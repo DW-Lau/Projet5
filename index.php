@@ -2,10 +2,9 @@
 session_start();
 
 if (!(isset($_GET['action']) ) ) {
-	require("controller/Front.php");
-	//	headBand();
-		//getAllChaps();	
-}
+	require("controllers/Front.php");
+		headBand();
+		firstPageInfo();}
 
 if (isset($_GET['action'])){
 
@@ -16,8 +15,8 @@ if (isset($_GET['action'])){
 
 /*--------------------------------LOGIN / SUBSCRIBE----------------------------------------*/
 if($_GET['action']=='connexion'){
-	require("controller/Front.php");
-	require ("controller/Back.php");
+	require("controllers/Front.php");
+	require ("controllers/Back.php");
 	 	headBand();
 	 	formulaire();
 }
@@ -32,28 +31,29 @@ if($_GET['action']=='connexion'){
 				if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
 					if (isset($pseudo)&&($mdp==true)&&($mail== true) ) {
 						$pseudoPresent=0;
-							require ("controller/Front.php");
-							require ("controller/Back.php");
-						//	headBand();
+							require ("controllers/Front.php");
+							require ("controllers/Back.php");
+							headBand();
 							//subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent);
-					//	$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
-						//	infoIssues($infoIssues);
+						$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
+						infoIssues($infoIssues);
 					}
 				}else{
-			//	$message="Une erreur dans votre adresse mail s'est produit. Veuillez vérifier vos information";
-				require ("controller/Front.php");
-				require ("controller/Back.php");
-				//headBand();
-				//msgMail($message);
+				$message="Une erreur dans votre adresse mail s'est produit. Veuillez vérifier vos information";
+				require ("controllers/Front.php");
+				require ("controllers/Back.php");
+				headBand();
+				msgMail($message);
 				}
 			}else{
-			//	$message="Les 2 mots de passes ne sont pas correspondant";
-				require ("controller/Front.php");
-				require ("controller/Back.php");
-				//headBand();
-				//msgPWD($message);
+				$message="Les 2 mots de passes ne sont pas correspondant";
+				require ("controllers/Front.php");
+				require ("controllers/Back.php");
+				headBand();
+				msgPWD($message);
 				
 			}
 		}//end of if(isset($lastname)&& isset($firstname)&&	.....
 			
 	}
+}
