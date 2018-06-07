@@ -1,8 +1,9 @@
 <?php
 session_start();
+require("controllers/Front.php");
+require ("controllers/Back.php");
 
 if (!(isset($_GET['action']) ) ) {
-	require("controllers/Front.php");
 		headBand();
 		firstPageInfo();}
 
@@ -15,8 +16,6 @@ if (isset($_GET['action'])){
 
 /*--------------------------------LOGIN / SUBSCRIBE----------------------------------------*/
 if($_GET['action']=='connexion'){
-	require("controllers/Front.php");
-	require ("controllers/Back.php");
 	 	headBand();
 	 	formulaire();
 }
@@ -40,15 +39,11 @@ if($_GET['action']=='connexion'){
 					}
 				}else{
 				$message="Une erreur dans votre adresse mail s'est produit. Veuillez vérifier vos information";
-				require ("controllers/Front.php");
-				require ("controllers/Back.php");
 				headBand();
 				msgMail($message);
 				}
 			}else{
 				$message="Les 2 mots de passes ne sont pas correspondant";
-				require ("controllers/Front.php");
-				require ("controllers/Back.php");
 				headBand();
 				msgPWD($message);
 				

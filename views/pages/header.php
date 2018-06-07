@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<meta name="description" content="Fiches et posts sur l'univers des films Marvel,(Sité réalisé dans le cadre de la formation OpenClassroom)">
+		<meta name="description" content="Fiches et posts sur l'univers des films Blender,(Sité réalisé dans le cadre de la formation OpenClassroom)">
 
-		<meta name="keywords" content="Films, Marvel, super-héros, 10 ans, Iron Man, Captain America, Hulk, Thor, Avenger,Saga, Forum" />
+		<meta name="keywords" content="Films, Forum" />
 			<!--Meta Facebook-->
 		<meta property="og:title" content="" />
 		<meta property="og:type" content="article" /> 
@@ -23,10 +23,9 @@
 		<meta name="twitter:creator" content="@author_handle">
 		<meta name="twitter:image:src" content="images.png">
 			<!--FIN META -->
-			<link rel="stylesheet" type="text/css" href="view/css/menu.css">
-		<link rel="stylesheet" type="text/css" href="view/css/styles.css">
-		<link rel="stylesheet" type="text/css" href="view/css/stylesA.css">
-		<link rel="stylesheet" type="text/css" href="view/css/stylesResponsiv.css">
+		
+		<link rel="stylesheet" type="text/css" href="views/css/styles.css">
+	
 		<!--POLICES-->
 		
 		<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
@@ -38,16 +37,16 @@
 				height:'250px'
 			});
 		</script>
-		<title>Saga Marvel</title>
+		<title>Blender</title>
 
 	</head>
 
 		<body>	
 			<header>
 				<div id="headband">
-					<img src="" alt="Logo Marvel Studio">
+					<img src="views/Images/Logo_Blender.png" alt="Logo Blender">
 					<h1>
-						<a href="./index.php"> Saga Marvel:Le MCU </a>
+						<a href="./index.php">  Blender </a>
 					</h1>
 					
 				</div>
