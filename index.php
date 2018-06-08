@@ -64,4 +64,8 @@ if ($_GET['action']=='logger'){
 if ($_GET['action']=='films') {
 		allMovies();
 	}	
+if ($_GET['action']=='film') {
+		oneMovie();
+	}
+	
 }

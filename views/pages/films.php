@@ -11,7 +11,8 @@
 			?>
 				<figure class="thumbnais_Movie">
 					<?php 
-						echo '<img src="views/Images/Films/'. $allMovies['img_link'].'" alt="'. $allMovies['img_link'].'">';
+						echo '<a href="./index.php?action=film&amp;id='. $allMovies['id_film'] .'">
+							<img src="views/Images/Films/'. $allMovies['img_link'].'" alt="'. $allMovies['img_link'].'"></a>';
 					?> 
 							<figcaption> 
 							
@@ -26,3 +27,5 @@
 		</article>
 	</div>
 </section>
+</body>
+</html>

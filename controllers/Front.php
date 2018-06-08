@@ -20,3 +20,8 @@ function allMovies(){
 	$Movies= $listMovies->moviesCall();
 	require('./views/pages/films.php');
 }
+function oneMovie(){
+	$oneMovies= new MoviesManager();
+	$selectedMovie= $oneMovies->moviesCall();
+	require('./views/pages/film.php');
+}
