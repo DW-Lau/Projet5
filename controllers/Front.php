@@ -15,3 +15,8 @@ function firstPageInfo(){
 function formulaire(){
 	require('./views/pages/connexion.php');
 }
+function allMovies(){
+	$listMovies= new MoviesManager();
+	$Movies= $listMovies->moviesCall();
+	require('./views/pages/films.php');
+}
