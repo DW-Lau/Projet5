@@ -16,19 +16,19 @@
 				 while($movie = $upDateMovie->fetch() ){ 
 
 			?>
-		<!-- 	<?php 
-			//echo '<img src="views/Images/Films/'. $movie['img_link'].'" alt="Dernier film de la fondation Blender">'; 
-			//var_dump($movie['img_link']);
-			?> -->
+		 	<?php 
+			echo '<img src="views/Images/Films/'. $movie['img_link'].'" alt="'. $movie['img_link'].'" class="FirstPageImg">'; 
+			
+			?> 
 			<h3>Dernier Film sortie: <?php echo $movie['titre_film']?> </h3>
 
 			<p div="resume_Last_Movie"> Synopsis: <?php echo htmlspecialchars($movie['resume']);?>
 				<br> Sortie le : <?php echo htmlspecialchars($movie['date_fr']); ?>
 				<br>
-			<!-- 	<?php 
-			//echo 'Visionner le film :<a href="'. $movie['movie_link'].'"></a>"'; 
-			//var_dump($movie['img_link']);
-			?> -->
+				<?php 
+			echo 'Visionner le film :<a href="'. $movie['movie_link'].'"> Ici</a>'; 
+			
+			?> 
 				
 			</p>
 			<?php
