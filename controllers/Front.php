@@ -1,5 +1,5 @@
 <?php
-require_once("./models/Adminpage.php");
+require_once("./models/AdminManager.php");
 require_once("./models/movies.php");
 
 
@@ -11,5 +11,7 @@ function firstPageInfo(){
 	$upDateMovie= $LastMovie->lastMovie();
 
 	require('./views/pages/homepage.php');
-
+}
+function formulaire(){
+	require('./views/pages/connexion.php');
 }

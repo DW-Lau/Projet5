@@ -70,7 +70,7 @@
 								}
 							?>
 							<?php
-								if (!isset($_SESSION['pseudo'])){
+								if (isset($_SESSION['pseudo'])){
 							?> 
 								<li>
 									<a href="./index.php?action=espace">Profil</a>
@@ -80,7 +80,7 @@
 							?>
 
 							<?php
-								if (!isset($_SESSION['id'])  ||$_SESSION['droits']==2){
+								if (!isset($_SESSION['id'])||$_SESSION['droits']==2){
 									echo "<li><a href='./index.php?action=admin'>Admin</a></li>";
 									}
 							?> 

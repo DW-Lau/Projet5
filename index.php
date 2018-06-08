@@ -3,8 +3,10 @@ session_start();
 require("controllers/Front.php");
 require ("controllers/Back.php");
 
+
+headBand();
 if (!(isset($_GET['action']) ) ) {
-		headBand();
+		//headBand();
 		firstPageInfo();}
 
 if (isset($_GET['action'])){
@@ -16,39 +18,46 @@ if (isset($_GET['action'])){
 
 /*--------------------------------LOGIN / SUBSCRIBE----------------------------------------*/
 if($_GET['action']=='connexion'){
-	 	headBand();
+	 	//headBand();
 	 	formulaire();
 }
-	if ($_GET['action']=='subscribeMember') {
-		$pseudo = htmlspecialchars($_POST['pseudo']);//PSEUDO
-		$mdp=$_POST['mdp'];//MOT DE PASSE
-		$mdp1=$_POST['mdp1'];//CONFIRMATION MOT DE PASSE
-		$mail = $_POST['mail'];//ADRESSE MAIL
+if ($_GET['action']=='subscribeMember') {
+	$pseudo = htmlspecialchars($_POST['pseudo']);//PSEUDO
+	$pwd=$_POST['pwd'];//MOT DE PASSE
+	$pwd1=$_POST['pwd1'];//CONFIRMATION MOT DE PASSE
+	
+	if(isset($pseudo)&&isset($pwd)&&isset($pwd1)){
+		if ($pwd==$pwd1) {
+			if (isset($pseudo)&&($pwd==true) ) {
+				$pseudoPresent=0;
+				$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
 
-		if(isset($pseudo)&&isset($mdp)&&isset($mdp1)&&isset($mail)){
-			if ($mdp==$mdp1) {
-				if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
-					if (isset($pseudo)&&($mdp==true)&&($mail== true) ) {
-						$pseudoPresent=0;
-							require ("controllers/Front.php");
-							require ("controllers/Back.php");
-							headBand();
-							//subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent);
-						$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
-						infoIssues($infoIssues);
-					}
-				}else{
-				$message="Une erreur dans votre adresse mail s'est produit. Veuillez vérifier vos information";
 				headBand();
-				msgMail($message);
-				}
-			}else{
-				$message="Les 2 mots de passes ne sont pas correspondant";
-				headBand();
-				msgPWD($message);
-				
+				entry($pseudo,$pwd,$pseudoPresent);
+				infoIssues($infoIssues);
 			}
-		}//end of if(isset($lastname)&& isset($firstname)&&	.....
+		}else{
+			$message="Les 2 mots de passes ne sont pas correspondant";
+
+			//headBand();
+			msgPWD($message);
+				
+		}
+	}//end of if(isset($lastname)&& isset($firstname)&&	.....
+}//end of subscribe
+
+if ($_GET['action']=='logger'){
+		$checkPseudo = htmlspecialchars($_POST['checkPseudo']);
+		$checkpwd = $_POST['checkpwd'];
+
+		if ( isset($checkPseudo)&& isset($checkpwd) ){
+			$noNickName="Aucun pseudo reconnu";
+			$NoMatch="Pseudo ou mot de passe incorrect";
 			
+			checkInfo($checkPseudo,$checkpwd);
+			noNickName($noNickName);
+			NoMatch($NoMatch);
+		}
+
 	}
 }
