@@ -27,7 +27,9 @@
 		<link rel="stylesheet" type="text/css" href="views/css/styles.css">
 	
 		<!--POLICES-->
-		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
 		<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
 
 		<script src="view/tinymce/js/tinymce/tinymce.min.js"></script>
@@ -70,7 +72,7 @@
 								}
 							?>
 							<?php
-								if (isset($_SESSION['pseudo'])){
+								if (isset($_SESSION['id'])&&isset($_SESSION['droits'])!=3){
 							?> 
 								<li>
 									<a href="./index.php?action=espace">Profil</a>
@@ -80,7 +82,7 @@
 							?>
 
 							<?php
-								if (!isset($_SESSION['id'])||$_SESSION['droits']==2){
+								if (isset($_SESSION['id']) && isset($_SESSION['droits'])==3) {
 									echo "<li><a href='./index.php?action=admin'>Admin</a></li>";
 									}
 							?> 
