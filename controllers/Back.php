@@ -48,3 +48,16 @@ function NoMatch($NoMatch){
 	require('./views/pages/connexion.php');
 }
 /*--------------------------------END MESSAGES----------------------------------------*/
+/*--------------------------------ADMIN SECTION----------------------------------------*/
+function adminPage(){
+
+	$listMovies= new MoviesManager();
+	$Movies= $listMovies->moviesCall();
+
+	
+	require('./views/pages/adminpage.php');
+}
+
+
+
+/*--------------------ADMIN-PANNEL-------------------------------*/

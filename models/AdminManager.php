@@ -71,4 +71,9 @@ class membersManager extends Manager
 		
 			}
 	}
+	public function upGradeRights($id){
+		$bdd=$this->dbConnect();
+		$upGR= $bdd->prepare('UPDATE ');
+	}
+	
 }
