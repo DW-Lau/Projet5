@@ -3,10 +3,35 @@
 	<div id="headBandUpDate">
 		<div id="listAdminTopics">
 			<!-- Liste des admins Forum-->
+			<h2>Modérateur(s) forum:</h2>
+			<p>
+				
+			</p>
 			
 		</div>
 		<div id="listMember">
 	<!-- 		liste de tous les membres du site. -->
+		<h2>Personnes inscrites:</h2>
+		<?php
+		while($listOfMembers=$AllMembers->fetch() ){
+			if($listOfMembers['status_membre']==1){
+				$listOfMembers['status_membre']="Membre";
+			}
+			if($listOfMembers['status_membre']==2){
+				$listOfMembers['status_membre']="Modérateur";
+			}
+			if($listOfMembers['status_membre']==3){
+				$listOfMembers['status_membre']="Admin";
+			}
+		?>
+		<p>Pseudo: <?php echo htmlspecialchars($listOfMembers['pseudo'])?> , status: <?php echo $listOfMembers['status_membre'] ?><br>
+			
+		</p>
+
+		<?php
+		}
+		$AllMembers->closeCursor();
+		?>
 		</div>
 
 		<div id="lastTopicUpdate">

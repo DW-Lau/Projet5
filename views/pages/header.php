@@ -72,7 +72,7 @@
 								}
 							?>
 							<?php
-								if (isset($_SESSION['id'])&&isset($_SESSION['droits'])!=3){
+								if  (isset($_SESSION['id']) && isset($_SESSION['droits'])!=3){
 							?> 
 								<li>
 									<a href="./index.php?action=espace">Profil</a>

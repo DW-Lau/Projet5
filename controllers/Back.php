@@ -54,6 +54,8 @@ function adminPage(){
 	$listMovies= new MoviesManager();
 	$Movies= $listMovies->moviesCall();
 
+	$listMembers= new membersManager();
+	$AllMembers=$listMembers->listMembers();
 	
 	require('./views/pages/adminpage.php');
 }

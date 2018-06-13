@@ -75,5 +75,10 @@ class membersManager extends Manager
 		$bdd=$this->dbConnect();
 		$upGR= $bdd->prepare('UPDATE ');
 	}
+	public function listMembers(){
+		$bdd=$this->dbConnect();
+		$listMmbrs= $bdd->query('SELECT id_membre,pseudo, status_membre FROM membre');
+		return $listMmbrs;
+	}
 	
 }
