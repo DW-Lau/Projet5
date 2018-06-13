@@ -9,7 +9,7 @@ function entry($pseudo,$pwd,$pseudoPresent){
 	$newMember= new membersManager();
 	$getNewMember= $newMember->NewUser($pseudo,$pwd,$pseudoPresent);
 
-	require('./views/pages/membre.php');
+	//require('./views/pages/membre.php');
 }
 function checkInfo($checkPseudo,$checkpwd){
 	$checkUser= new membersManager();
@@ -50,16 +50,26 @@ function NoMatch($NoMatch){
 /*--------------------------------END MESSAGES----------------------------------------*/
 /*--------------------------------ADMIN SECTION----------------------------------------*/
 function adminPage(){
-
 	$listMovies= new MoviesManager();
 	$Movies= $listMovies->moviesCall();
 
 	$listMembers= new membersManager();
 	$AllMembers=$listMembers->listMembers();
 	
+
+	$listModos= new membersManager();
+	$AllModerateurs=$listModos->listModo();
+
 	require('./views/pages/adminpage.php');
 }
-
+function upgradeMember($id_membre){
+	$newModo= new membersManager();
+	$Moderateur=$newModo->upGradeRights($id_membre);
+}
+function downGradeMember($id_membre){
+	$downModo= new membersManager();
+	$backMember= $downModo ->downGradeRights($id_membre);
+}
 
 
 /*--------------------ADMIN-PANNEL-------------------------------*/

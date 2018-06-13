@@ -67,7 +67,18 @@ if ($_GET['action']=='logger'){
 /*------------------------------ADMIN--------------------------*/
 
 if($_GET['action']=='admin'){
+	var_dump("hello??");
 	adminPage();
+}
+if($_GET['action']=='upGrade'){
+	$id_membre=$_GET['id'];
+	adminPage();
+	upgradeMember($id_membre);
+}
+if($_GET['action']=='downGrade'){
+	$id_membre=$_GET['id'];
+	adminPage();
+	downGradeMember($id_membre);
 }
 
 /*------------------------END ADMIN-------------------------------*/

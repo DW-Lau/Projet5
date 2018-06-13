@@ -67,18 +67,37 @@ class membersManager extends Manager
 				$_SESSION["id"]=$SessionInfos["id_membre"];
 			 	$_SESSION["pseudo"]=$pseudo;
 
-				// header("Location:./index.php");
+				 header("Location:./index.php");
 		
 			}
 	}
-	public function upGradeRights($id){
+	public function upGradeRights($id_membre){
 		$bdd=$this->dbConnect();
-		$upGR= $bdd->prepare('UPDATE ');
+		$id_membre;
+		$upGR= $bdd->prepare('UPDATE membre SET status_membre=\'2\' WHERE id_membre= :idmembre');
+		$upGR->execute(array(
+			'idmembre'=>$id_membre
+		));
+		header("Location:./index.php?action=admin");
+	}
+	public function downGradeRights($id_membre){
+		$bdd=$this->dbConnect();
+		$id_membre;
+		$downGR= $bdd->prepare('UPDATE membre SET status_membre=\'1\'WHERE id_membre= :idmembre');
+		$downGR->execute(array(
+			'idmembre'=>$id_membre
+		));
+		header("Location:./index.php?action=admin");
 	}
 	public function listMembers(){
 		$bdd=$this->dbConnect();
-		$listMmbrs= $bdd->query('SELECT id_membre,pseudo, status_membre FROM membre');
+		$listMmbrs= $bdd->query('SELECT id_membre,pseudo, status_membre FROM membre WHERE status_membre=\'1\'');
 		return $listMmbrs;
 	}
-	
+
+	public function listModo(){
+		$bdd=$this->dbConnect();
+		$listMd= $bdd->query('SELECT id_membre,pseudo, status_membre FROM membre WHERE status_membre=\'2 \'');
+		return $listMd;
+	}
 }

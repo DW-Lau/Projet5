@@ -72,18 +72,10 @@
 								}
 							?>
 							<?php
-								if  (isset($_SESSION['id']) && isset($_SESSION['droits'])!=3){
-							?> 
-								<li>
-									<a href="./index.php?action=espace">Profil</a>
-								</li>
-							<?php
-								}
-							?>
-
-							<?php
-								if (isset($_SESSION['id']) && isset($_SESSION['droits'])==3) {
+								if(isset($_SESSION['droits'])==3) {
 									echo "<li><a href='./index.php?action=admin'>Admin</a></li>";
+									}elseif(isset($_SESSION['id']) && isset($_SESSION['droits'])!==3){
+										echo "<li><a href='./index.php?action=espace'>Profil</a></li>";
 									}
 							?> 
 								
