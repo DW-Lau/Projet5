@@ -67,7 +67,7 @@ if ($_GET['action']=='logger'){
 /*------------------------------ADMIN--------------------------*/
 
 if($_GET['action']=='admin'){
-	var_dump("hello??");
+	
 	adminPage();
 }
 if($_GET['action']=='upGrade'){

@@ -7,7 +7,7 @@
 			 ?>
 			<p>
 				Pseudo: <?php echo htmlspecialchars($modos['pseudo'])?> <br>
-				<a href="./index.php?action=downGrade&amp;id=<?php echo $modos['id_membre']; ?>"><i class="fas fa-user-minus">Retire ce modérateur.</i></a>
+				<button id="dwnDroit"><a href="./index.php?action=downGrade&amp;id=<?php echo $modos['id_membre']; ?>"><i class="fas fa-user-minus">Retire ce modérateur.</i></a></button>
 			</p>
 			<?php
 			}
@@ -23,7 +23,8 @@
 		
 		?>
 		<p>Pseudo: <?php echo htmlspecialchars($listOfMembers['pseudo'])?> , status: <?php echo $listOfMembers['status_membre'] ?><br>
-			<a href="./index.php?action=upGrade&amp;id=<?php echo $listOfMembers['id_membre']; ?>"><i class="fas fa-user-plus">Passer Modérateur</i></a> <a href="./index.php?action=ban&amp;id=<?php echo $listOfMembers['id_membre']; ?>"><i class="fas fa-user-alt-slash">Bannir </i></a>
+			<button id="newModo"><a href="./index.php?action=upGrade&amp;id=<?php echo $listOfMembers['id_membre']; ?>"><i class="fas fa-user-plus">Passer Modérateur</i></a></button>
+				<button id="ban"></a> <a href="./index.php?action=ban&amp;id=<?php echo $listOfMembers['id_membre']; ?>"><i class="fas fa-user-alt-slash">Bannir </i></a></button>
 		</p>
 
 		<?php
@@ -85,3 +86,5 @@ Modifier</i></a>
 	</div>
 
 </section>
+</body>
+<script type="text/javascript" src="./views/javascript/adminPannel.js"></script>
