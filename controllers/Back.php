@@ -62,6 +62,11 @@ function adminPage(){
 
 	require('./views/pages/adminpage.php');
 }
+function addNewEntry($title,$resume,$releaseDate,$addLink,$resultat){
+	$newMovie= new MoviesManager();
+	$newEntry= $newMovie->addNewMovie($title,$resume,$releaseDate,$addLink,$resultat);
+	
+}
 function upgradeMember($id_membre){
 	$newModo= new membersManager();
 	$Moderateur=$newModo->upGradeRights($id_membre);

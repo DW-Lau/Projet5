@@ -72,16 +72,19 @@ Modifier</i></a>
 		<article>
 			<h2>Ajouter un film:</h2>
 
-			<form id="getNewMovie" action="./index.php?action=postMovie" method="post">
+			<form id="getNewMovie" action="./index.php?action=postMovie" method="post" enctype="multipart/form-data">
 			<fieldset>		
 				<label>Titre du film :<input type="text" name="title" id="title" value="" required/></label>
 				<label>Date de sortie<input type="date" name="date"></label>
 			
-				<label> Résumé du film: <textarea class="tinymce" name="tinymce_Movie"></textarea></label>
-				<label>Lien du film :<input type="text" name="title" id="title" value="" required/></label>
-				<label for="titre">Titre du fichier (max. 50 caractères) :<input type="file" name="mon_fichier" id="mon_fichier"  required/></label>
-				<label for="imgFilms">Fichier (tous formats | max. 1 Mo) :
-     				<input type="file" name="icone" id="icone" required/>
+				<label> Résumé du film: <textarea class="tinymce" name="tinymce_Movie"></textarea>
+				</label>
+				<label>Lien du film :<input type="text" name="link" id="link" value="" required/>
+				</label>
+				<label>Titre du fichier (max. 50 caractères) :<input type="text" name="newMovie" id="newMovie"  required/>
+				</label>
+				<label>Fichier ('jpg','jpeg', 'gif' et 'png' | max. 2 Mo) :
+     				<input type="file" name="imgFilms" id="imgFilms" required/>
    				</label>
 				<input type="submit" id="send" value="Publier" />
 			</fieldset>

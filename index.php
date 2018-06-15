@@ -81,6 +81,38 @@ if($_GET['action']=='downGrade'){
 	downGradeMember($id_membre);
 }
 
+if ($_GET['action']=='postMovie') {
+	if (isset($_FILES['imgFilms']) AND $_FILES['imgFilms']['error'] == 0)
+	{
+		$title=htmlspecialchars($_POST['title']);
+		$releaseDate=$_POST['date'];
+		$resume=htmlspecialchars($_POST['tinymce_Movie']);
+		$addLink=$_POST['link'];
+		$fileName=htmlspecialchars($_POST['newMovie']);
+		
+		$taillemax=3000000;//environ 3MO
+		$extensionValides=array('jpg','jpeg', 'gif','png');
+
+			if ($_FILES['imgFilms']['size']<=$taillemax) {
+
+				$infosfichier = pathinfo($_FILES['imgFilms']['name']);
+				$extension_upload = $infosfichier['extension'];
+				$resultat=$fileName.".".$extension_upload;
+					
+					if (in_array($extension_upload, $extensionValides)) {
+						move_uploaded_file($_FILES['imgFilms']['tmp_name'], './views/Images/Films/' . basename($_FILES['imgFilms']['name']));
+	                    echo "L'envoi a bien été effectué !";
+					addNewEntry($title,$resume,$releaseDate,$addLink,$resultat);
+					}else{
+						$msg="Votre photo n'est pas au bon format.";
+					}
+
+			}
+			else{
+				$msg="Votre image dépasse les 2MO.";
+			}
+	}
+}
 /*------------------------END ADMIN-------------------------------*/
 if ($_GET['action']=='films') {
 		allMovies();
@@ -89,4 +121,6 @@ if ($_GET['action']=='film') {
 		oneMovie();
 	}
 	
+
+
 }
