@@ -65,7 +65,16 @@ function adminPage(){
 function addNewEntry($title,$resume,$releaseDate,$addLink,$resultat){
 	$newMovie= new MoviesManager();
 	$newEntry= $newMovie->addNewMovie($title,$resume,$releaseDate,$addLink,$resultat);
-	
+}
+function editEntry($movieEdit){
+	$edit= new MoviesManager();
+	$editMovie= $edit->editedMovie($movieEdit);
+	require('./views/pages/editFilm.php');
+}
+
+function deleteMovie($moviedeleted){
+	$dlt= new MoviesManager();
+	$dltMv=$dlt->eraseChapter($movieEdit);
 }
 function upgradeMember($id_membre){
 	$newModo= new membersManager();

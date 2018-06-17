@@ -112,15 +112,27 @@ if ($_GET['action']=='postMovie') {
 				$msg="Votre image dépasse les 2MO.";
 			}
 	}
+
+}
+if($_GET['action']=='editEntry'){
+	$movieEdit=$_GET['id'];
+		editEntry($movieEdit);
+}
+if ($_GET['action']=='eraseEntry') {
+	$moviedeleted=$_GET['id_film'];
+	deleteMovie($moviedeleted);
 }
 /*------------------------END ADMIN-------------------------------*/
+
+/*----------------------------MEMBERS-----------------------------*/
+/*--------------------------END MEMBERS---------------------------*/
+
+
 if ($_GET['action']=='films') {
 		allMovies();
 	}	
 if ($_GET['action']=='film') {
 		oneMovie();
 	}
-	
-
 
 }

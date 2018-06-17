@@ -51,12 +51,10 @@
 						<?php echo $listMovies['titre_film']?>
 						</br>
 						<span id="deleteEntry">
-							<a href="./index.php?action=eraseEntry&amp;id=<?php echo $listMovies['id_film']; ?>"> <i class="fas fa-eraser">Effacer de la liste</i></a>
+							<button id="deletMovie"><a href="./index.php?action=eraseEntry&amp;id=<?php echo $listMovies['id_film']; ?>"> <i class="fas fa-eraser">Effacer de la liste</i></a></button>
 						</span>
 						<span id="changeButton">
-							<a href="./index.php?action=editEntry&amp;id=<?php echo $listMovies['id_film']; ?>"><i class="fas fa-undo-alt">
-
-Modifier</i></a>
+							<button id="modifMovie"><a href="./index.php?action=editEntry&amp;id=<?php echo $listMovies['id_film']; ?>"><i class="fas fa-undo-alt">Modifier</i></a></button>
 						</span>
 
 						 <br/>
@@ -82,8 +80,8 @@ Modifier</i></a>
 				<label>Lien du film :<input type="text" name="link" id="link" value="" required/>
 				</label>
 				<label>Titre du fichier (max. 50 caractères) :<input type="text" name="newMovie" id="newMovie"  required/>
-				</label>
-				<label>Fichier ('jpg','jpeg', 'gif' et 'png' | max. 2 Mo) :
+				</label><span id="warningTitle"></span>
+				<label>Fichier ('jpg','jpeg', 'gif' et 'png' | max. 3 Mo) :
      				<input type="file" name="imgFilms" id="imgFilms" required/>
    				</label>
 				<input type="submit" id="send" value="Publier" />

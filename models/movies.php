@@ -36,4 +36,18 @@ class MoviesManager extends Manager{
 		));
 		 header("Location:./index.php?action=admin");
 	}
+	public function editedMovie($movieEdit){
+		$bdd=$this->dbConnect();
+		$editAMovie=$bdd->prepare('SELECT id_film,titre_film,resume,date_format(date_sortie,"%d.%m.%y")as date_fr,movie_link, img_link FROM films WHERE id_film=:idFilm ');
+		$editAMovie->execute(array(
+			'idFilm'=>$movieEdit
+		));
+		return $editAMovie;
+	}
+	public function eraseChapter($movieEdit){//This function will deleted
+		$bdd=$this->dbConnect();
+		$dltAMovie=$bdd->prepare('DELETE FROM films WHERE id_film=?');
+		$eraseComms=$dltAMovie->execute(array($movieEdit));
+		header("Location:./index.php?action=admin");
+	}
 }
