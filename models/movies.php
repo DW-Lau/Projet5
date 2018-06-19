@@ -57,10 +57,11 @@ class MoviesManager extends Manager{
 			));
 		 header("Location:./index.php?action=admin");
 	}
-	public function eraseChapter($movieEdit){//This function will deleted
+	public function eraseChapter($moviedeleted){//This function will deleted
 		$bdd=$this->dbConnect();
-		$dltAMovie=$bdd->prepare('DELETE FROM films WHERE id_film=?');
-		$eraseComms=$dltAMovie->execute(array($movieEdit));
+		$dltAMovie=$bdd->prepare('DELETE FROM films WHERE id_film= :id');
+		$eraseComms=$dltAMovie->execute(array(
+			'id'=>$moviedeleted));
 		header("Location:./index.php?action=admin");
 	}
 }

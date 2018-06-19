@@ -79,7 +79,7 @@ function submitEntry($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$r
 }
 function deleteMovie($moviedeleted){
 	$dlt= new MoviesManager();
-	$dltMv=$dlt->eraseChapter($movieEdit);
+	$dltMv=$dlt->eraseChapter($moviedeleted);
 }
 function upgradeMember($id_membre){
 	$newModo= new membersManager();

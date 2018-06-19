@@ -151,7 +151,8 @@ if($_GET['action']=='updateEntry'){
 
 }
 if ($_GET['action']=='eraseEntry') {
-	$moviedeleted=$_GET['id_film'];
+	$moviedeleted=$_GET['id'];
+	var_dump($moviedeleted);
 	deleteMovie($moviedeleted);
 }
 /*------------------------END ADMIN-------------------------------*/
