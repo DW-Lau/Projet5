@@ -109,7 +109,7 @@ if ($_GET['action']=='postMovie') {
 
 			}
 			else{
-				$msg="Votre image dépasse les 2MO.";
+				$msg="Votre image dépasse les 3MO.";
 			}
 	}
 
@@ -117,6 +117,38 @@ if ($_GET['action']=='postMovie') {
 if($_GET['action']=='editEntry'){
 	$movieEdit=$_GET['id'];
 		editEntry($movieEdit);
+}
+if($_GET['action']=='updateEntry'){
+	$movieEdit=$_GET['id'];
+	if (isset($_FILES['newimgFilms']) AND $_FILES['newimgFilms']['error'] == 0)
+	{
+		$newtitle=htmlspecialchars($_POST['newtitle']);
+		$newreleaseDate=$_POST['newdate'];
+		$newresume=htmlspecialchars($_POST['newtinymce_Movie']);
+		$newLink=$_POST['newlink'];
+		$newfileName=htmlspecialchars($_POST['editMovie']);
+		
+		$taillemax=3000000;//environ 3MO
+		$extensionValides=array('jpg','jpeg', 'gif','png');
+			if ($_FILES['newimgFilms']['size']<=$taillemax) {
+
+				$infosfichier = pathinfo($_FILES['newimgFilms']['name']);
+				$extension_upload = $infosfichier['extension'];
+				$resultat=$newfileName.".".$extension_upload;
+					
+					if (in_array($extension_upload, $extensionValides)) {
+						move_uploaded_file($_FILES['newimgFilms']['tmp_name'], './views/Images/Films/' . basename($_FILES['newimgFilms']['name']));
+					submitEntry($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$resultat);
+					}else{
+						$msg="Veuillez vérifier le format de la photo.";
+					}
+
+			}
+			else{
+				$msg="Votre image dépasse les 3MO.";
+			}
+	}
+
 }
 if ($_GET['action']=='eraseEntry') {
 	$moviedeleted=$_GET['id_film'];

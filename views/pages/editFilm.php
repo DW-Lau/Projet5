@@ -5,7 +5,7 @@
 		?>
 			<h2><span class="maj">é</span>diter film:</h2>
 
-			<form id="editMovie" action="./index.php?action=reedit&amp;id=<?php echo $infoRecup['id_film'];?>" method="post" enctype="multipart/form-data">
+			<form id="editMovie" action="./index.php?action=updateEntry&amp;id=<?php echo $infoRecup['id_film'];?>" method="post" enctype="multipart/form-data">
 			<fieldset>		
 				<label>Titre du film :<input type="text" name="newtitle" id="title" value="<?php echo $infoRecup['titre_film'];?>" required/></label>
 				<label>Date de sortie<input type="date" name="newdate" value="<?php echo $infoRecup['date_fr'];?>" required/></label>

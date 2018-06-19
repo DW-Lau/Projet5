@@ -19,7 +19,7 @@ class MoviesManager extends Manager{
 	}
 	public function lastMovie(){
 		$bdd=$this->dbConnect();
-		$lastMovieOut= $bdd->query('SELECT id_film,titre_film,SUBSTR(resume, 1, 250)as resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link, img_link FROM films ORDER BY date_sortie LIMIT 0,1');
+		$lastMovieOut= $bdd->query('SELECT id_film,titre_film,SUBSTR(resume, 1, 250)as resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link, img_link FROM films ORDER BY date_sortie desc LIMIT 0,1');
 		
 		return $lastMovieOut;
 	}
@@ -43,6 +43,19 @@ class MoviesManager extends Manager{
 			'idFilm'=>$movieEdit
 		));
 		return $editAMovie;
+	}
+	public function submitedMovie($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$resultat){
+		$bdd=$this->dbConnect();
+		$submit=$bdd->prepare('UPDATE films SET titre_film= :titre , resume= :resume, date_sortie = :datesortie,movie_link= :linkmovie , img_link= :imglink WHERE id_film=:id ');
+		$submit->execute(array(
+			'id'=>$movieEdit,
+			'titre'=>$newtitle,
+			'resume'=>$newresume,
+			'datesortie' =>$newreleaseDate,
+			'linkmovie'=> $newLink,
+			'imglink'=>$resultat
+			));
+		 header("Location:./index.php?action=admin");
 	}
 	public function eraseChapter($movieEdit){//This function will deleted
 		$bdd=$this->dbConnect();

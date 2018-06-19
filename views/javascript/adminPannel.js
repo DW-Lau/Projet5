@@ -22,4 +22,4 @@ envoie.addEventListener("click",function(){
 warningTitleInput.addEventListener("click",function(){
 	warningTitleText.style.display="1";
 	warningTitleText.textContent="Veuilliez ne pas mettre d'espace ou de majuscule.";
-})
+});

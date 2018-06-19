@@ -71,7 +71,12 @@ function editEntry($movieEdit){
 	$editMovie= $edit->editedMovie($movieEdit);
 	require('./views/pages/editFilm.php');
 }
+function submitEntry($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$resultat){
 
+	$submit= new MoviesManager();
+	$submitMovie= $submit->submitedMovie($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$resultat);
+	//require('./views/pages/adminpage.php');
+}
 function deleteMovie($moviedeleted){
 	$dlt= new MoviesManager();
 	$dltMv=$dlt->eraseChapter($movieEdit);
