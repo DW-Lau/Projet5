@@ -163,8 +163,8 @@ if ($_GET['action']=='forum') {
 }
 if ($_GET['action']=='newTopic') {
 	$auteurTopic=$_SESSION['id'];
-	$titreTopic=$_POST['titreTopic'];
-	$messageTopic=$_POST['tinymce_Topic'];
+	$titreTopic=htmlspecialchars($_POST['titreTopic']);
+	$messageTopic=htmlspecialchars($_POST['tinymce_Topic']);
 	var_dump($auteurTopic,$titreTopic,$messageTopic);
 	createdTopic($auteurTopic,$titreTopic,$messageTopic);
 }
