@@ -152,11 +152,23 @@ if($_GET['action']=='updateEntry'){
 }
 if ($_GET['action']=='eraseEntry') {
 	$moviedeleted=$_GET['id'];
-	var_dump($moviedeleted);
 	deleteMovie($moviedeleted);
 }
+
 /*------------------------END ADMIN-------------------------------*/
 
+/*-----------------------------TOPICS-----------------------------*/
+if ($_GET['action']=='forum') {
+	allTopics();
+}
+if ($_GET['action']=='newTopic') {
+	$auteurTopic=$_SESSION['id'];
+	$titreTopic=$_POST['titreTopic'];
+	$messageTopic=$_POST['tinymce_Topic'];
+	var_dump($auteurTopic,$titreTopic,$messageTopic);
+	createdTopic($auteurTopic,$titreTopic,$messageTopic);
+}
+/*-----------------------------END TOPICS-------------------------*/
 /*----------------------------MEMBERS-----------------------------*/
 /*--------------------------END MEMBERS---------------------------*/
 

@@ -90,5 +90,14 @@ function downGradeMember($id_membre){
 	$backMember= $downModo ->downGradeRights($id_membre);
 }
 
-
+function createdTopic($auteurTopic,$titreTopic,$messageTopic){
+	
+	$newTopic= new CommentsManager();
+	$newSubject=$newTopic->createdTopic($auteurTopic,$titreTopic,$messageTopic);
+}
 /*--------------------ADMIN-PANNEL-------------------------------*/
+
+function allTopics(){
+	$topics= new CommentsManager();
+	$getTopics= $topics->getAllTopics();
+}

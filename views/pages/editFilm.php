@@ -8,7 +8,7 @@
 			<form id="editMovie" action="./index.php?action=updateEntry&amp;id=<?php echo $infoRecup['id_film'];?>" method="post" enctype="multipart/form-data">
 			<fieldset>		
 				<label>Titre du film :<input type="text" name="newtitle" id="title" value="<?php echo $infoRecup['titre_film'];?>" required/></label>
-				<label>Date de sortie<input type="date" name="newdate" value="<?php echo $infoRecup['date_fr'];?>" required/></label>
+				<label>Date de sortie<input type="date" name="newdate" value="<?php echo $infoRecup['date_fr'];?>" required/><p id="date_event"><?php echo $infoRecup['date_fr'];?></p></label>
 			
 				<label> Résumé du film: <textarea class="tinymce" name="newtinymce_Movie"><?php echo $infoRecup['resume'];?></textarea>
 				</label>

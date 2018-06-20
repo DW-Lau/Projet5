@@ -67,7 +67,7 @@
 		<aside id="messagesPannel">
 			
 		</aside>
-		<article>
+		<article id="newMovie">
 			<h2>Ajouter un film:</h2>
 
 			<form id="getNewMovie" action="./index.php?action=postMovie" method="post" enctype="multipart/form-data">
@@ -88,6 +88,19 @@
 			</fieldset>
 			</form>
 			
+		</article>
+		<article id="newTopic">
+			<h2>Créer un nouveau sujet de discussion:</h2>
+
+			<form id="getNewSubject" action="./index.php?action=newTopic" method="post" enctype="multipart/form-data">
+				<fieldset>
+					<label>Auteur du sujet: <?php echo $_SESSION['pseudo'];?> </label>
+					<label>Titre du topic:<input type="text" name="titreTopic" required/></label>
+					<label> Message: <textarea class="tinymce" name="tinymce_Topic"></textarea>
+					</label>
+					<input type="submit" id="send" value="Créer" />
+				</fieldset>
+			</form>
 		</article>
 
 	</div>
