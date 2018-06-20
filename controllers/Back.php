@@ -100,4 +100,5 @@ function createdTopic($auteurTopic,$titreTopic,$messageTopic){
 function allTopics(){
 	$topics= new CommentsManager();
 	$getTopics= $topics->getAllTopics();
+	require("./views/pages/forum.php");
 }
