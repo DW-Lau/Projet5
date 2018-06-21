@@ -19,6 +19,6 @@ class CommentsManager extends Manager{
 			
 		));
 		$newTopic=$bdd->query('SELECT forum.id_auteur, membre.id_membre FROM forum LEFT JOIN membre ON forum.id_auteur=membre.id_membre');
-		header("Location:index.php?action=admin");
+		//header("Location:index.php?action=admin");
 	}
 }

@@ -61,6 +61,8 @@ function adminPage(){
 	$AllModerateurs=$listModos->listModo();
 
 	require('./views/pages/adminpage.php');
+	require("./views/pages/newtopic.php");
+
 }
 function addNewEntry($title,$resume,$releaseDate,$addLink,$resultat){
 	$newMovie= new MoviesManager();
@@ -101,4 +103,9 @@ function allTopics(){
 	$topics= new CommentsManager();
 	$getTopics= $topics->getAllTopics();
 	require("./views/pages/forum.php");
+
+	if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
+		require("./views/pages/newtopic.php");
+	}
+	
 }
