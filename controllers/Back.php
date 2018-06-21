@@ -107,5 +107,9 @@ function allTopics(){
 	if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
 		require("./views/pages/newtopic.php");
 	}
-	
 }
+function deleteTopic($idTopic){
+	$dlt= new CommentsManager();
+	$eraseTopic=$dlt->deletTopic($idTopic);	
+		require('./views/pages/forum.php');
+	}	

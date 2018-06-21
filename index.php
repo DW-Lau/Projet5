@@ -69,6 +69,7 @@ if ($_GET['action']=='logger'){
 if($_GET['action']=='admin'){
 	
 	adminPage();
+	deleteTopic($idTopic);
 }
 if($_GET['action']=='upGrade'){
 	$id_membre=$_GET['id'];
@@ -165,8 +166,12 @@ if ($_GET['action']=='newTopic') {
 	$auteurTopic=$_SESSION['id'];
 	$titreTopic=htmlspecialchars($_POST['titreTopic']);
 	$messageTopic=htmlspecialchars($_POST['tinymce_Topic']);
-	var_dump($auteurTopic,$titreTopic,$messageTopic);
 	createdTopic($auteurTopic,$titreTopic,$messageTopic);
+}
+if ($_GET['action']=='eraseTopic') {
+	$idTopic=$_GET['id'];
+	
+	deleteTopic($idTopic);
 }
 /*-----------------------------END TOPICS-------------------------*/
 /*----------------------------MEMBERS-----------------------------*/

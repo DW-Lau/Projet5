@@ -21,4 +21,10 @@ class CommentsManager extends Manager{
 		$newTopic=$bdd->query('SELECT forum.id_auteur, membre.id_membre FROM forum LEFT JOIN membre ON forum.id_auteur=membre.id_membre');
 		//header("Location:index.php?action=admin");
 	}
+	public function deletTopic($idTopic){
+		$bdd=$this->dbConnect();
+		$dltTopic=$bdd->query('SELECT id_post, sujet.id_topic FROM forum LEFT JOIN sujet ON forum.id_post=sujet.id_topic');
+		$dltTopic=$bdd->prepare('DELETE FROM forum WHERE id_post=?');
+		$dltTopic->execute(array($idTopic));
+	}
 }
