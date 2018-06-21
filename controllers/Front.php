@@ -22,6 +22,6 @@ function allMovies(){
 }
 function oneMovie(){
 	$oneMovies= new MoviesManager();
-	$selectedMovie= $oneMovies->moviesCall();
+	$selectedMovie= $oneMovies->selectOneMovie();
 	require('./views/pages/film.php');
 }

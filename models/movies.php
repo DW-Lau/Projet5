@@ -11,7 +11,7 @@ class MoviesManager extends Manager{
 
 	public function selectOneMovie(){
 		$bdd=$this->dbConnect();
-		$selectOne=$bdd->prepare('SELECT id_film,titre_film,resume,date_format(date_sortie,"%d.%m.%y")as date_fr,movie_link, img_link FROM films WHERE id=:idFilm ');
+		$selectOne=$bdd->prepare('SELECT id_film,titre_film,resume,date_format(date_sortie,"%d.%m.%y")as date_fr,movie_link, img_link FROM films WHERE id_film=:idFilm ');
 		$selectOne->execute(array(
 			'idFilm'=>$_GET['id']
 		 	 ));
