@@ -157,7 +157,13 @@ if ($_GET['action']=='eraseEntry') {
 }
 
 /*------------------------END ADMIN-------------------------------*/
-
+if ($_GET['action']=='espace') {
+	$idMembre=$_SESSION['id'];
+	getInfoUser($idMembre);
+}
+if ($_GET['action']=='infoEspaceMembre') {
+	
+}
 /*-----------------------------TOPICS-----------------------------*/
 if ($_GET['action']=='forum') {
 	allTopics();
@@ -167,6 +173,10 @@ if ($_GET['action']=='newTopic') {
 	$titreTopic=htmlspecialchars($_POST['titreTopic']);
 	$messageTopic=htmlspecialchars($_POST['tinymce_Topic']);
 	createdTopic($auteurTopic,$titreTopic,$messageTopic);
+}
+if ($_GET['action']=='selectTopic') {
+	$topic=$_GET['id'];
+	selectTopic($topic);
 }
 if ($_GET['action']=='eraseTopic') {
 	$idTopic=$_GET['id'];

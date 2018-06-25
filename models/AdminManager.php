@@ -71,6 +71,15 @@ class membersManager extends Manager
 		
 			}
 	}
+	public function getInfo($idMembre){
+		$bdd=$this->dbConnect();
+		$getAllInfo=$bdd->prepare('SELECT pseudo,status_membre,date_format(date_membre,"%d.%m.%y")as date_membre, avatar, membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE id_membre =:idmembre');
+		$getAllInfo->execute(array(
+			':idmembre'=>$idMembre
+		));
+		return $getAllInfo;
+
+	}
 	public function upGradeRights($id_membre){
 		$bdd=$this->dbConnect();
 		$id_membre;

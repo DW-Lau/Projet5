@@ -16,7 +16,11 @@ function checkInfo($checkPseudo,$checkpwd){
 	$userLogin= $checkUser->checkInfo($checkPseudo,$checkpwd);
 	//A redirection will be done on the Adminpage.php
 }
-
+function  getInfoUser($idMembre){
+	$infoUser= new membersManager();
+	$userInfo=$infoUser->getInfo($idMembre);
+	require('./views/pages/membre.php');
+}
 function sessionOut(){
 	require('./index.php');
 }
@@ -98,7 +102,7 @@ function createdTopic($auteurTopic,$titreTopic,$messageTopic){
 	$newSubject=$newTopic->createdTopic($auteurTopic,$titreTopic,$messageTopic);
 }
 /*--------------------ADMIN-PANNEL-------------------------------*/
-
+/*--------------------------- FORUM -----------------------------*/
 function allTopics(){
 	$topics= new CommentsManager();
 	$getTopics= $topics->getAllTopics();
@@ -107,6 +111,12 @@ function allTopics(){
 	if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
 		require("./views/pages/newtopic.php");
 	}
+}
+function selectTopic($topic){
+	var_dump('hello');
+	$oneTopic= new CommentsManager();
+	$picked= $oneTopic->oneTopic($topic);
+	require('./views/pages/topic.php');
 }
 function deleteTopic($idTopic){
 	$dlt= new CommentsManager();

@@ -9,6 +9,15 @@ class CommentsManager extends Manager{
 		
 		return $Topics;
 	}
+	public function oneTopic($topic){
+		var_dump($topic);
+		$bdd=$this->dbConnect();
+		$topic=$bdd->query('SELECT forum.id_post,sujet.id_topic FROM forum LEFT JOIN sujet on forum.id_post=sujet.id_topic ');
+		$topic=$bdd->prepare('SELECT id_auteur,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message,id_topic,id_auteurSujet,message,date_format(date_poste,"%d.%m.%y")as date_messagePost FROM forum WHERE id_post=:id_post');
+		$topic->execute(array(
+			':id_post'=>$topic));
+	
+	}
 	public function createdTopic($auteurTopic,$titreTopic,$messageTopic){
 		$bdd=$this->dbConnect();
 		$newTopic=$bdd->prepare('INSERT INTO forum ( id_auteur,titre_post,message_post, date_post) VALUES(:id_auteur,:titre_post,:message_post, NOW() )' );
