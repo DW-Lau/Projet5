@@ -78,7 +78,19 @@ class membersManager extends Manager
 			':idmembre'=>$idMembre
 		));
 		return $getAllInfo;
-
+	}
+	public function updateInfo($idMembre,$pseudo,$avatar){
+		$bdd=$this->dbConnect();
+		$updateInfo=$bdd->prepare('SELECT pseudo, avatar, membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE id_membre =:idmembre');
+		$updateInfo->execute(array(
+			':idmembre'=>$idMembre
+		));
+		$updateInfo=$bdd->prepare('UPDATE membre SET pseudo= :pseudo, lien_avatar= :lien WHERE id_membre= :idMembre');
+		$updateInfo->execute(array(
+			'idmembre'=>$idMembre,
+			'pseudo'=>$pseudo,
+			'lien'=>$avatar
+		));
 	}
 	public function upGradeRights($id_membre){
 		$bdd=$this->dbConnect();

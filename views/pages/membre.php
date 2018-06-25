@@ -28,9 +28,9 @@
 				?>
 				<label>Votre avatar:
 				<?php 
-				echo '<img src="views/Images/Avatars/'. $recapInfo['lien_avatar'].'" alt="'. $recapInfo['lien_avatar'].'" class="FirstPageImg">'; 
+				echo '<img src="views/Images/Avatars/'. $recapInfo['lien_avatar'].'"  class="FirstPageImg">'; 
 				?> 
-     				<input type="file" name="imgFilms" id="imgFilms" required/>
+     				<input type="file" name="newAvatar" id="Avatar" />
    				</label>
 				<input type="submit" id="confirmation" value="Confirmer les modifications" />
 			
