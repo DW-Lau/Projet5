@@ -164,7 +164,7 @@ if ($_GET['action']=='espace') {
 if ($_GET['action']=='infoEspaceMembre') {
 	$idMembre=$_SESSION['id'];
 	$pseudo=$_POST['newPseudo'];
-	var_dump($pseudo);
+	//var_dump($pseudo);
 	$newAvatar=$_POST['newAvatar'];
 	$taillemax=3000000;//environ 3MO
 		$extensionValides=array('jpg','jpeg', 'gif','png');

@@ -30,7 +30,7 @@
 				<?php 
 				echo '<img src="views/Images/Avatars/'. $recapInfo['lien_avatar'].'"  class="FirstPageImg">'; 
 				?> 
-     				<input type="file" name="newAvatar" id="Avatar" />
+     				<!-- <input type="file" name="newAvatar" id="Avatar" required/> -->
    				</label>
 				<input type="submit" id="confirmation" value="Confirmer les modifications" />
 			

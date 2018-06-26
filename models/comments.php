@@ -12,10 +12,10 @@ class CommentsManager extends Manager{
 	public function oneTopic($topic){
 		var_dump($topic);
 		$bdd=$this->dbConnect();
-		$topic=$bdd->query('SELECT forum.id_post,sujet.id_topic FROM forum LEFT JOIN sujet on forum.id_post=sujet.id_topic ');
-		$topic=$bdd->prepare('SELECT id_auteur,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message,id_topic,id_auteurSujet,message,date_format(date_poste,"%d.%m.%y")as date_messagePost FROM forum WHERE id_post=:id_post');
-		$topic->execute(array(
+		$sujet=$bdd->prepare('SELECT forum.id_post,sujet.id_topic,id_auteur,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message,id_topic,id_auteurSujet,message,date_format(date_poste,"%d.%m.%y")as date_messagePost FROM forum INNER JOIN sujet on forum.id_post=sujet.id_topic WHERE id_post=:id_post');
+		$sujet->execute(array(
 			':id_post'=>$topic));
+		return $sujet;
 	
 	}
 	public function createdTopic($auteurTopic,$titreTopic,$messageTopic){
