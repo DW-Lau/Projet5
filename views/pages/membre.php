@@ -4,7 +4,10 @@
 		while($recapInfo=$userInfo->fetch() ){
 			?>
 		<div id="infoPerso">
-			<p>Bonjour <?php echo $recapInfo['pseudo']?></p>
+			<?php 
+				echo '<img src="views/Images/Avatars/'. $recapInfo['lien_avatar'].'"  class="FirstPageImg">'; 
+				?>
+				<p>Bonjour <?php echo $recapInfo['pseudo']?></p>
 		</div>
 
 		<div>
@@ -21,20 +24,7 @@
 		
 		
 			<p>Vous êtes inscrit depuis le :<?php echo $recapInfo['date_membre']?></p>
-			<form id="changeInfo" action="./index.php?action=infoEspaceMembre" method="post" enctype="multipart/form-data">
-					
-				<?php
-				echo '<label>Votre pseudo :<input type="text" name="newPseudo" id="pseudo" value="'.$recapInfo['pseudo'].'" required/></label>AJOUTER UN MESSAGE DE PR2VENTIONS';
-				?>
-				<label>Votre avatar:
-				<?php 
-				echo '<img src="views/Images/Avatars/'. $recapInfo['lien_avatar'].'"  class="FirstPageImg">'; 
-				?> 
-     				<!-- <input type="file" name="newAvatar" id="Avatar" required/> -->
-   				</label>
-				<input type="submit" id="confirmation" value="Confirmer les modifications" />
-			
-			</form>
+		
 		</div>
 		<?php
 	}

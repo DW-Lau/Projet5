@@ -5,7 +5,7 @@ class membersManager extends Manager
 {
 	public function checkInfo($checkPseudo,$checkpwd){
 		$bdd=$this->dbConnect();
-		$req= $bdd->prepare('SELECT id_membre,pwd, status_membre FROM membre WHERE pseudo=:pseudo');
+		$req= $bdd->prepare('SELECT id_membre,pwd, status_membre,membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar  WHERE pseudo=:pseudo');
 		$req->execute(array(
 	   			    'pseudo' => $checkPseudo
 	   			));
@@ -18,11 +18,11 @@ class membersManager extends Manager
 		}
 		else{
 	    	if ($isPasswordCorrect) {
-	    		var_dump($resultat['status_membre']);
 	    		$_SESSION['droits']=$resultat['status_membre'];
 	        	$_SESSION['id'] = $resultat['id_membre'];
 	       		$_SESSION['pseudo'] = $checkPseudo;
-	        	echo 'Content de vous revoir '. $_SESSION['pseudo'];
+	       		$_SESSION['avatar']=$resultat['lien_avatar'];
+	        	var_dump($_SESSION['avatar']);
 	        	header("Location:./index.php");
 	   		}
 	   		else{
@@ -58,7 +58,7 @@ class membersManager extends Manager
 						'pwd'=>$pass_hache
 					));
 
-				$membreLogin= $bdd->prepare('SELECT id_membre, status_membre,avatar FROM membre WHERE pseudo=:pseudo ');
+				$membreLogin= $bdd->prepare('SELECT id_membre, status_membre,avatar membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE pseudo=:pseudo ');
 				$membreLogin->execute(array(
 	   			    'pseudo'=>$pseudo
 	   			));

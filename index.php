@@ -161,28 +161,7 @@ if ($_GET['action']=='espace') {
 	$idMembre=$_SESSION['id'];
 	getInfoUser($idMembre);
 }
-if ($_GET['action']=='infoEspaceMembre') {
-	$idMembre=$_SESSION['id'];
-	$pseudo=$_POST['newPseudo'];
-	//var_dump($pseudo);
-	$newAvatar=$_POST['newAvatar'];
-	$taillemax=3000000;//environ 3MO
-		$extensionValides=array('jpg','jpeg', 'gif','png');
-			if ($_FILES['newAvatar']['size']<=$taillemax) {
 
-				$infosfichier = pathinfo($_FILES['newAvatar']['name']);
-				$extension_upload = $infosfichier['extension'];
-				$avatar=$newAvatar.".".$extension_upload;
-					
-					if (in_array($extension_upload, $extensionValides)) {
-						move_uploaded_file($_FILES['newAvatar']['tmp_name'], './views/Images/Avatars/' . basename($_FILES['newAvatar']['name']));
-					updateUser($idMembre,$pseudo,$avatar);
-					}else{
-						$msg="Veuillez vérifier le format de la photo.";
-					}
-			}
-	
-}
 /*-----------------------------TOPICS-----------------------------*/
 if ($_GET['action']=='forum') {
 	allTopics();

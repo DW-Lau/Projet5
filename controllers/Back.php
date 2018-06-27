@@ -21,10 +21,7 @@ function  getInfoUser($idMembre){
 	$userInfo=$infoUser->getInfo($idMembre);
 	require('./views/pages/membre.php');
 }
-function updateUser($idMembre,$pseudo,$avatar){
-	$UDinfoUser= new membersManager();
-	$update=$UDinfoUser->updateInfo($idMembre,$pseudo,$avatar);
-}
+
 function sessionOut(){
 	require('./index.php');
 }
