@@ -117,6 +117,9 @@ function selectTopic($topic){
 	var_dump('hello');
 	$oneTopic= new CommentsManager();
 	$picked= $oneTopic->oneTopic($topic);
+
+	$answers= new CommentsManager();
+	$allAnswers=$answers->answerOneTopic($topic);
 	require('./views/pages/topic.php');
 }
 function deleteTopic($idTopic){
