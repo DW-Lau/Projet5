@@ -26,9 +26,20 @@
 				<p>
 				Le <?php echo $pseudoAnswer['date_messagePost']?>, <h3><?php echo $pseudoAnswer['pseudo']?> </h3>à répondu:</p>
 			
-				<p><?php echo $pseudoAnswer['message']?></p>	<?php
-			}
-			$allAnswers->closeCursor();
+				<p>
+					<?php
+						if ($pseudoAnswer['stat_message'] ==1) {
+							echo '<span class="attentionRequired"> Vérification du contenu en cours</span>';
+						}
+					?>
+					<?php echo $pseudoAnswer['message']?>
+					<a href="./index.php?action=signaler&amp;id=<?php echo $pseudoAnswer['id_sujet']; ?>&amp;id_topic=<?php echo $pseudoAnswer['id_topic']; ?>" title="signaler commentaire">
+						<i class="fas fa-exclamation-triangle"></i>
+					</a>
+				</p>	
+				<?php
+					}
+					$allAnswers->closeCursor();
 				?>
 			</div>
 		

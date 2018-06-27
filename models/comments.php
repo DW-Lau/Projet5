@@ -25,7 +25,7 @@ class CommentsManager extends Manager{
 	public function answerOneTopic($topic){
 
 		$bdd=$this->dbConnect();
-		$answer=$bdd->prepare(' SELECT forum.id_post,sujet.id_topic,sujet.id_auteurSujet,membre.id_membre,pseudo,id_topic,message,date_format(date_poste,"%d.%m.%y")as date_messagePost 
+		$answer=$bdd->prepare(' SELECT forum.id_post,sujet.id_topic,sujet.id_auteurSujet,membre.id_membre,id_sujet,pseudo,id_topic,message,date_format(date_poste,"%d.%m.%y")as date_messagePost, stat_message
 			FROM sujet 
 				INNER JOIN forum 
 			on forum.id_post=sujet.id_topic 
@@ -57,7 +57,6 @@ class CommentsManager extends Manager{
 	}
 	public function addnewComment($idTopic,$idAuteur,$textTopic){
 		$bdd=$this->dbConnect();
-		var_dump($idTopic,$idAuteur,$textTopic);
 		$newComm=$bdd->prepare('INSERT INTO sujet(id_topic,id_auteurSujet,message, date_poste) VALUES(?,?,?, NOW())' );
 		$newComm->execute(array(
 			$idTopic,
@@ -65,5 +64,17 @@ class CommentsManager extends Manager{
 			$textTopic
 			));
 		//return $newComm;
+	}
+	public function WarningComment($idTopic,$idSubject){
+		$bdd=$this->dbConnect();
+		$pbComm=$bdd->prepare('UPDATE sujet SET stat_message=1 WHERE id_sujet=:id_sujet');
+		$pbComm->execute(array(
+			'id_sujet'=> $idSubject
+		));
+		// $recupIdChap= $bdd->prepare('SELECT stat_message FROM sujet WHERE id_comm=:id_topic');
+		// $recupIdChap->execute(array(
+		// 	'id_topic'=> $idTopic
+		// ));
+		header("Location:index.php?action=selectTopic&id=$idTopic");
 	}
 }

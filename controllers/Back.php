@@ -130,4 +130,9 @@ function newComment($idTopic,$idAuteur,$textTopic){
 	$newComm= new CommentsManager();
 	$addNewComm= $newComm-> addnewComment($idTopic,$idAuteur,$textTopic);
 	require('./views/pages/topic.php');
-}	
+}
+function warningComm($idTopic,$idSubject){
+	$wngComm= new CommentsManager();
+	$warningComment= $wngComm->WarningComment($idTopic,$idSubject);
+	require('./views/pages/topic.php');
+}

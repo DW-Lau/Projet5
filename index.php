@@ -184,10 +184,12 @@ if($_GET['action']=='addNewComment'){
 
 }
 if ($_GET['action']=='signaler'){
-		$idTopic=$_GET['id'];
+		$idTopic=$_GET['id_topic'];
 		$idSubject=$_GET['id'];
+		
 		WarningComm($idTopic,$idSubject);
 }
+
 if ($_GET['action']=='eraseTopic') {
 	$idTopic=$_GET['id'];
 	deleteTopic($idTopic);
