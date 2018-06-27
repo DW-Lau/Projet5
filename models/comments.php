@@ -58,11 +58,7 @@ class CommentsManager extends Manager{
 	public function addnewComment($idTopic,$idAuteur,$textTopic){
 		$bdd=$this->dbConnect();
 		$newComm=$bdd->prepare('INSERT INTO sujet(id_topic,id_auteurSujet,message, date_poste) VALUES(?,?,?, NOW())' );
-		$newComm->execute(array(
-			$idTopic,
-			$idAuteur,
-			$textTopic
-			));
+		$newComm->execute(array($idTopic,$idAuteur,$textTopic));
 		//return $newComm;
 	}
 	public function WarningComment($idTopic,$idSubject){
@@ -75,6 +71,18 @@ class CommentsManager extends Manager{
 		// $recupIdChap->execute(array(
 		// 	'id_topic'=> $idTopic
 		// ));
-		header("Location:index.php?action=selectTopic&id=$idTopic");
+		header("Location:./index.php?action=selectTopic&id=$idTopic");
+	}
+	public function listWarningComm(){
+		$bdd=$this->dbConnect();
+		$listWarning=$bdd->query('SELECT id_sujet,id_topic,sujet.id_auteurSujet,message,date_poste, membre.id_membre, pseudo FROM sujet INNER JOIN membre on sujet.id_auteurSujet=membre.id_membre WHERE stat_message=1');
+		return $listWarning;
+	}
+
+	public function eraseComment($idSubject){
+		$bdd=$this->dbConnect();
+		$dltComm=$bdd->prepare('DELETE FROM sujet WHERE id_sujet=?');
+		$dltComm->execute(array($idSubject));
+		header("Location:./index.php");
 	}
 }

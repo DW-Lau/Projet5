@@ -70,6 +70,7 @@ if($_GET['action']=='admin'){
 
 	adminPage();
 	allTopics();
+	getWarningComm();
 }
 if($_GET['action']=='upGrade'){
 	$id_membre=$_GET['id'];
@@ -159,7 +160,9 @@ if ($_GET['action']=='eraseEntry') {
 /*------------------------END ADMIN-------------------------------*/
 if ($_GET['action']=='espace') {
 	$idMembre=$_SESSION['id'];
+	
 	getInfoUser($idMembre);
+
 }
 
 /*-----------------------------TOPICS-----------------------------*/
@@ -189,7 +192,10 @@ if ($_GET['action']=='signaler'){
 		
 		WarningComm($idTopic,$idSubject);
 }
-
+if ($_GET['action']=='deleteComm'){
+	$idSubject=$_GET['id_sujet'];
+	deleteComm($idSubject);
+}
 if ($_GET['action']=='eraseTopic') {
 	$idTopic=$_GET['id'];
 	deleteTopic($idTopic);

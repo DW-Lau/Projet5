@@ -32,4 +32,15 @@
 	?>
 	</article>
 
+	<article>
+		<h2> Liste des commentaires à vérifier: </h2>
+		<?php
+		while($listResult=$listWarningComm->fetch() ){
+		?>
+		<p><?php echo $listResult['message']?></p>
+		<?php
+		}
+	$listWarningComm->closeCursor();
+			?>
+	</article>
 </section>

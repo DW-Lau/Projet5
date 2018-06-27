@@ -16,9 +16,14 @@ function checkInfo($checkPseudo,$checkpwd){
 	$userLogin= $checkUser->checkInfo($checkPseudo,$checkpwd);
 	//A redirection will be done on the Adminpage.php
 }
+
 function  getInfoUser($idMembre){
 	$infoUser= new membersManager();
 	$userInfo=$infoUser->getInfo($idMembre);
+	
+	$getAllWarningComm= new CommentsManager();
+	$listWarningComm=$getAllWarningComm->listWarningComm();
+
 	require('./views/pages/membre.php');
 }
 
@@ -135,4 +140,9 @@ function warningComm($idTopic,$idSubject){
 	$wngComm= new CommentsManager();
 	$warningComment= $wngComm->WarningComment($idTopic,$idSubject);
 	require('./views/pages/topic.php');
+}
+
+function deleteComm($idSubject){
+	$deleteComm= new CommentsManager();
+	$deletingComment=$deleteComm->eraseComment($idSubject);
 }
