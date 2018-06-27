@@ -48,7 +48,7 @@
 						while ($listMovies=$Movies->fetch() ) {
 					?>
 					<p class="warning">
-						<?php echo $listMovies['titre_film']?>
+						<i class="fas fa-film"></i> <?php echo $listMovies['titre_film']?>
 						</br>
 						<span id="deleteEntry">
 							<button id="deletMovie"><a href="./index.php?action=eraseEntry&amp;id=<?php echo $listMovies['id_film']; ?>"> <i class="fas fa-eraser">Effacer de la liste</i></a></button>

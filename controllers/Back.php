@@ -66,8 +66,7 @@ function adminPage(){
 	$AllModerateurs=$listModos->listModo();
 
 	require('./views/pages/adminpage.php');
-	require("./views/pages/newtopic.php");
-
+	
 }
 function addNewEntry($title,$resume,$releaseDate,$addLink,$resultat){
 	$newMovie= new MoviesManager();
@@ -114,16 +113,21 @@ function allTopics(){
 	}
 }
 function selectTopic($topic){
-	var_dump('hello');
 	$oneTopic= new CommentsManager();
 	$picked= $oneTopic->oneTopic($topic);
 
 	$answers= new CommentsManager();
 	$allAnswers=$answers->answerOneTopic($topic);
+
 	require('./views/pages/topic.php');
 }
 function deleteTopic($idTopic){
 	$dlt= new CommentsManager();
 	$eraseTopic=$dlt->deletTopic($idTopic);	
 		require('./views/pages/forum.php');
-	}	
+	}
+function newComment($idTopic,$idAuteur,$textTopic){
+	$newComm= new CommentsManager();
+	$addNewComm= $newComm-> addnewComment($idTopic,$idAuteur,$textTopic);
+	require('./views/pages/topic.php');
+}	

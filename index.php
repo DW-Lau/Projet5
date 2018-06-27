@@ -67,9 +67,9 @@ if ($_GET['action']=='logger'){
 /*------------------------------ADMIN--------------------------*/
 
 if($_GET['action']=='admin'){
-	
+
 	adminPage();
-	deleteTopic($idTopic);
+	allTopics();
 }
 if($_GET['action']=='upGrade'){
 	$id_membre=$_GET['id'];
@@ -176,9 +176,20 @@ if ($_GET['action']=='selectTopic') {
 	$topic=$_GET['id'];
 	selectTopic($topic);
 }
+if($_GET['action']=='addNewComment'){
+	$idTopic=$_GET['id'];
+	$idAuteur=$_SESSION['id'];
+	$textTopic=htmlspecialchars($_POST['tinymce_Comment']);
+		newComment($idTopic,$idAuteur,$textTopic);
+
+}
+if ($_GET['action']=='signaler'){
+		$idTopic=$_GET['id'];
+		$idSubject=$_GET['id'];
+		WarningComm($idTopic,$idSubject);
+}
 if ($_GET['action']=='eraseTopic') {
 	$idTopic=$_GET['id'];
-	
 	deleteTopic($idTopic);
 }
 /*-----------------------------END TOPICS-------------------------*/

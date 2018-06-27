@@ -12,14 +12,11 @@ class CommentsManager extends Manager{
 	public function oneTopic($topic){
 		
 		$bdd=$this->dbConnect();
-		$sujet=$bdd->prepare(' SELECT forum.id_post,forum.id_auteur,sujet.id_topic,sujet.id_auteurSujet,membre.id_membre,pseudo,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message,id_topic,message,date_format(date_poste,"%d.%m.%y")as date_messagePost 
+		$sujet=$bdd->prepare(' SELECT id_post,forum.id_auteur,membre.id_membre,pseudo,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message
 			FROM forum 
-				INNER JOIN sujet 
-			on forum.id_post=sujet.id_topic 
-
  				INNER JOIN membre 
 				on forum.id_auteur=membre.id_membre 
-			WHERE id_post=:id_post');
+			WHERE id_post= :id_post');
 		$sujet->execute(array(
 			':id_post'=>$topic));
 		return $sujet;
@@ -57,5 +54,16 @@ class CommentsManager extends Manager{
 		$dltTopic=$bdd->query('SELECT id_post, sujet.id_topic FROM forum LEFT JOIN sujet ON forum.id_post=sujet.id_topic');
 		$dltTopic=$bdd->prepare('DELETE FROM forum WHERE id_post=?');
 		$dltTopic->execute(array($idTopic));
+	}
+	public function addnewComment($idTopic,$idAuteur,$textTopic){
+		$bdd=$this->dbConnect();
+		var_dump($idTopic,$idAuteur,$textTopic);
+		$newComm=$bdd->prepare('INSERT INTO sujet(id_topic,id_auteurSujet,message, date_poste) VALUES(?,?,?, NOW())' );
+		$newComm->execute(array(
+			$idTopic,
+			$idAuteur,
+			$textTopic
+			));
+		//return $newComm;
 	}
 }
