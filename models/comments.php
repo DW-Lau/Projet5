@@ -75,13 +75,13 @@ class CommentsManager extends Manager{
 	}
 	public function listWarningComm(){
 		$bdd=$this->dbConnect();
-		$listWarning=$bdd->query('SELECT id_sujet,id_topic,sujet.id_auteurSujet,message,date_poste, membre.id_membre, pseudo FROM sujet INNER JOIN membre on sujet.id_auteurSujet=membre.id_membre WHERE stat_message=1');
+		$listWarning=$bdd->query('SELECT id_sujet,id_topic,sujet.id_auteurSujet,message,date_format(date_poste,"%d.%m.%y")as date_Poste, membre.id_membre, pseudo FROM sujet INNER JOIN membre on sujet.id_auteurSujet=membre.id_membre WHERE stat_message=1');
 		return $listWarning;
 	}
 
 	public function eraseComment($idSubject){
 		$bdd=$this->dbConnect();
-		$dltComm=$bdd->prepare('DELETE FROM sujet WHERE id_sujet=?');
+		$dltComm=$bdd->prepare('UPDATE sujet SET message="[Message supprimé par les modérateur]" , stat_message=2 WHERE id_sujet=?');
 		$dltComm->execute(array($idSubject));
 		header("Location:./index.php");
 	}

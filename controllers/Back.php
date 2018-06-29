@@ -22,7 +22,7 @@ function  getInfoUser($idMembre){
 	$userInfo=$infoUser->getInfo($idMembre);
 	
 	$getAllWarningComm= new CommentsManager();
-	$listWarningComm=$getAllWarningComm->listWarningComm();
+	$listWarningComm=$getAllWarningComm->listWarningComm(); 
 
 	require('./views/pages/membre.php');
 }
@@ -66,6 +66,9 @@ function adminPage(){
 	$listMembers= new membersManager();
 	$AllMembers=$listMembers->listMembers();
 	
+	$getAllWarningComm= new CommentsManager();
+	$listWarningComm=$getAllWarningComm->listWarningComm(); 
+
 
 	$listModos= new membersManager();
 	$AllModerateurs=$listModos->listModo();
@@ -139,10 +142,12 @@ function newComment($idTopic,$idAuteur,$textTopic){
 function warningComm($idTopic,$idSubject){
 	$wngComm= new CommentsManager();
 	$warningComment= $wngComm->WarningComment($idTopic,$idSubject);
-	require('./views/pages/topic.php');
+	//require('./views/pages/topic.php');
 }
 
 function deleteComm($idSubject){
+	var_dump($idSubject);
 	$deleteComm= new CommentsManager();
 	$deletingComment=$deleteComm->eraseComment($idSubject);
+
 }

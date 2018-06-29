@@ -67,10 +67,9 @@ if ($_GET['action']=='logger'){
 /*------------------------------ADMIN--------------------------*/
 
 if($_GET['action']=='admin'){
-
+	
 	adminPage();
-	allTopics();
-	getWarningComm();
+	allTopics();	
 }
 if($_GET['action']=='upGrade'){
 	$id_membre=$_GET['id'];
@@ -156,7 +155,11 @@ if ($_GET['action']=='eraseEntry') {
 	$moviedeleted=$_GET['id'];
 	deleteMovie($moviedeleted);
 }
+if ($_GET['action']=='eraseComm') {
+	$idSubject=$_GET['id'];
+	deleteComm($idSubject);
 
+}
 /*------------------------END ADMIN-------------------------------*/
 if ($_GET['action']=='espace') {
 	$idMembre=$_SESSION['id'];
