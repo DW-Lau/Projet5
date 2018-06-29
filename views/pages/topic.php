@@ -28,7 +28,7 @@
 			
 				<p>
 					<?php
-						if ($pseudoAnswer['stat_message'] ==1) {
+						if ($pseudoAnswer['stat_message'] ===1) {
 							echo '<span class="attentionRequired"> Vérification du contenu en cours</span>';
 						}
 					?>

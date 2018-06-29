@@ -85,4 +85,10 @@ class CommentsManager extends Manager{
 		$dltComm->execute(array($idSubject));
 		header("Location:./index.php");
 	}
+	public function confirmComment($idSubject){
+		$bdd=$this->dbConnect();
+		$confComm=$bdd->prepare('UPDATE sujet SET  stat_message=0 WHERE id_sujet=?');
+		$confComm->execute(array($idSubject));
+		header("Location:./index.php");
+	}
 }

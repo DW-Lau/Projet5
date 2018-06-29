@@ -146,8 +146,10 @@ function warningComm($idTopic,$idSubject){
 }
 
 function deleteComm($idSubject){
-	var_dump($idSubject);
 	$deleteComm= new CommentsManager();
 	$deletingComment=$deleteComm->eraseComment($idSubject);
-
+}
+function confirmComm($idSubject){
+	$conf= new CommentsManager();
+	$confComm= $conf->confirmComment($idSubject);
 }

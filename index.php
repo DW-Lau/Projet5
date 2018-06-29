@@ -158,14 +158,15 @@ if ($_GET['action']=='eraseEntry') {
 if ($_GET['action']=='eraseComm') {
 	$idSubject=$_GET['id'];
 	deleteComm($idSubject);
-
+}
+if ($_GET['action']=='confirmComm') {
+	$idSubject=$_GET['id'];
+	confirmComm($idSubject);
 }
 /*------------------------END ADMIN-------------------------------*/
 if ($_GET['action']=='espace') {
 	$idMembre=$_SESSION['id'];
-	
 	getInfoUser($idMembre);
-
 }
 
 /*-----------------------------TOPICS-----------------------------*/
