@@ -48,7 +48,7 @@
 				<div id="headband">
 					<img src="views/Images/Logo_Blender.png" alt="Logo Blender">
 					<h1>
-						<a href="./index.php">  Blender </a>
+						<a href="./index.php">  Blender Open Projects </a>
 					</h1>
 					
 				</div>
@@ -81,10 +81,11 @@
 								
 						</ul>
 					</nav>
+					<div id="recapProfil">
 						<?php
 							if (isset($_SESSION['pseudo'] ) ) {
 								if (isset($_SESSION['avatar'])) {
-									echo '<img src="views/Images/Avatars/'. $_SESSION['avatar'].'"  class="FirstPageImg">';
+									echo '<img src="views/Images/Avatars/'. $_SESSION['avatar'].'"  class="Profil">';
 								}else{
 									echo "Rendez_vous dans votre profil pour choisir un avatar";
 									$_SESSION['avatar'];
@@ -92,6 +93,6 @@
 								echo "<p> Bonjour ".$_SESSION['pseudo']."<br/><a href='./index.php?action=logOut'>Déconnexion</a><p>";
 							}
 						?>
-						
+						</div>
 				</div>
 			</header>

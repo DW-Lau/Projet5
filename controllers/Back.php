@@ -20,9 +20,10 @@ function checkInfo($checkPseudo,$checkpwd){
 function  getInfoUser($idMembre){
 	$infoUser= new membersManager();
 	$userInfo=$infoUser->getInfo($idMembre);
-	
+	 var_dump("expression");
 	$getAllWarningComm= new CommentsManager();
 	$listWarningComm=$getAllWarningComm->listWarningComm(); 
+	var_dump("expression");
 
 	require('./views/pages/membre.php');
 }
