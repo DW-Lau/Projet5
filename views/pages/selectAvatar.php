@@ -14,14 +14,14 @@
 			$pickAvatar->closeCursor();
 			?>
 		</div>
-		<p id="avatChoisi">'.$listAvatar['lien_avatar'].'</p>
+
 	</article>
 	<article id="Selection">
-		<p>Vous avez choisie : <span id="avatarChoice"></span></p>
-		<button>
-			<?php
-			echo '<a href=./index.php?action=validAvatar&amp;id_avatar='.$listAvatar['lien_avatar'].'&amp;id_membre='.$_SESSION['id'].'"> Valider votre choix</a>';
-			?></button>
+		<form id="validationAvatar" action="./index.php?action=validAvatar" method="post">
+			<label>Vous avez choise:<span id="avatarChoice"></span></label>
+			<input type="submit" id="send" value="Valider votre choix" />
+		</form>
+		
 	</article>
 	
 </section>
@@ -29,7 +29,7 @@
 var selection=document.getElementById('avatChoisi');
 var recupInf=document.getElementById('avatarChoice');
 
-if(selection){
+if(recupInf){
 	selection.addEventListener("click", function( ){
 		
 	recupInf.textContent=selection.textContent;

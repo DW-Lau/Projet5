@@ -20,6 +20,7 @@
 			echo '<img src="views/Images/Films/'. $movie['img_link'].'" alt="'. $movie['img_link'].'" class="FirstPageImg">'; 
 			
 			?> 
+			<div id="presentation">
 			<h3>Dernier Film sortie: <?php echo $movie['titre_film']?> </h3>
 
 			<p div="resume_Last_Movie"> Synopsis: <?php echo htmlspecialchars($movie['resume']);?>
@@ -36,6 +37,7 @@
 				}
 				$upDateMovie->closeCursor();
 			?>
+			</div>
 		</div>
 
 		<div id="last_Topic_Out">

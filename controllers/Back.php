@@ -118,6 +118,10 @@ function chooseAvatar(){
 	$pickAvatar= $selectAvatar->choseAvatar();
 	require('./views/pages/selectAvatar.php');
 }
+function changeAvatar($idMembre,$idAvatar){
+	$newPick= new membersManager();
+	$newProfil=$newPick->newAvatar($idMembre,$idAvatar);
+}
 /*--------------------ADMIN-PANNEL-------------------------------*/
 /*--------------------------- FORUM -----------------------------*/
 function allTopics(){

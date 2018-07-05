@@ -15,6 +15,7 @@
 		<div id="subBlock">
 
 			<div class="formulaires">
+				<fieldset>
 				<h3>Inscription:</h3>
 					<form method="post" action="./index.php?action=subscribeMember">
 						
@@ -31,6 +32,7 @@
 
 						<input type="submit" id="valide" value="Valider" />
 					</form>
+					</fieldset>
 					<?php
 					if (isset($pseudoPresent)) {
 						echo "<p> Pseudo déjà utilisé, veuillez en séléctionner un autre.</p>";
@@ -45,13 +47,14 @@
 			</div>
 
 			<div class="formulaires">
-				<h3>Connexion: </h3>
+				<fieldset>
+					<h3>Connexion: </h3>
 					<form method="post" action="./index.php?action=logger">
 						<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudoMember" required></label>
 						<label name="checkpwd">Mot de passe:<input type="password" name="checkpwd" id="motDpasseMember" required /></label>
 						<input type="submit" id="validation" value="Valider" />
 					
-					</form>
+					</form></fieldset>
 						<?php
 						if (isset($noNickName)) {
 							echo "<p>".$noNickName."</p>";

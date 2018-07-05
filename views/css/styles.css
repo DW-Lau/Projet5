@@ -1,5 +1,5 @@
 body{
-	background: #0c5282;
+	background: #0c52828a;
 	margin:0px;
 }
 a{
@@ -10,7 +10,10 @@ p{
 }
 h1 a{
 	color: #0e5584;
-    font-size: 1.8em;
+    font-size: 0.9em;
+}
+h4{
+	text-align: center;
 }
 header{
 	background: white;
@@ -72,4 +75,44 @@ section{
     align-items: center;
     border-left: 2px solid #0e5584;
     border-right: 2px solid #0e5584;
+    background: #ffffffcc;
+}
+.FirstPageImg{
+	height:300px;
+}
+#disclamer{
+	background: white;
+    padding: 5px;
+    text-align: justify;
+    font-size: 1em;
+}
+#last_Movie_Out{
+	display: flex;
+    width: 90%;
+    margin: auto;
+    background: white;
+    border-left: 2px solid #e38831;
+    border-right: 2px solid #e38831;
+}
+#presentation{
+	display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 5px;
+}
+
+
+/*CONNEXION*/
+#rules{
+	background: white;
+    width: 90%;
+    margin: auto;
+    text-align: justify;
+    padding: 10px;
+    border-left: 2px solid #e38831;
+    border-right: 2px solid #e38831;
+}
+#subBlock{
+	display: flex;
+	width: 90%;
 }

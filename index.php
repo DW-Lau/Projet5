@@ -75,8 +75,8 @@ if ($_GET['action']=='selectAvatar') {
 	chooseAvatar();
 }
 if ($_GET['action']=='validAvatar') {
-	$idMembre=$_GET['id_membre'];
-	$idAvatar=$_GET['id_avatar'];
+	$idMembre=$_SESSION['id'];
+	$idAvatar=$_POST['avatarChoice'];
 
 	changeAvatar($idMembre,$idAvatar);
 }

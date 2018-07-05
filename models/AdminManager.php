@@ -126,4 +126,8 @@ class membersManager extends Manager
 		$listAvatar=$bdd->query('SELECT * FROM avatar');
 		return $listAvatar;
 	}
+	// public function newAvatar($idMembre,$idAvatar){
+	// 	$bdd=$this->dbConnect();
+	// 	$newPicture=$bdd->prepare('SELECT avatar.id_avatar,membre.avatar FROM avatar INNER JOIN membre ON avatar.id_avatar=membre.avatar WHERE lien_avatar=:idAvatar ');
+	// } Continuer à faire la jointure, tester par la suite .
 }
