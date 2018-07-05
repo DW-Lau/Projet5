@@ -1,5 +1,14 @@
 <section id="adminPannel">
-	
+	<div id="profil">
+		<?php
+		while($recapInfo=$userInfo->fetch() ){
+		  echo '<img src="views/Images/Avatars/'. $recapInfo['lien_avatar'].'"  class="FirstPageImg">'
+				; 
+			}
+			$userInfo->closeCursor();	
+		?>
+		<a href="./index.php?action=selectAvatar">Séléctionner un avatar</a>
+	</div>
 	<div id="headBandUpDate">
 		<div id="listAdminTopics">
 			<h2>Modérateur(s) forum:</h2>

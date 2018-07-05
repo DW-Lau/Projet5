@@ -5,7 +5,13 @@ class CommentsManager extends Manager{
 
 	public function getAllTopics(){
 		$bdd=$this->dbConnect();
-		$Topics=$bdd->query('SELECT id_post,forum.id_auteur,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message, membre.id_membre,pseudo FROM forum INNER JOIN membre ON forum.id_auteur=membre.id_membre');
+		$Topics=$bdd->query('SELECT id_post,forum.id_auteur, membre.id_membre,membre.avatar,avatar.id_avatar,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message,pseudo, lien_avatar
+			FROM membre
+				INNER JOIN forum 
+			ON forum.id_auteur=membre.id_membre
+				LEFT JOIN avatar
+			ON membre.avatar=avatar.id_avatar');
+		
 		
 		return $Topics;
 	}

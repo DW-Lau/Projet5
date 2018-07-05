@@ -6,7 +6,8 @@
 	?>
 	<div class="infoMember">
 		<?php
-		echo '<img src="views/Images/Avatar/'.$listTopic['pseudo'].'" alt="Avatar de '. $listTopic['pseudo'].'" class="Avatar">';
+		echo '<img src="views/Images/Avatars/'.$listTopic['lien_avatar'].'" alt="Avatar de '. $listTopic['pseudo'].'" class="Avatar">';
+		var_dump($listTopic['lien_avatar']);
 			?>
 		<?php echo $listTopic['pseudo']?> à écrit: le <?php echo $listTopic['date_message']?>
 	</div>

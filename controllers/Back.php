@@ -20,10 +20,10 @@ function checkInfo($checkPseudo,$checkpwd){
 function  getInfoUser($idMembre){
 	$infoUser= new membersManager();
 	$userInfo=$infoUser->getInfo($idMembre);
-	 var_dump("expression");
+	
 	$getAllWarningComm= new CommentsManager();
 	$listWarningComm=$getAllWarningComm->listWarningComm(); 
-	var_dump("expression");
+	
 
 	require('./views/pages/membre.php');
 }
@@ -60,7 +60,7 @@ function NoMatch($NoMatch){
 }
 /*--------------------------------END MESSAGES----------------------------------------*/
 /*--------------------------------ADMIN SECTION----------------------------------------*/
-function adminPage(){
+function adminPage($idMembre){
 	$listMovies= new MoviesManager();
 	$Movies= $listMovies->moviesCall();
 
@@ -70,6 +70,9 @@ function adminPage(){
 	$getAllWarningComm= new CommentsManager();
 	$listWarningComm=$getAllWarningComm->listWarningComm(); 
 
+
+	$infoUser= new membersManager();
+	$userInfo=$infoUser->getInfo($idMembre);
 
 	$listModos= new membersManager();
 	$AllModerateurs=$listModos->listModo();
@@ -110,16 +113,22 @@ function createdTopic($auteurTopic,$titreTopic,$messageTopic){
 	$newTopic= new CommentsManager();
 	$newSubject=$newTopic->createdTopic($auteurTopic,$titreTopic,$messageTopic);
 }
+function chooseAvatar(){
+	$selectAvatar= new membersManager();
+	$pickAvatar= $selectAvatar->choseAvatar();
+	require('./views/pages/selectAvatar.php');
+}
 /*--------------------ADMIN-PANNEL-------------------------------*/
 /*--------------------------- FORUM -----------------------------*/
 function allTopics(){
 	$topics= new CommentsManager();
 	$getTopics= $topics->getAllTopics();
-	require("./views/pages/forum.php");
+	
 
 	if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
 		require("./views/pages/newtopic.php");
 	}
+	require("./views/pages/forum.php");
 }
 function selectTopic($topic){
 	$oneTopic= new CommentsManager();

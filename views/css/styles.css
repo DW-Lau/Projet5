@@ -1,9 +1,16 @@
 body{
-	background: lightgrey;
+	background: #0c5282;
 	margin:0px;
 }
 a{
 	text-decoration: none;
+}
+p{
+	font-family: 'Raleway';
+}
+h1 a{
+	color: #0e5584;
+    font-size: 1.8em;
 }
 header{
 	background: white;
@@ -15,6 +22,9 @@ header{
 	display: flex;
     flex-direction: column;
     align-items: center;
+}
+#headband img{
+	width: 50%;
 }
 
 /*---------------MENU------------------*/
@@ -60,4 +70,6 @@ section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-left: 2px solid #0e5584;
+    border-right: 2px solid #0e5584;
 }

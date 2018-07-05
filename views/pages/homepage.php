@@ -26,7 +26,7 @@
 				<br> Sortie le : <?php echo htmlspecialchars($movie['date_fr']); ?>
 				<br>
 				<?php 
-			echo 'Visionner le film :<a href="'. $movie['movie_link'].'"> Ici</a>'; 
+			echo 'Visionner le film :<a href="'. $movie['movie_link'].'" target="_blank"> Ici</a>'; 
 			
 			?> 
 				

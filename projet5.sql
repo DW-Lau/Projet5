@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 02 juil. 2018 à 22:01
+-- Généré le :  jeu. 05 juil. 2018 à 15:56
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -33,14 +33,16 @@ CREATE TABLE IF NOT EXISTS `avatar` (
   `id_avatar` int(11) NOT NULL AUTO_INCREMENT,
   `lien_avatar` text NOT NULL,
   PRIMARY KEY (`id_avatar`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `avatar`
 --
 
 INSERT INTO `avatar` (`id_avatar`, `lien_avatar`) VALUES
-(1, 'chien.png');
+(1, 'chien.png'),
+(2, 'chat.png'),
+(3, 'escargot.png');
 
 -- --------------------------------------------------------
 
@@ -100,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
   `status_post` int(2) NOT NULL DEFAULT '0',
   `date_post` date NOT NULL,
   PRIMARY KEY (`id_post`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `forum`
@@ -108,6 +110,7 @@ CREATE TABLE IF NOT EXISTS `forum` (
 
 INSERT INTO `forum` (`id_post`, `id_auteur`, `titre_post`, `message_post`, `status_post`, `date_post`) VALUES
 (1, 2, 'Règles du forum', 'Bonjour à tous et à toutes!\r\nVoici un premier message', 0, '2018-06-20'),
+(12, 1, 'BOnjour à tous', 'Ceci est un test', 0, '2018-07-05'),
 (9, 2, 'Présentations', 'Retrouvez ici, les présentations des différents membres en charge de la modération du site :)', 0, '2018-06-21');
 
 -- --------------------------------------------------------

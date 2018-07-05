@@ -121,4 +121,9 @@ class membersManager extends Manager
 		$listMd= $bdd->query('SELECT id_membre,pseudo, status_membre FROM membre WHERE status_membre=\'2 \'');
 		return $listMd;
 	}
+	public function choseAvatar(){
+		$bdd=$this->dbConnect();
+		$listAvatar=$bdd->query('SELECT * FROM avatar');
+		return $listAvatar;
+	}
 }

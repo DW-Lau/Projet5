@@ -67,9 +67,18 @@ if ($_GET['action']=='logger'){
 /*------------------------------ADMIN--------------------------*/
 
 if($_GET['action']=='admin'){
-	
-	adminPage();
+	$idMembre=$_SESSION['id'];
+	adminPage($idMembre);
 	allTopics();	
+}
+if ($_GET['action']=='selectAvatar') {
+	chooseAvatar();
+}
+if ($_GET['action']=='validAvatar') {
+	$idMembre=$_GET['id_membre'];
+	$idAvatar=$_GET['id_avatar'];
+
+	changeAvatar($idMembre,$idAvatar);
 }
 if($_GET['action']=='upGrade'){
 	$id_membre=$_GET['id'];
