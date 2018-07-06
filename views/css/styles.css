@@ -77,6 +77,22 @@ section{
     border-right: 2px solid #0e5584;
     background: #ffffffcc;
 }
+#diapoFirstPage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#arrows-L,#arrows-R{
+     font-size: 2em;
+    border: solid;
+    border-radius: 55%;
+    width: 5%;
+    text-align: center;  
+}
+#chevron-r,#chevron-l{
+    color:  #e38831;
+}
+
 .FirstPageImg{
 	height:300px;
 }

@@ -1,4 +1,27 @@
 <section>
+	<article>
+		<div id="diapo">
+			<figure id="diapoFirstPage">
+				<div id="arrows-L">
+					<a href="#", id="chevron-l">
+						<i class="fas fa-caret-left"></i>
+					</a>
+				</div>
+									
+					<img src="views/Images/Logo_Blender.png" alt="Blender Open movie" id="carrousel" style="height: inherit">
+									
+				<div id="arrows-R">
+					<a href="#" , id="chevron-r"> 
+						<i class="fas fa-caret-right"></i>
+					</a>
+				</div>
+								
+			</figure>
+
+			<figcaption id="legende"></figcaption>	
+			
+		</div>
+	</article>
 	<article id="disclamer">
 		<p>
 			Site web réalisé dans le cadre de la formation "Developpeur Web Junoir" OpenClassroom. Tous les personnages, films et photos de ce site sont la proprieté de Blender.<br>
