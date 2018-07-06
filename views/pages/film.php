@@ -14,13 +14,14 @@
 
 		<?php 
 		
-			echo '<video src="'. $movie['movie_link'].'" width="600" alt="'. $movie['titre_film'].'"></video>';
+			echo '<video src="'. $movie['movie_link'].'" width="600" alt="'. $movie['titre_film'].'"></video><p>Si votre navigateur n\'affiche pas la vidéo, cliquez <a href="'. $movie['movie_link'].'"target="_blank">ICI</a></p>';
 			?>
-			<p>Si votre navigateur n'affiche pas la vidéo, cliquez <a href="'. $movie['movie_link'].'">ICI</a></p>
+			
 		<?php 
 		}
 		$selectedMovie-> closeCursor();
 		?>
+
 	</article>
 
 </section>

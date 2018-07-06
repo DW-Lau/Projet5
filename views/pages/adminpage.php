@@ -2,7 +2,7 @@
 	<div id="profil">
 		<?php
 		while($recapInfo=$userInfo->fetch() ){
-		  echo '<img src="views/Images/Avatars/'. $recapInfo['lien_avatar'].'"  class="FirstPageImg">'
+		  echo '<img src="views/Images/Avatars/'. $recapInfo['lien_avatar'].'"  class="profilPicture">'
 				; 
 			}
 			$userInfo->closeCursor();	
@@ -11,18 +11,20 @@
 	</div>
 	<div id="headBandUpDate">
 		<div id="listAdminTopics">
-			<h2>Modérateur(s) forum:</h2>
-			<?php while ($modos=$AllModerateurs->fetch()) {
-			 ?>
-			<p>
-				Pseudo: <?php echo htmlspecialchars($modos['pseudo'])?> <br>
-				<button id="dwnDroit"><a href="./index.php?action=downGrade&amp;id=<?php echo $modos['id_membre']; ?>"><i class="fas fa-user-minus">Retire ce modérateur.</i></a></button>
-			</p>
-			<?php
-			}
-			$AllModerateurs->closeCursor();
-			?>
-			
+			<h2>Modérateur(s) forum:<button id="moderateurs"><i class="fas fa-plus" id="plusModo"><i class="fas fa-minus" id="minusModo"></i></i></button></h2>
+				<div id="listModo">
+					<?php 
+						while ($modos=$AllModerateurs->fetch()) {
+					 ?>
+					<p>
+						Pseudo: <?php echo htmlspecialchars($modos['pseudo'])?> <br>
+						<button id="dwnDroit"><a href="./index.php?action=downGrade&amp;id=<?php echo $modos['id_membre']; ?>"><i class="fas fa-user-minus">Retire ce modérateur.</i></a></button>
+					</p>
+					<?php
+						}
+						$AllModerateurs->closeCursor();
+					?>
+				</div>
 		</div>
 		<div id="listMember">
 		<h2>Personnes inscrites:</h2>

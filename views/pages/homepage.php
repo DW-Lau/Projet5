@@ -19,7 +19,7 @@
 			</figure>
 
 			<figcaption id="legende"></figcaption>	
-			
+
 		</div>
 	</article>
 	<article id="disclamer">
@@ -53,6 +53,7 @@
 			echo 'Visionner le film :<a href="'. $movie['movie_link'].'" target="_blank"> Ici</a>'; 
 			
 			?> 
+			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/mN0zPOpADL4?rel=0" frameborder="0"; encrypted-media" allowfullscreen></iframe> -->
 				
 			</p>
 			<?php
@@ -61,10 +62,6 @@
 				$upDateMovie->closeCursor();
 			?>
 			</div>
-		</div>
-
-		<div id="last_Topic_Out">
-			
 		</div>
 	</div>
 

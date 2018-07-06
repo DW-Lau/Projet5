@@ -23,3 +23,22 @@ warningTitleInput.addEventListener("click",function(){
 	warningTitleText.style.display="1";
 	warningTitleText.textContent="Veuilliez ne pas mettre d'espace ou de majuscule.";
 });
+
+/*LIST*/
+var plusModoList= document.getElementById('plusModo');
+var minusModoList=document.getElementById('minusModo');
+var listModo=document.getElementById('listModo');
+
+minusModoList.style.display="none";
+listModo.style.display="none";
+
+plusModoList.addEventListener('click',function(){
+listModo.style.display="inline-block";
+minusModoList.style.display="bloc";
+plusModoList.style.display="none";
+});
+minusModoList.addEventListener('click',function(){
+	plusModoList.style.display="block";
+	minusModoList.style.display="none";
+listModo.style.display="none";
+})

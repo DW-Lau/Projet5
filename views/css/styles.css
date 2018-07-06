@@ -11,6 +11,8 @@ p{
 h1 a{
 	color: #0e5584;
     font-size: 0.9em;
+        border-top: 2px solid #ea8e32;
+    border-radius: 5px
 }
 h4{
 	text-align: center;
@@ -39,9 +41,16 @@ header{
 }
 nav{
 	width: 80%;
+     font-family: Raleway;
+     font-size: 1em;
 }
 nav a{
 	text-decoration: none;
+    color: #0e5584;
+}
+ul li:hover{
+    background: #ea8e32;
+
 }
 ul{
 	display: flex;
@@ -49,6 +58,11 @@ ul{
 }
 ul li{
 	list-style: none;
+    border-left: solid 2px #0e5584;
+    border-radius: 6%;
+   
+    padding: 5px;
+
 }
 
 
@@ -57,19 +71,26 @@ ul li{
 	display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 60%;
+    width: 50%;
+    border-radius: 5px;
+    border-top: 2px solid #ea8e32;
+    border-bottom: 2px solid #ea8e32;
 }
 .Profil{
 	border-radius: 50%;
 	height: 20%;
     width: 20%;
 }
-
-
+#pseudoProfil{
+    text-align: center;
+}
+.fa-sign-out-alt{
+    color: #ea8e32;
+}
 section{
 	width: 80%;
     margin: auto;
-   
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,8 +105,6 @@ section{
 }
 #arrows-L,#arrows-R{
      font-size: 2em;
-    border: solid;
-    border-radius: 55%;
     width: 5%;
     text-align: center;  
 }
@@ -102,8 +121,12 @@ section{
     text-align: justify;
     font-size: 1em;
 }
+#first_Page_Info{
+    width: 90%;
+}
 #last_Movie_Out{
 	display: flex;
+    padding: 15px;
     width: 90%;
     margin: auto;
     background: white;
@@ -131,4 +154,32 @@ section{
 #subBlock{
 	display: flex;
 	width: 90%;
+}
+
+/*FILMS*/
+#Thumbnails{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: white;
+}
+a img{
+    width: 50%;
+}
+.thumbnais_Movie{
+    width: 33%;
+}
+
+
+/*Admin*/
+#profil{
+    display: flex;
+    width: 50%;
+}
+.profilPicture{
+   border: solid 2px orange;
+   border-radius: 50%;
+    height: 200px;
+    width: 35%;
+    
 }
