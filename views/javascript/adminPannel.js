@@ -24,21 +24,72 @@ warningTitleInput.addEventListener("click",function(){
 	warningTitleText.textContent="Veuilliez ne pas mettre d'espace ou de majuscule.";
 });
 
-/*LIST*/
+/*LISTE MODERATEURS*/
 var plusModoList= document.getElementById('plusModo');
 var minusModoList=document.getElementById('minusModo');
 var listModo=document.getElementById('listModo');
 
-minusModoList.style.display="none";
+minusModoList.style.opacity="0";
 listModo.style.display="none";
 
 plusModoList.addEventListener('click',function(){
-listModo.style.display="inline-block";
-minusModoList.style.display="bloc";
-plusModoList.style.display="none";
+	listModo.style.display="inline-block";
+	minusModoList.style.opacity="1";
+	plusModoList.style.opacity="0";
+
+	minusModoList.addEventListener('click',function(){
+		plusModoList.style.opacity="1";
+		minusModoList.style.opacity="0";
+		listModo.style.display="none";
+	});
 });
-minusModoList.addEventListener('click',function(){
-	plusModoList.style.display="block";
-	minusModoList.style.display="none";
-listModo.style.display="none";
-})
+
+/*LISTE MEMBRES*/
+
+var plusmembresList= document.getElementById('plusMembre');
+var minusmembresList=document.getElementById('minusMembre');
+var listmembres=document.getElementById('listmembres');
+
+minusmembresList.style.opacity="0";
+listmembres.style.display="none";
+
+plusmembresList.addEventListener('click',function(){
+	listmembres.style.display="inline-block";
+	minusmembresList.style.opacity="1";
+	plusmembresList.style.opacity="0";
+
+	minusmembresList.addEventListener('click',function(){
+		plusmembresList.style.opacity="1";
+		minusmembresList.style.opacity="0";
+		listmembres.style.display="none";
+	});
+});
+
+/*LISTE DES COMMENTAIRES*/
+var plusCommsList= document.getElementById('plusComm');
+var minusCommsList=document.getElementById('minusComm');
+var listComms=document.getElementById('listComms');
+
+minusCommsList.style.opacity="0";
+//listComms.style.display="none";
+var listSize=listComms.length;
+console.log(listSize);
+plusCommsList.addEventListener('click',function(){
+
+	
+	if (listComms.length!=1) {
+		listComms.style.display="inline-block";
+		minusCommsList.style.opacity="1";
+		plusCommsList.style.opacity="0";
+	}
+	else{
+		listComms.textContent="Il n'y a pas de commentaires à vérifier."
+	}
+	
+
+	minusCommsList.addEventListener('click',function(){
+		plusCommsList.style.opacity="1";
+		minusCommsList.style.opacity="0";
+		listComms.style.display="none";
+	});
+});

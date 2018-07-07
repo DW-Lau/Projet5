@@ -15,24 +15,28 @@
 		<div id="subBlock">
 
 			<div class="formulaires">
-				<fieldset>
-				<h3>Inscription:</h3>
-					<form method="post" action="./index.php?action=subscribeMember">
+			
+					<h3>Inscription:</h3>
+						<form method="post" action="./index.php?action=subscribeMember">
+							
+							<label name="pseudo"> Pseudo:
+								<input type="text" name="pseudo" id="pseudo" required>
+							</label></br>
 						
-						<label name="pseudo"> Pseudo:<input type="text" name="pseudo" id="pseudo" required></label>
-								
 
-						<!-- <label name="mail"> Adresse mail:<input type="email" name="mail" id="mail" required/></label>
-								<span id="mailcheck"></span> -->
+							<label name="pwd">Mot de passe:
+								<input type="password" name="pwd" id="motDpasse" required />
+							</label></br>
+								<span id="longueurpwd"></span></br>
 
-						<label name="pwd">Mot de passe:<input type="password" name="pwd" id="motDpasse" required /></label>
-								<span id="longueurpwd"></span>
+							<label name="pwd1">Confirmation du mot de passe:
+								<input type="password" name="pwd1" id="pwd1" required />
+							</label></br>
 
-						<label name="pwd1">Confirmation du mot de passe:<input type="password" name="pwd1" id="pwd1" required /></label>
+							<input type="submit" id="valide" value="Valider" />
+						</form>
+				
 
-						<input type="submit" id="valide" value="Valider" />
-					</form>
-					</fieldset>
 					<?php
 					if (isset($pseudoPresent)) {
 						echo "<p> Pseudo déjà utilisé, veuillez en séléctionner un autre.</p>";

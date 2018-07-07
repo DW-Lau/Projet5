@@ -11,7 +11,15 @@
 	</div>
 	<div id="headBandUpDate">
 		<div id="listAdminTopics">
-			<h2>Modérateur(s) forum:<button id="moderateurs"><i class="fas fa-plus" id="plusModo"><i class="fas fa-minus" id="minusModo"></i></i></button></h2>
+			<h2>Modérateur(s) forum:
+				<button class="moderateursPlus">
+					<i class="fas fa-plus" id="plusModo"></i>
+
+				</button>
+				<button class="moderateursMoins"><i class="fas fa-minus" id="minusModo"></i>
+				</button>
+
+			</h2>
 				<div id="listModo">
 					<?php 
 						while ($modos=$AllModerateurs->fetch()) {
@@ -27,7 +35,15 @@
 				</div>
 		</div>
 		<div id="listMember">
-		<h2>Personnes inscrites:</h2>
+		<h2>Personnes inscrites:
+			<button class="membresPlus">
+					<i class="fas fa-plus" id="plusMembre"></i>
+
+				</button>
+				<button class="membresMoins"><i class="fas fa-minus" id="minusMembre"></i>
+				</button>
+		</h2>
+		<div id="listmembres">
 		<?php
 		while($listOfMembers=$AllMembers->fetch() ){
 				$listOfMembers['status_membre']="Membre";
@@ -42,19 +58,29 @@
 		}
 		$AllMembers->closeCursor();
 		?>
+	</div>
 		</div>
 
 		<div id="commentsPannel">
-			<h2>Liste des commentaires à vérifier : </h2>
+			<h2>Liste des commentaires à vérifier :
+			<button class="commsPlus">
+					<i class="fas fa-plus" id="plusComm"></i>
+
+				</button>
+				<button class="commsMoins"><i class="fas fa-minus" id="minusComm"></i>
+				</button> </h2>
+			<div id="listcomments">
 			<?php
 			while ($getReportedComms=$listWarningComm->fetch() ) {
 			?>
+
 			<p class="reported"> <?php echo $getReportedComms['pseudo']?> à écrit le <?php echo $getReportedComms['date_Poste']?> : <?php echo $getReportedComms['message']?> <span class="deleteComm"><a href="./index.php?action=eraseComm&amp;id=<?php echo $getReportedComms['id_sujet']; ?>"> Effacer commentaire</a></span>
 				<span class="confirmComm" ><a href="./index.php?action=confirmComm&amp;id=<?php echo $getReportedComms['id_sujet']; ?>">Confirmer Commentaire</a></span></p>
 			<?php
 			}
 			$listWarningComm->closeCursor();
 			?>
+		</div>
 		</div>
 		
 	</div>
