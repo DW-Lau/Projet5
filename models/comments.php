@@ -18,10 +18,13 @@ class CommentsManager extends Manager{
 	public function oneTopic($topic){
 		
 		$bdd=$this->dbConnect();
-		$sujet=$bdd->prepare(' SELECT id_post,forum.id_auteur,membre.id_membre,pseudo,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message
+		$sujet=$bdd->prepare(' SELECT id_post,forum.id_auteur,membre.id_membre,membre.avatar,avatar.id_avatar,pseudo,titre_post,message_post,date_format(date_post,"%d.%m.%y")as date_message,lien_avatar
 			FROM forum 
  				INNER JOIN membre 
-				on forum.id_auteur=membre.id_membre 
+			on forum.id_auteur=membre.id_membre 
+				LEFT JOIN avatar
+			ON membre.avatar=avatar.id_avatar
+
 			WHERE id_post= :id_post');
 		$sujet->execute(array(
 			':id_post'=>$topic));
@@ -31,16 +34,18 @@ class CommentsManager extends Manager{
 	public function answerOneTopic($topic){
 
 		$bdd=$this->dbConnect();
-		$answer=$bdd->prepare(' SELECT forum.id_post,sujet.id_topic,sujet.id_auteurSujet,membre.id_membre,id_sujet,pseudo,id_topic,message,date_format(date_poste,"%d.%m.%y")as date_messagePost, stat_message
-			FROM sujet 
-				INNER JOIN forum 
-			on forum.id_post=sujet.id_topic 
+		$answer=$bdd->prepare(' SELECT forum.id_post,forum.id_auteur,sujet.id_topic,sujet.id_auteurSujet,membre.id_membre,membre.avatar,avatar.id_avatar,id_sujet,pseudo,id_topic,message,date_format(date_poste,"%d.%m.%y")as date_messagePost,date_format(message_post,"%d.%m.%y") as date_message,stat_message,lien_avatar
+			FROM forum
+				INNER JOIN sujet
+			on forum.id_post=sujet.id_topic
+				INNER JOIN membre
+			on forum.id_auteur=membre.id_membre
+				INNER JOIN avatar
+			on membre.avatar=avatar.id_avatar
 
- 				INNER JOIN membre 
-				on sujet.id_auteurSujet=membre.id_membre 
-			WHERE id_post=:id_post');
+			WHERE id_topic=:id_topic');
 		$answer->execute(array(
-			':id_post'=>$topic));
+			':id_topic'=>$topic));
 		return $answer;
 	}
 	public function createdTopic($auteurTopic,$titreTopic,$messageTopic){
@@ -65,6 +70,7 @@ class CommentsManager extends Manager{
 		$bdd=$this->dbConnect();
 		$newComm=$bdd->prepare('INSERT INTO sujet(id_topic,id_auteurSujet,message, date_poste) VALUES(?,?,?, NOW())' );
 		$newComm->execute(array($idTopic,$idAuteur,$textTopic));
+		header("Location:./index.php?action=selectTopic&id=$idTopic");
 		//return $newComm;
 	}
 	public function WarningComment($idTopic,$idSubject){

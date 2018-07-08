@@ -1,47 +1,57 @@
 <section>
-
-	<article id="">
-		
+	<article id="topic">
 		<div class="listAnswer">
-			<div class="infoMember">
+			<div class="infoMessageMember">
 				<?php
-		while($answer=$picked->fetch() ){
-			
-			?>
-				<h3><?php echo $answer['pseudo'];?></h3> 
-				à écrit:<h2><?php echo $answer['titre_post']?></h2>
-			
-				<?php echo $answer['message_post']?>	<?php
-		}
-		$picked->closeCursor();
-		?>
+					while($answers=$picked->fetch() ){
+				?>
+				<?php
+						echo '<img src="views/Images/Avatars/'.$answers['lien_avatar'].'" alt="Avatar de '. $answers['pseudo'].'" class="Avatar">';
+					?>
+				<h3>
+					
+					<?php echo $answers['pseudo'];?>
+						
+				</h3> 
+				à écrit le: <?php echo $answers['date_message']?>, 
+				<p class="titreMessage"> <?php echo $answers['titre_post']?></p>
 			</div>
-		
+				à écrit <?php echo $answers['message_post']?>
+
+				<?php
+				}
+					$picked->closeCursor();
+				?>
+			
 		</div>
 		
-			<div>
+			<?php
+				while($pseudoAnswer=$allAnswers->fetch() ){
+			?>
+			<div class="allAnswers">
+				<p class="presentationAnswers">
 				<?php
-					while($pseudoAnswer=$allAnswers->fetch() ){
+					echo '<img src="views/Images/Avatars/'.$pseudoAnswer['lien_avatar'].'" alt="Avatar de '. $pseudoAnswer['pseudo'].'" class="Avatar">';
 				?>
-				<p>
-				Le <?php echo $pseudoAnswer['date_messagePost']?>, <h3><?php echo $pseudoAnswer['pseudo']?> </h3>à répondu:</p>
-			
-				<p>
-					<?php
-						if ($pseudoAnswer['stat_message'] ===1) {
-							echo '<span class="attentionRequired"> Vérification du contenu en cours</span>';
-						}
-					?>
-					<?php echo $pseudoAnswer['message']?>
-					<a href="./index.php?action=signaler&amp;id=<?php echo $pseudoAnswer['id_sujet']; ?>&amp;id_topic=<?php echo $pseudoAnswer['id_topic']; ?>" title="signaler commentaire">
-						<i class="fas fa-exclamation-triangle"></i>
-					</a>
-				</p>	
+						<?php echo $pseudoAnswer['pseudo']?>, à écrit le <?php echo $pseudoAnswer['date_messagePost']?>
+				</p>
+					<p>
+						<?php
+							if ($pseudoAnswer['stat_message'] ===1) {
+								echo '<span class="attentionRequired"> Vérification du contenu en cours</span>';
+							}
+						?>
+						<?php echo htmlspecialchars($pseudoAnswer['message']);?>
+						<a href="./index.php?action=signaler&amp;id=<?php echo $pseudoAnswer['id_sujet']; ?>&amp;id_topic=<?php echo $pseudoAnswer['id_topic']; ?>" title="signaler commentaire">
+							<i class="fas fa-exclamation-triangle"></i>
+						</a>
+					</p>
+				</div>
 				<?php
 					}
 					$allAnswers->closeCursor();
 				?>
-			</div>
+			
 		
 		
 	</article>

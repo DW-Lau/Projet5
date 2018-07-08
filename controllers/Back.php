@@ -128,11 +128,11 @@ function allTopics(){
 	$topics= new CommentsManager();
 	$getTopics= $topics->getAllTopics();
 	
-
+require("./views/pages/forum.php");
 	if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
 		require("./views/pages/newtopic.php");
 	}
-	require("./views/pages/forum.php");
+	
 }
 function selectTopic($topic){
 	$oneTopic= new CommentsManager();
@@ -151,7 +151,7 @@ function deleteTopic($idTopic){
 function newComment($idTopic,$idAuteur,$textTopic){
 	$newComm= new CommentsManager();
 	$addNewComm= $newComm-> addnewComment($idTopic,$idAuteur,$textTopic);
-	require('./views/pages/topic.php');
+	//require('./views/pages/topic.php');
 }
 function warningComm($idTopic,$idSubject){
 	$wngComm= new CommentsManager();

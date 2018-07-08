@@ -14,6 +14,12 @@ h1 a{
     border-top: 2px solid #ea8e32;
     border-radius: 5px
 }
+h2{
+    margin: 5px;
+    font-family: 'Helvetica';
+    font-size: 1.2em;
+    text-align: center;
+}
 h3{
     margin: 0px;
     font-family: 'Helvetica';
@@ -250,4 +256,74 @@ a img{
 .message{
     border-bottom: solid 2px #ea8e32;
     margin-bottom: 5px;
+    text-align: justify;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    
+}
+.message a{
+    color: black;
+    font-family: 'Raleway';
+    font-size: 1em;
+}
+#forumPage{
+    display: flex;
+    flex-direction: column-reverse;
+}
+#newTopic{
+    width: 80%;
+    margin: auto;
+}
+.newSubject{
+    background: #e6edf2;
+    display: flex;
+    border-left: 2px solid #0e5585;
+    border-right: 2px solid #0e5585;
+}
+#eraseTopic{
+    height: 35px;
+    width: 11%;
+    border-radius: 5px;
+    background: white;
+}
+
+/*TOPIC*/
+#topic{
+    width: 100%;
+}
+.listAnswer{
+    background: white;
+}
+.infoMessageMember{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: white;
+    width: 50%;
+    margin: auto;
+    border-top: solid 2px #0e5585;
+    padding: 5px;
+}
+.titreMessage{
+    text-align: center;
+}
+.allAnswes{
+    border-bottom: #e48932 solid 2px;
+    border-top: #0d5383 solid 2px;
+    background: #0e5584;
+    border-radius: 5px;
+
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.presentationAnswers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background: #0e5584;
+    width: 100%;
 }
