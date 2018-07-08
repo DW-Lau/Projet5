@@ -22,15 +22,14 @@
 
 		</div>
 	</article>
+
 	<article id="disclamer">
 		<p>
 			Site web réalisé dans le cadre de la formation "Developpeur Web Junoir" OpenClassroom. Tous les personnages, films et photos de ce site sont la proprieté de Blender.<br>
 			Mentions et crédits des photos/images sont à retrouver, plus en détails, dans la partie <a href="">"Mentions"</a>
 		</p>
 	</article>
-	<article id="bioBlog">
-		
-	</article>
+
 	<div id="first_Page_Info">
 
 		<div id="last_Movie_Out">
@@ -39,21 +38,32 @@
 				 while($movie = $upDateMovie->fetch() ){ 
 
 			?>
-		 	<?php 
-			echo '<img src="views/Images/Films/'. $movie['img_link'].'" alt="'. $movie['img_link'].'" class="FirstPageImg">'; 
-			
-			?> 
-			<div id="presentation">
-			<h3>Dernier Film sortie: <?php echo $movie['titre_film']?> </h3>
 
-			<p div="resume_Last_Movie"> Synopsis: <?php echo htmlspecialchars($movie['resume']);?>
-				<br> Sortie le : <?php echo htmlspecialchars($movie['date_fr']); ?>
-				<br>
+			<h3>
+				Dernier Film sortie: <?php echo $movie['titre_film']?> 
+			</h3>
+		 	<p div="resume_Last_Movie"> 
+		 	<?php 
+				echo '<img src="views/Images/Films/'. $movie['img_link'].'" alt="'. $movie['img_link'].'" class="FirstPageImg">'; 
+			?>
+
+			
+				Synopsis: <?php echo htmlspecialchars($movie['resume']);?><br>
+
+				Sortie le : <?php echo htmlspecialchars($movie['date_fr']); ?><br>
+			</p>
+			<div id="presentation">
+			
+
+		<?php
+			echo '<p><iframe class="formatVideo" src="'. $movie['movie_link'].'"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+			?>
+
 				<?php 
 			echo 'Visionner le film :<a href="'. $movie['movie_link'].'" target="_blank"> Ici</a>'; 
 			
 			?> 
-			<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/mN0zPOpADL4?rel=0" frameborder="0"; encrypted-media" allowfullscreen></iframe> -->
+			
 				
 			</p>
 			<?php

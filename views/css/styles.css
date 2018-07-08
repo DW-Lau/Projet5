@@ -121,7 +121,14 @@ section{
 
 .FirstPageImg{
 	height:300px;
+    width: 50%;
+}/*
+.formatVideo{
+    width:560px;
+     height:315px;
 }
+    CHANGER LE FORMAT RESPONSIV
+*/
 #disclamer{
 	background: white;
     padding: 5px;
@@ -133,12 +140,18 @@ section{
 }
 #last_Movie_Out{
 	display: flex;
+    flex-direction: column;
     padding: 15px;
     width: 90%;
     margin: auto;
     background: white;
     border-left: 2px solid #e38831;
     border-right: 2px solid #e38831;
+}
+#resume_Last_Movie{
+    display: flex;
+    justify-content: space-around;
+    text-align: justify;
 }
 #presentation{
 	display: flex;
@@ -176,6 +189,7 @@ section{
 #IntroMovies{
     width: 80%;
     margin: auto;
+    padding: 10px;
     background: white;
     border-left: 2px solid #e38831;
     border-right: 2px solid #e38831;
@@ -191,7 +205,20 @@ a img{
 .thumbnais_Movie{
     width: 33%;
 }
+/*FILM*/
+#imgPoster{
+    height: 350px;
+}
+.presentation{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: justify;
 
+}
+#warningVideo{
+    font-size: 0.8em;
+}
 
 /*Admin*/
 #profil{
