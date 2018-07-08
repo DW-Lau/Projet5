@@ -232,3 +232,22 @@ a img{
     width: 35%;
     
 }
+
+/*FORUM*/
+.Avatar{
+    height: 50px;
+    width: 50%
+    border: white 2px solid;
+    border-radius:50%;
+}
+.infoMember{
+    display: flex;
+    align-items: center;
+    background: white;
+    border-top: solid 2px #0e5585;
+    padding: 5px;
+}
+.message{
+    border-bottom: solid 2px #ea8e32;
+    margin-bottom: 5px;
+}

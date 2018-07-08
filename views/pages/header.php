@@ -32,13 +32,13 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
 
-		<!-- <script src="view/tinymce/js/tinymce/tinymce.min.js"></script>
+		<script src="views/tinymce/js/tinymce/tinymce.min.js"></script>
 		<script>
 			tinymce.init({ 
 				selector:'textarea',
 				height:'250px'
 			});
-		</script> -->
+		</script>
 		<title>Blender</title>
 
 	</head>
