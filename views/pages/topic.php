@@ -35,9 +35,9 @@
 				?>
 						<?php echo $pseudoAnswer['pseudo']?>, à écrit le <?php echo $pseudoAnswer['date_messagePost']?>
 				</p>
-					<p>
+					<p class="reponses">
 						<?php
-							if ($pseudoAnswer['stat_message'] ===1) {
+							if ($pseudoAnswer['stat_message'] ==1) {
 								echo '<span class="attentionRequired"> Vérification du contenu en cours</span>';
 							}
 						?>

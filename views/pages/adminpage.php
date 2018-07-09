@@ -74,8 +74,8 @@
 			while ($getReportedComms=$listWarningComm->fetch() ) {
 			?>
 
-			<p class="reported"> <?php echo $getReportedComms['pseudo']?> à écrit le <?php echo $getReportedComms['date_Poste']?> : <?php echo $getReportedComms['message']?> <span class="deleteComm"><a href="./index.php?action=eraseComm&amp;id=<?php echo $getReportedComms['id_sujet']; ?>"> Effacer commentaire</a></span>
-				<span class="confirmComm" ><a href="./index.php?action=confirmComm&amp;id=<?php echo $getReportedComms['id_sujet']; ?>">Confirmer Commentaire</a></span></p>
+			<p class="reported"> <?php echo $getReportedComms['pseudo']?> à écrit le <?php echo $getReportedComms['date_Poste']?> : <?php echo $getReportedComms['message']?> <span class="deleteComm"><a href="./index.php?action=eraseComm&amp;id=<?php echo $getReportedComms['id_sujet']; ?>"> Effacer</a></span>
+				<span class="confirmComm" ><a href="./index.php?action=confirmComm&amp;id=<?php echo $getReportedComms['id_sujet']; ?>">Confirmer </a></span></p>
 			<?php
 			}
 			$listWarningComm->closeCursor();
@@ -108,14 +108,14 @@
 							$Movies->closeCursor();
 						?>
 		</aside>
-		<aside id="messagesPannel">
-			
-		</aside>
+		<div class="bandeau">
+			<!-- decoration -->
+		</div>
 		<article id="newMovie">
 			<h2>Ajouter un film:</h2>
 
 			<form id="getNewMovie" action="./index.php?action=postMovie" method="post" enctype="multipart/form-data">
-			<fieldset>		
+			<fieldset id="newEntry">		
 				<label>Titre du film :<input type="text" name="title" id="title" value="" required/></label>
 				<label>Date de sortie<input type="date" name="date"></label>
 			
@@ -123,7 +123,7 @@
 				</label>
 				<label>Lien du film :<input type="text" name="link" id="link" value="" required/>
 				</label>
-				<label>Titre du fichier (max. 50 caractères) :<input type="text" name="newMovie" id="newMovie"  required/>
+				<label>Titre du fichier :<input type="text" name="newMovie" id="newMovie"  required/>
 				</label><span id="warningTitle"></span>
 				<label>Fichier ('jpg','jpeg', 'gif' et 'png' | max. 3 Mo) :
      				<input type="file" name="imgFilms" id="imgFilms" required/>

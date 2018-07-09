@@ -231,11 +231,15 @@ a img{
 #imgPoster{
     height: 350px;
 }
+#moviePage{
+    background: white;
+}
 .presentation{
     display: flex;
     align-items: center;
     justify-content: space-around;
     text-align: justify;
+    padding: 5px;
 
 }
 #warningVideo{
@@ -253,6 +257,68 @@ a img{
     height: 200px;
     width: 35%;
     
+}
+#headBandUpDate{
+    margin: 5px;
+    border-top: #0f5685 solid 2px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    background: #ffffff96;
+}
+#listAdminTopics, #listMember, #commentsPannel{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 5px;
+
+}
+#controlleAdmin{
+   display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+#EntryAdmin{
+        height: 532px;
+    overflow: auto;
+    background: white;
+    width: 22%;
+    border-top: #e78c34 2px solid;
+    border-radius: 5px;
+}
+.warning{
+    border-bottom: #0f5685 solid 2px;
+    width: 80%;
+    margin: auto;
+    padding: 5px;
+}
+#newEntry{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    border: none;
+    border-top: solid 2px #0e5585;
+    border-radius: 5px;
+}
+#newEntry label{
+    font-family: 'Raleway';
+    font-size: 1.1em;
+}
+.bandeau{
+    height: 450px;
+    border: solid 1px #0e5585
+
+}
+
+/*BUTTONS*/
+
+.moderateursPlus,.membresPlus,.commsPlus,.moderateursMoins,.membresMoins,.commsMoins{
+    background: orange;
+    color: white;
+    border-radius: 20px;
 }
 
 /*FORUM*/
@@ -311,6 +377,7 @@ a img{
 }
 .listAnswer{
     background: white;
+    padding-top: 5px;
 }
 .infoMessageMember{
     display: flex;
@@ -321,6 +388,7 @@ a img{
     margin: auto;
     border-top: solid 2px #0e5585;
     padding: 5px;
+    border-radius: 5px;
 }
 .titreMessage{
     text-align: center;
@@ -339,7 +407,41 @@ a img{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    background: #0e5584;
-    width: 100%;
+  margin: 0px;
+        background: #0e5584;
+    width: 30%;
+    border-bottom: #ec9136 solid 2px;
+    border-radius: 0px 0px 5px 5px;
+}
+.attentionRequired{
+    font-style: italic;
+    font-size: 0.8em;
+}
+.deleteComm, .confirmComm{
+    border: solid #e98c34 1px;
+    border-radius: 5px;
+    padding: 5px;
+    background: #e98c34;
+}
+.deleteComm a,.confirmComm a {
+    font-size: 1em;
+    color: white;
+}
+.reponses{
+       text-align: justify;
+    width: 70%;
+    margin: 0px;
+    border-bottom: #0e5584 solid 2px;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+#message{
+    border-top: solid #ec9136 2px;
+    border-radius: 5px;
+    width: 90%;
+    background: white;
+}
+.allAnswers{
+    display: flex;
+    padding: 5px;
 }

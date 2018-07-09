@@ -21,7 +21,7 @@ var Diaporama={
 		}
 	};
 /*-------------GRANDE RESOLUTION------------------*/
-var diapo=["views/Images/Screens/BigBuckBunny.png","views/Images/Films/Sintel.jpg"];
+var diapo=["views/Images/Screens/BigBuckBunnyOpening.png","views/Images/Screens/agent327_v2.png"];
 var description=["Bonne visite!", "Bienvenu!"," Inscrivez vous"];
 var miniDesc=["hello 1", "hello 2", "hello3"];
 
