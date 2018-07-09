@@ -78,8 +78,6 @@ ul li{
 
 }
 
-
-
 #recapProfil{
 	display: flex;
     justify-content: space-around;
@@ -111,10 +109,28 @@ section{
     border-right: 2px solid #0e5584;
     background: #ffffffcc;
 }
+#diaporama{
+    width: 100%;
+}
+#diapo{
+    width: 90%;
+    margin: auto;
+}
+#carrousel{
+    max-height: 150px;
+}
+#legende{
+    font-family: 'Helvetica';
+    font-style: 0.8em;
+}
 #diapoFirstPage{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 5px;
+    border: white 2px solid;
+    border-radius: 5px;
+    background: white;
 }
 #arrows-L,#arrows-R{
      font-size: 2em;
@@ -127,12 +143,12 @@ section{
 
 .FirstPageImg{
 	height:300px;
-    width: 50%;
-}/*
+   
+}
 .formatVideo{
     width:560px;
      height:315px;
-}
+}/*
     CHANGER LE FORMAT RESPONSIV
 */
 #disclamer{

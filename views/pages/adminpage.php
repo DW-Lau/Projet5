@@ -139,3 +139,4 @@
 </section>
 </body>
 <script type="text/javascript" src="./views/javascript/adminPannel.js"></script>
+</html>

@@ -1,5 +1,5 @@
 <section>
-	<article>
+	<article id="diaporama">
 		<div id="diapo">
 			<figure id="diapoFirstPage">
 				<div id="arrows-L">
@@ -56,11 +56,11 @@
 			
 
 		<?php
-			echo '<p><iframe class="formatVideo" src="'. $movie['movie_link'].'"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+			echo '<iframe class="formatVideo" src="'. $movie['movie_link'].'"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
 			?>
 
 				<?php 
-			echo 'Visionner le film :<a href="'. $movie['movie_link'].'" target="_blank"> Ici</a>'; 
+			echo '<p>Visionner le film :<a href="'. $movie['movie_link'].'" target="_blank"> Ici</a>'; 
 			
 			?> 
 			
@@ -78,4 +78,5 @@
 
 </section>
 </body>
+<script type="text/javascript" src="./views/javascript/diapo.js"></script>
 </html>
