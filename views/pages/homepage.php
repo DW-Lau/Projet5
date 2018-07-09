@@ -42,16 +42,17 @@
 			<h3>
 				Dernier Film sortie: <?php echo $movie['titre_film']?> 
 			</h3>
-		 	<p div="resume_Last_Movie"> 
+		 	<div id="resume_Last_Movie"> 
 		 	<?php 
 				echo '<img src="views/Images/Films/'. $movie['img_link'].'" alt="'. $movie['img_link'].'" class="FirstPageImg">'; 
 			?>
-
+<p>
 			
 				Synopsis: <?php echo htmlspecialchars($movie['resume']);?><br>
 
 				Sortie le : <?php echo htmlspecialchars($movie['date_fr']); ?><br>
 			</p>
+		</div>
 			<div id="presentation">
 			
 

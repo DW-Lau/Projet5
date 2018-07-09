@@ -6,7 +6,7 @@
 			<?php
 			while($listAvatar=$pickAvatar->fetch() ){
 				echo '<figure>
-				<img src="views/Images/Avatars/'.$listAvatar['lien_avatar'].'" alt="Avatar '.$listAvatar['lien_avatar'].'"><p id="avatChoisi">'.$listAvatar['lien_avatar'].'</p>
+				<img src="views/Images/Avatars/'.$listAvatar['lien_avatar'].'" alt="Avatar '.$listAvatar['lien_avatar'].'" class="imageAvatar"><p id="avatChoisi">'.$listAvatar['lien_avatar'].'</p>
 				</figure>
 				';
 				//var_dump($listAvatar['lien_avatar']);

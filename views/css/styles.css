@@ -107,7 +107,7 @@ section{
     align-items: center;
     border-left: 2px solid #0e5584;
     border-right: 2px solid #0e5584;
-    background: #ffffffcc;
+    background: #fffffff2;
 }
 #diaporama{
     width: 100%;
@@ -184,9 +184,37 @@ section{
 
 
 /*CONNEXION*/
+#conditions{
+    display: flex;
+}
+#miniGalerie{
+     padding: 0px;
+    width: 46%;
+    margin: 5px;
+    display: flex;
+    
+    flex-wrap: wrap;
+  
+    justify-content: center;
+}
+.connexionGalerie{
+    margin:2px;
+}
+#paysage{
+    height: 200px;
+}
+#miniPortrait{
+    height: 180px;
+}
+#poster{
+    height: 200px;
+}
+#land{
+    width: 80%;
+}
 #rules{
 	background: white;
-    width: 90%;
+    width: 54%;
     margin: auto;
     text-align: justify;
     padding: 10px;
@@ -248,15 +276,27 @@ a img{
 
 /*Admin*/
 #profil{
-    display: flex;
+        display: flex;
     width: 50%;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
 }
 .profilPicture{
-   border: solid 2px orange;
+   border: solid 2px #e78c34;
    border-radius: 50%;
     height: 200px;
     width: 35%;
     
+}
+.avatar{
+    border-radius: 5px;
+    padding: 5px;
+    background: #e78c34;
+
+}
+.avatar a{
+    color: white;
 }
 #headBandUpDate{
     margin: 5px;
@@ -312,6 +352,7 @@ a img{
     border: solid 1px #0e5585
 
 }
+
 
 /*BUTTONS*/
 
@@ -444,4 +485,14 @@ a img{
 .allAnswers{
     display: flex;
     padding: 5px;
+}
+
+/*Avatar*/
+#galerie{
+        display: flex;
+    flex-wrap: wrap;
+}
+.imageAvatar{
+    border: white solid 2px;
+    border-radius: 29px;
 }

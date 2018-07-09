@@ -1,5 +1,17 @@
 <section>
-	<div id="">	
+	<div id="conditions">	
+		<aside id="miniGalerie"><figure class="connexionGalerie">
+				<img src="views/Images/Films/caminandes_grandillama.jpg" alt="caminandes_grandillama" id="poster">
+			</figure>
+			<figure class="connexionGalerie">
+				<img src="views/Images/Screens/BigBuckBunnyOpening.png" alt="BigBuckBunny" id="paysage" >
+			</figure >
+
+			<figure class="connexionGalerie">
+				<img src="views/Images/Screens/Elephants_Dream.jpg" alt="Elephants_Dream" id="miniPortrait">
+			</figure>
+		
+		</aside>
 		<article id="rules">
 			<h4 class="subInfo">Avant de continuer..</h4>
 				<p> Remplissez le formulaire  pour rejoindre notre communautée! </br>
@@ -11,7 +23,13 @@
 				</p>
 				<p id="mentions">Projet réalisé dans le cadre de la formation OpenClassroom: Développeur Web Junior.Projet 5: "Réaliser un projet personnel".</p></i>
 		</article>
-
+	</div>
+	<div>
+		<figure >
+				<img src="views/Images/Screens/agent327_v2.png" alt="Agent327" id="land">
+				<figcaption >Agent 327</figcaption>
+			</figure>
+	</div>
 		<div id="subBlock">
 
 			<div class="formulaires">
@@ -69,7 +87,7 @@
 						?>
 			</div>
 		</div> <!-- end of subBlock -->
-	</div><!--end secondSideDeco-->
+	
 	
 </section>
 
