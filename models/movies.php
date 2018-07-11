@@ -5,7 +5,7 @@ class MoviesManager extends Manager{
 
 	public function moviesCall(){
 		$bdd=$this->dbConnect();
-		$movies= $bdd->query('SELECT id_film,titre_film,resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link,img_link FROM films ORDER BY date_sortie ');	
+		$movies= $bdd->query('SELECT id_film,titre_film,resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link,img_link FROM films ORDER BY date_sortie DESC');	
 		return $movies;
 	}
 

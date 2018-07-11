@@ -84,7 +84,11 @@
 			<?php
 			while ($getReportedComms=$listWarningComm->fetch() ) {
 			?>
-
+			<?php
+				if($getReportedComms===0){
+					echo "Il n'y a pas de commentaires à gérer";
+				}
+			?>
 			<p class="reported"> <?php echo $getReportedComms['pseudo']?> à écrit le <?php echo $getReportedComms['date_Poste']?> : <?php echo $getReportedComms['message']?> <span class="deleteComm"><a href="./index.php?action=eraseComm&amp;id=<?php echo $getReportedComms['id_sujet']; ?>"> Effacer</a></span>
 				<span class="confirmComm" ><a href="./index.php?action=confirmComm&amp;id=<?php echo $getReportedComms['id_sujet']; ?>">Confirmer </a></span></p>
 			<?php
@@ -106,10 +110,10 @@
 						<i class="fas fa-film"></i> <?php echo $listMovies['titre_film']?>
 						</br>
 						<span id="deleteEntry">
-							<button id="deletMovie"><a href="./index.php?action=eraseEntry&amp;id=<?php echo $listMovies['id_film']; ?>"> <i class="fas fa-eraser">Effacer de la liste</i></a></button>
+							<a href="./index.php?action=eraseEntry&amp;id=<?php echo $listMovies['id_film']; ?>"><button id="deletMovie"> <i class="fas fa-eraser">Effacer de la liste</i></button></a>
 						</span>
 						<span id="changeButton">
-							<button id="modifMovie"><a href="./index.php?action=editEntry&amp;id=<?php echo $listMovies['id_film']; ?>"><i class="fas fa-undo-alt">Modifier</i></a></button>
+							<a href="./index.php?action=editEntry&amp;id=<?php echo $listMovies['id_film']; ?>"><button id="modifMovie"><i class="fas fa-undo-alt">Modifier</i></button></a>
 						</span>
 
 						 <br/>
