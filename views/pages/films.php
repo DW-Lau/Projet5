@@ -17,7 +17,7 @@
 							<figcaption> 
 							
 								<h4> <?php echo $allMovies['titre_film']?> </h4>
-								<p><?php echo htmlspecialchars_decode($allMovies['resume']);?></p>
+								<p><?php echo htmlspecialchars_decode($allMovies['resume']);?> [...]</p>
 							</figcaption>
 				</figure>
 			<?php

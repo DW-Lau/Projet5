@@ -15,14 +15,24 @@ h1 a{
     border-radius: 5px
 }
 h2{
-    margin: 5px;
+    /*margin: 5px;
     font-family: 'Helvetica';
     font-size: 1.2em;
-    text-align: center;
+    text-align: center;*/
+    margin: 5px;
+font-family: 'Helvetica';
+font-size: 1.2em;
+text-align: center;
+border-top: #ea8f34 2px solid;
+border-radius: 5px;
+padding-left: 10px;
+padding-right: 10px;
 }
 h3{
-    margin: 0px;
+    margin: 5px;
     font-family: 'Helvetica';
+    border-bottom: #045484 solid 2px;
+    border-radius: 5px;
 }
 h4{
 	text-align: center;
@@ -120,7 +130,8 @@ section{
 }
 #legende{
     font-family: 'Helvetica';
-    font-style: 0.8em;
+    font-size: 0.8em;
+    text-align: center;
 }
 #diapoFirstPage{
     display: flex;
@@ -141,7 +152,7 @@ section{
 }
 
 .FirstPageImg{
-	height:300px;
+	width: 80%;
    
 }
 .formatVideo{
@@ -162,6 +173,7 @@ section{
 #last_Movie_Out{
 	display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 15px;
     width: 90%;
     margin: auto;
@@ -171,6 +183,7 @@ section{
 }
 #resume_Last_Movie{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     text-align: justify;
 }
@@ -187,14 +200,16 @@ section{
     display: flex;
 }
 #miniGalerie{
-     padding: 0px;
-    width: 46%;
+    padding: 0px;
+    max-width: 46%;
     margin: 5px;
     display: flex;
-    
     flex-wrap: wrap;
-  
     justify-content: center;
+    border-left: solid 2px #ea8f34;
+    border-radius: 5px;
+    border-right: solid 2px #ea8f34;
+    background: white;
 }
 .connexionGalerie{
     margin:2px;
@@ -208,8 +223,24 @@ section{
 #poster{
     height: 200px;
 }
+#slide{
+    background: white;
+border-top: #045484 solid 2px;
+border-bottom: #045484 solid 2px;
+padding: 5px;
+border-radius: 5px;
+width: 90%;
+}
+figure{
+    margin: 0px;
+}
 #land{
-    width: 80%;
+    width: 70%;
+}
+#movieLegend{
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Raleway';
 }
 #rules{
 	background: white;
@@ -219,6 +250,7 @@ section{
     padding: 10px;
     border-left: 2px solid #e38831;
     border-right: 2px solid #e38831;
+    border-radius: 5px;
 }
 #subBlock{
 	    display: flex;
@@ -233,6 +265,13 @@ section{
     padding: 5px;
     display: flex;
     flex-direction: column;
+}
+.formulaires fieldset{
+    border: none;
+display: flex;
+flex-direction: column;
+align-items: baseline;
+text-align: left;
 }
 /*FILMS*/
 #IntroMovies{
@@ -272,14 +311,21 @@ figcaption p{
 }
 #moviePage{
     background: white;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 80%;
+margin: auto;
 }
 .presentation{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    text-align: justify;
-    padding: 5px;
+    text-align: justif
 
+}
+.presentation img{
+    margin: 5px;
 }
 #warningVideo{
     font-size: 0.8em;

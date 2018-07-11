@@ -48,7 +48,7 @@
 			?>
 <p>
 			
-				Synopsis: <?php echo htmlspecialchars($movie['resume']);?><br>
+				Synopsis: <?php echo htmlspecialchars_decode($movie['resume']);?><br>
 
 				Sortie le : <?php echo htmlspecialchars($movie['date_fr']); ?><br>
 			</p>

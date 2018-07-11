@@ -24,16 +24,16 @@
 				<p id="mentions">Projet réalisé dans le cadre de la formation OpenClassroom: Développeur Web Junior.Projet 5: "Réaliser un projet personnel".</p></i>
 		</article>
 	</div>
-	<div>
+	<div id="slide">
 		<figure >
 				<img src="views/Images/Screens/agent327_v2.png" alt="Agent327" id="land">
-				<figcaption >Agent 327</figcaption>
+				<figcaption id="movieLegend" >Agent 327</figcaption>
 			</figure>
 	</div>
 		<div id="subBlock">
 
 			<div class="formulaires">
-			
+				<fieldset>
 					<h3>Inscription:</h3>
 						<form method="post" action="./index.php?action=subscribeMember">
 							
@@ -66,14 +66,15 @@
 						echo "<p class='warning_Info'>" .$infoIssues."</p>";
 					}
 					?>
+				</fieldset>
 			</div>
 
 			<div class="formulaires">
 				<fieldset>
 					<h3>Connexion: </h3>
 					<form method="post" action="./index.php?action=logger">
-						<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudoMember" required></label>
-						<label name="checkpwd">Mot de passe:<input type="password" name="checkpwd" id="motDpasseMember" required /></label>
+						<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudoMember" required></label><br />
+						<label name="checkpwd">Mot de passe:<input type="password" name="checkpwd" id="motDpasseMember" required /></label><br />
 						<input type="submit" id="validation" value="Valider" />
 					
 					</form></fieldset>
