@@ -1,6 +1,6 @@
 <section id="forumPage">
 	<article>
-	<h2>Forum:titre temporaire</h2>
+	<h2>Blender Open Movie: le forum</h2>
 	<?php
 		while($listTopic = $getTopics->fetch()){
 	?>
@@ -26,6 +26,11 @@
 	<?php
 	}
 	$getTopics->closeCursor();
+	?>
+	<?php
+	if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
+		require("./views/pages/newtopic.php");
+	}
 	?>
 	</article>
 </section>
