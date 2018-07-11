@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 05 juil. 2018 à 15:56
+-- Généré le :  mar. 10 juil. 2018 à 07:49
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -83,9 +83,9 @@ CREATE TABLE IF NOT EXISTS `films` (
 --
 
 INSERT INTO `films` (`id_film`, `titre_film`, `resume`, `date_sortie`, `movie_link`, `img_link`) VALUES
-(1, 'Elephants dream', '1er film de la fondation Blender en tant que \"Open Movie\".', '2006-03-31', 'https://www.youtube.com/watch?v=TLkA0RELQ1g&index=9&list=PL6B3937A5D230E335', 'blender-poster-elephantsdream.jpg'),
-(2, 'Big Buck Bunny', 'Projet', '2008-04-01', 'https://www.youtube.com/watch?v=YE7VzlLtp-4&index=8&list=PL6B3937A5D230E335', 'bigbuckbunny.jpg'),
-(3, 'Sintel', 'Sintel Projet Durant', '2010-09-01', 'https://www.youtube.com/watch?v=eRsGyueVLvQ&index=6&list=PL6B3937A5D230E335', 'Sintel.jpg');
+(1, 'Elephants dream', '1er film de la fondation Blender en tant que \"Open Movie\".', '2006-03-31', 'https://www.youtube.com/embed/TLkA0RELQ1g', 'blender-poster-elephantsdream.jpg'),
+(2, 'Big Buck Bunny', 'Projet', '2008-04-01', 'https://www.youtube.com/embed/YE7VzlLtp-4', 'bigbuckbunny.jpg'),
+(3, 'Sintel', '&lt;p style=&quot;text-align: justify;&quot;&gt;Sintel est le 3&amp;egrave;me projet de l\'institut Blender. Le projet Durian a d&amp;eacute;marr&amp;eacute;e sa production en Septembre 2009 et a &amp;eacute;t&amp;eacute; pr&amp;eacute;sent&amp;eacute; pour la 1&amp;egrave;re fois un an plus tard au Festival du Film N&amp;eacute;erlandais.&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;', '2010-09-01', 'https://www.youtube.com/embed/eRsGyueVLvQ', 'Sintel.jpg');
 
 -- --------------------------------------------------------
 
@@ -136,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `membre` (
 
 INSERT INTO `membre` (`id_membre`, `pseudo`, `pwd`, `status_membre`, `date_membre`, `avatar`) VALUES
 (1, 'Lau', '$2y$10$b6ZDEbiEbGkFM5hwdzT81uQUn3Euy7HF4bTOMXbdyNlw4S7Tn8Vcu', 2, '2018-06-08', 1),
-(2, 'Weebie', '$2y$10$.H3atDEFmzq10HbYJxY/YukNRlZYy0eOaRAQR58jTLKKwtfR.NVe.', 3, '2018-06-12', NULL),
+(2, 'Weebie', '$2y$10$.H3atDEFmzq10HbYJxY/YukNRlZYy0eOaRAQR58jTLKKwtfR.NVe.', 3, '2018-06-12', 3),
 (3, 'Low', '$2y$10$cTJx.bUmW3J5sylts9g7seVz7rPG.Rxamjw6DaojxmNiPTUfOCK1K', 1, '2018-06-13', NULL);
 
 -- --------------------------------------------------------
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `sujet` (
   `date_poste` datetime DEFAULT NULL,
   `stat_message` int(11) DEFAULT '0',
   PRIMARY KEY (`id_sujet`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `sujet`
@@ -163,7 +163,13 @@ CREATE TABLE IF NOT EXISTS `sujet` (
 INSERT INTO `sujet` (`id_sujet`, `id_topic`, `id_auteurSujet`, `message`, `date_poste`, `stat_message`) VALUES
 (1, 9, 1, 'Bonjour à tous!', '2018-06-23 10:33:16', 0),
 (2, 9, 2, '[Message supprimé par les modérateur]', '2018-06-27 15:30:06', 0),
-(3, 9, 2, '[Message supprimé par les modérateur]', '2018-06-27 15:44:57', 2);
+(3, 9, 2, '[Message supprimé par les modérateur]', '2018-06-27 15:44:57', 2),
+(4, 12, 2, '&lt;p&gt;Bonjour bonjour&lt;/p&gt;', '2018-07-08 12:37:31', 0),
+(5, 12, 2, '&lt;p&gt;Bonjour bonjour&lt;/p&gt;', '2018-07-08 12:37:58', 0),
+(6, 12, 2, '&lt;p&gt;Bonjour Bonjour&lt;/p&gt;', '2018-07-08 12:38:08', 1),
+(7, 12, 2, '[Message supprimé par les modérateur]', '2018-07-08 12:40:38', 2),
+(8, 12, 2, 'Bonjour Bonjour', '2018-07-08 12:40:45', 0),
+(9, 12, 2, '&lt;p&gt;&lt;strong&gt;Ceci est un autre test, pour remplir les espaces, et voir comment tout &amp;ccedil;a va, ou pas , ensemble&lt;/strong&gt;&lt;/p&gt;', '2018-07-09 15:08:19', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

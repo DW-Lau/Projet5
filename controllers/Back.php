@@ -31,7 +31,11 @@ function  getInfoUser($idMembre){
 function sessionOut(){
 	require('./index.php');
 }
-
+function getNewAvatar($idAvatar,$idMembre){
+	$newProfilPicture= new membersManager();
+	$newPicture=$newProfilPicture->newAvatarProfil($idAvatar,$idMembre);
+	//require('./index.php');
+}
 /*--------------------------------MESSAGE LOGIN----------------------------------------*/
 function msgPWD($message){
 	$message;
@@ -129,9 +133,7 @@ function allTopics(){
 	$getTopics= $topics->getAllTopics();
 	
 require("./views/pages/forum.php");
-	if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
-		require("./views/pages/newtopic.php");
-	}
+	
 	
 }
 function selectTopic($topic){

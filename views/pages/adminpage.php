@@ -52,8 +52,17 @@
 		
 		?>
 		<p>Pseudo: <?php echo htmlspecialchars($listOfMembers['pseudo'])?> , status: <?php echo $listOfMembers['status_membre'] ?><br>
-			<button id="newModo"><a href="./index.php?action=upGrade&amp;id=<?php echo $listOfMembers['id_membre']; ?>"><i class="fas fa-user-plus">Passer Modérateur</i></button>
-				<button id="ban"> <a href="./index.php?action=ban&amp;id=<?php echo $listOfMembers['id_membre']; ?>"><i class="fas fa-user-alt-slash">Bannir </i></a></button>
+			<button id="newModo">
+				<a href="./index.php?action=upGrade&amp;id=<?php echo $listOfMembers['id_membre']; ?>">
+					<i class="fas fa-user-plus">Passer Modérateur</i>
+				</a>
+			</button>
+			
+			<button id="ban">
+				<a href="./index.php?action=ban&amp;id=<?php echo $listOfMembers['id_membre']; ?>">
+					<i class="fas fa-user-alt-slash">Bannir </i>
+				</a>
+			</button>
 		</p>
 
 		<?php
@@ -137,6 +146,11 @@
 		</article>
 <!-- New topic is call by "Back.php" -->
 	</div>
+	<?php
+	if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
+		require("./views/pages/newtopic.php");
+	}
+	?>
 
 </section>
 </body>

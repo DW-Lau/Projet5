@@ -6,7 +6,8 @@
 			<?php
 			while($listAvatar=$pickAvatar->fetch() ){
 				echo '<figure>
-				<img src="views/Images/Avatars/'.$listAvatar['lien_avatar'].'" alt="Avatar '.$listAvatar['lien_avatar'].'" class="imageAvatar"><p id="avatChoisi">'.$listAvatar['lien_avatar'].'</p>
+				<a href="./index.php?action=newAvatar&amp;id_pict='.$listAvatar['id_avatar'].'"><img src="views/Images/Avatars/'.$listAvatar['lien_avatar'].'" alt="Avatar '.$listAvatar['lien_avatar'].'" class="imageAvatar">
+					<p id="avatChoisi">'.$listAvatar['lien_avatar'].'</p> </a>
 				</figure>
 				';
 				//var_dump($listAvatar['lien_avatar']);
@@ -16,16 +17,16 @@
 		</div>
 
 	</article>
-	<article id="Selection">
+	<!-- <article id="Selection">
 		<form id="validationAvatar" action="./index.php?action=validAvatar" method="post">
 			<label>Vous avez choise:<span id="avatarChoice"></span></label>
 			<input type="submit" id="send" value="Valider votre choix" />
 		</form>
 		
-	</article>
+	</article> -->
 	
 </section>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 var selection=document.getElementById('avatChoisi');
 var recupInf=document.getElementById('avatarChoice');
 
@@ -39,6 +40,6 @@ if(recupInf){
 	alert('rien');
 }
 
-</script>
+</script> -->
 </body>
 </html>

@@ -126,8 +126,24 @@ class membersManager extends Manager
 		$listAvatar=$bdd->query('SELECT * FROM avatar');
 		return $listAvatar;
 	}
-	// public function newAvatar($idMembre,$idAvatar){
-	// 	$bdd=$this->dbConnect();
-	// 	$newPicture=$bdd->prepare('SELECT avatar.id_avatar,membre.avatar FROM avatar INNER JOIN membre ON avatar.id_avatar=membre.avatar WHERE lien_avatar=:idAvatar ');
-	// } Continuer à faire la jointure, tester par la suite .
+	public function newAvatarProfil($idAvatar,$idMembre){
+		$bdd=$this->dbConnect();
+		$newPicture=$bdd->prepare('UPDATE membre SET avatar= ? WHERE id_membre= ?');
+		$newPicture->execute(array($idAvatar,$idMembre
+		));
+		$newPicture=$bdd->prepare('SELECT avatar.id_avatar,membre.avatar,membre.id_membre,membre.avatar,avatar.lien_avatar
+				FROM avatar 
+					INNER JOIN membre 
+				ON avatar.id_avatar=membre.avatar
+				WHERE id_membre= :idmembre
+				');
+		$newPicture->execute(array(
+			':idmembre'=>$idMembre));
+		
+		$getnewAvatar=$newPicture->fetch();
+
+		 $_SESSION['avatar']=$getnewAvatar['lien_avatar'];
+		header("Location:./index.php");
+
+	}
 }

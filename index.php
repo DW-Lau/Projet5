@@ -74,6 +74,13 @@ if($_GET['action']=='admin'){
 if ($_GET['action']=='selectAvatar') {
 	chooseAvatar();
 }
+if($_GET['action']=='newAvatar'){
+$idAvatar=$_GET['id_pict'];
+$idMembre=$_SESSION['id'];
+	getNewAvatar($idAvatar,$idMembre);
+	//headBand();
+
+}
 if ($_GET['action']=='validAvatar') {
 	$idMembre=$_SESSION['id'];
 	$idAvatar=$_POST['avatarChoice'];
