@@ -39,7 +39,7 @@ class CommentsManager extends Manager{
 				INNER JOIN sujet
 			on forum.id_post=sujet.id_topic
 				INNER JOIN membre
-			on forum.id_auteur=membre.id_membre
+			on sujet.id_auteurSujet=membre.id_membre
 				INNER JOIN avatar
 			on membre.avatar=avatar.id_avatar
 
