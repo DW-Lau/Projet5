@@ -6,6 +6,9 @@ require_once("./models/movies.php");
 function headBand(){
 	require('./views/pages/header.php');
 }
+function mentions(){
+	require('./views/pages/mentions.php');
+}
 function firstPageInfo(){
 	$LastMovie= new MoviesManager();
 	$upDateMovie= $LastMovie->lastMovie();

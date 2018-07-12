@@ -23,7 +23,9 @@
 		}
 		elseif($recapInfo['status_membre']==2){
 			$recapInfo['status_membre']="Modérateur du forum";
-			echo '<p>Vous êtes '. $recapInfo['status_membre'].'</p>';
+			echo '<p>Vous êtes '. $recapInfo['status_membre'].'</p>
+			<p id="stat_modo"> En tant que Modérateur du forum, vous pouvez aider l\'administrateur à maintenir l\'ordre dans la vie de la communauté.<br />
+			 </p>';
 		}
 			?>
 		
@@ -38,7 +40,7 @@
 	</article>
 
 	<article>
-		<h2>Liste</h2>
+		<h2>Liste des commentaires à vérifier: </h2>
 			<?php
 			while ($getReportedComms=$listWarningComm->fetch() ) {
 			?>

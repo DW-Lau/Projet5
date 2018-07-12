@@ -15,7 +15,9 @@ if (isset($_GET['action'])){
 		session_destroy();
 		header("Location:index.php");
 	}
-
+if($_GET['action']=='mentions'){
+	mentions();
+}
 /*--------------------------------LOGIN / SUBSCRIBE----------------------------------------*/
 if($_GET['action']=='connexion'){
 	 	//headBand();

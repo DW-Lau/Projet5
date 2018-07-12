@@ -26,7 +26,7 @@
 	<article id="disclamer">
 		<p>
 			Site web réalisé dans le cadre de la formation "Developpeur Web Junoir" OpenClassroom. Tous les personnages, films et photos de ce site sont la proprieté de Blender.<br>
-			Mentions et crédits des photos/images sont à retrouver, plus en détails, dans la partie <a href="">"Mentions"</a>
+			Mentions et crédits des photos/images sont à retrouver, plus en détails, dans la partie <a href="./index.php?action=mentions">"Mentions"</a>
 		</p>
 	</article>
 
