@@ -74,12 +74,13 @@
 
 		<div id="commentsPannel">
 			<h2>Liste des commentaires à vérifier :
-			<button class="commsPlus">
+				<button class="commsPlus">
 					<i class="fas fa-plus" id="plusComm"></i>
-
 				</button>
-				<button class="commsMoins"><i class="fas fa-minus" id="minusComm"></i>
-				</button> </h2>
+				<button class="commsMoins">
+					<i class="fas fa-minus" id="minusComm"></i>
+				</button>
+			</h2>
 			<div id="listcomments">
 			<?php
 			while ($getReportedComms=$listWarningComm->fetch() ) {

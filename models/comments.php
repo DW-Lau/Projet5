@@ -93,7 +93,7 @@ class CommentsManager extends Manager{
 
 	public function eraseComment($idSubject){
 		$bdd=$this->dbConnect();
-		$dltComm=$bdd->prepare('UPDATE sujet SET message="[Message supprimé par les modérateur]" , stat_message=2 WHERE id_sujet=?');
+		$dltComm=$bdd->prepare('UPDATE sujet SET message="[Message supprimé par les modérateurs]" , stat_message=2 WHERE id_sujet=?');
 		$dltComm->execute(array($idSubject));
 		header("Location:./index.php");
 	}
