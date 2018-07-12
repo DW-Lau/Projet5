@@ -47,18 +47,18 @@ class membersManager extends Manager
 				
 		}//end of the verification.
 		else{//If all conditions are true, subscribe
-				var_dump($pseudo);
+				
 				$pass_hache = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
 
 				$user = $bdd->prepare('INSERT INTO membre(pseudo,pwd,date_membre) VALUES(:pseudo,:pwd, Now() )');
-				var_dump($pseudo);
+		
 				
 				$info=$user->execute(array(
 						'pseudo'=>$pseudo,
 						'pwd'=>$pass_hache
 					));
 
-				$membreLogin= $bdd->prepare('SELECT id_membre, status_membre,avatar membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE pseudo=:pseudo ');
+				$membreLogin= $bdd->prepare('SELECT id_membre, status_membre,avatar, membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE pseudo=:pseudo ');
 				$membreLogin->execute(array(
 	   			    'pseudo'=>$pseudo
 	   			));

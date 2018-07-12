@@ -4,11 +4,11 @@
 				<img src="views/Images/Films/caminandes_grandillama.jpg" alt="caminandes_grandillama" id="poster">
 			</figure>
 			<figure class="connexionGalerie">
-				<img src="views/Images/Screens/BigBuckBunnyOpening.png" alt="BigBuckBunny" id="paysage" >
+				<img src="views/Images/Screens/BigBuckBunny_Evil-frank.png" alt="BigBuckBunny_Evil-frank" id="paysage" >
 			</figure >
 
 			<figure class="connexionGalerie">
-				<img src="views/Images/Screens/Elephants_Dream.jpg" alt="Elephants_Dream" id="miniPortrait">
+				<img src="views/Images/Screens/BigBuckBunny.png" alt="BigBuckBunny" id="miniPortrait">
 			</figure>
 		
 		</aside>

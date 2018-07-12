@@ -126,7 +126,7 @@ section{
     margin: auto;
 }
 #carrousel{
-    max-height: 150px;
+    max-height: 200px;
 }
 #legende{
     font-family: 'Helvetica';
@@ -235,7 +235,7 @@ figure{
     margin: 0px;
 }
 #land{
-    width: 70%;
+    width: 50%;
 }
 #movieLegend{
     text-align: center;
@@ -342,7 +342,6 @@ margin: auto;
 .profilPicture{
    border: solid 2px #e78c34;
    border-radius: 50%;
-    height: 200px;
     width: 35%;
     
 }
@@ -575,6 +574,8 @@ padding: 5px;
 border-left: 2px solid #ec9136;
     border-right: 2px solid #ec9136;
     border-radius: 5px;
+        width: 90%;
+    margin: auto;
 }
 .imageAvatar{
     border: white solid 2px;
