@@ -19,7 +19,7 @@
 		</p>
 		
 		<?php
-			echo '<iframe width="560" height="315" src="'. $movie['movie_link'].'"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			echo '<iframe width="560" height="315" src="'. $movie['movie_link'].'"frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="movie"></iframe>
 			<p id="warningVideo">Si votre navigateur n\'affiche pas la vidéo, cliquez <a href="'. $movie['movie_link'].'"target="_blank">ICI</a></p>';
 			?>
 			

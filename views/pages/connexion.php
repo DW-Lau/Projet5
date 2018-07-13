@@ -47,7 +47,7 @@
 							</label></br>
 								<span id="longueurpwd"></span></br>
 
-							<label name="pwd1">Confirmation du mot de passe:
+							<label name="pwd1">Confirmation :
 								<input type="password" name="pwd1" id="pwd1" required />
 							</label></br>
 

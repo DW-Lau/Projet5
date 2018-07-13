@@ -15,18 +15,14 @@ h1 a{
     border-radius: 5px
 }
 h2{
-    /*margin: 5px;
+    margin: 5px;
     font-family: 'Helvetica';
     font-size: 1.2em;
-    text-align: center;*/
-    margin: 5px;
-font-family: 'Helvetica';
-font-size: 1.2em;
-text-align: center;
-border-top: #ea8f34 2px solid;
-border-radius: 5px;
-padding-left: 10px;
-padding-right: 10px;
+    text-align: center;
+    border-top: #ea8f34 2px solid;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 h3{
     margin: 5px;
@@ -158,9 +154,7 @@ section{
 .formatVideo{
     width:560px;
      height:315px;
-}/*
-    CHANGER LE FORMAT RESPONSIV
-*/
+}
 #disclamer{
 	background: white;
     padding: 5px;
