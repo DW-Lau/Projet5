@@ -39,7 +39,7 @@
 	?>
 	</article>
 
-	<article>
+	<article id="gestion">
 		<h2>Liste des commentaires à vérifier: </h2>
 			<?php
 			while ($getReportedComms=$listWarningComm->fetch() ) {
