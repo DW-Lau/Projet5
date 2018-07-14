@@ -1,13 +1,11 @@
-var bouttonBannir=document.getElementById('ban');
+
 var ajoutModo=document.getElementById('newModo');
 var retourMembre=document.getElementById('dwnDroit');
 var envoie=document.getElementById('send');
 var warningTitleInput=document.getElementById('newMovie');
 var warningTitleText=document.getElementById('warningTitle');
 warningTitleText.style.display="0";
-bouttonBannir.addEventListener("click", function() {
-	alert("Vous allez bannir un membre! Son pseudo sera inutilisable.");
-});
+
 
 ajoutModo.addEventListener("click", function( ){
 	alert("Ce membre, sera inscrit en tant que modérateur du forum! :)");
@@ -21,7 +19,7 @@ envoie.addEventListener("click",function(){
 });
 warningTitleInput.addEventListener("click",function(){
 	warningTitleText.style.display="1";
-	warningTitleText.textContent="Veuilliez ne pas mettre d'espace ou de majuscule.";
+	warningTitleText.textContent="Veuilliez respecter le nom du fichier";
 });
 
 /*LISTE MODERATEURS*/

@@ -27,12 +27,20 @@
 		}
 		$selectedMovie-> closeCursor();
 		?>
+    <span id="sousTitre">
+      <i class="fas fa-deaf"></i>
+    </span>
+        <p id="activerSousTitre">Rappel: Les vidéos issue de l'institue Blender Open Movie sont sous-titrés. <br />
+         S'il ne sont pas automatiquement activés, l'option est disponible lors de la lecture. Pour cela, rendez-vous dans les paramètres de la vidéo est sélectionner l'option Sous-titrage.</p>
+    
 </div>
 	</article>
 
 </section>
-<!-- 
-    </body> <script>
+
+    </body> 
+ <script type="text/javascript" src="./views/javascript/video.js"></script>
+    <!-- <script>
       
       var tag = document.createElement('script');
 
@@ -65,10 +73,6 @@
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
       }
       function stopVideo() {
         player.stopVideo();

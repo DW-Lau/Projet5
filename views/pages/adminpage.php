@@ -57,12 +57,6 @@
 					<i class="fas fa-user-plus">Passer Modérateur</i>
 				</a>
 			</button>
-			
-			<button id="ban">
-				<a href="./index.php?action=ban&amp;id=<?php echo $listOfMembers['id_membre']; ?>">
-					<i class="fas fa-user-alt-slash">Bannir </i>
-				</a>
-			</button>
 		</p>
 
 		<?php
@@ -133,7 +127,7 @@
 			<form id="getNewMovie" action="./index.php?action=postMovie" method="post" enctype="multipart/form-data">
 			<fieldset id="newEntry">		
 				<label>Titre du film :<input type="text" name="title" id="title" value="" required/></label>
-				<label>Date de sortie<input type="date" name="date"></label>
+				<label>Date de sortie<input type="date" name="date" required/></label>
 			
 				<label> Résumé du film: <textarea class="tinymce" name="tinymce_Movie"></textarea>
 				</label>
@@ -160,4 +154,5 @@
 </section>
 </body>
 <script type="text/javascript" src="./views/javascript/adminPannel.js"></script>
+
 </html>

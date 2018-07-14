@@ -14,7 +14,7 @@
 				</label>
 				<label>Lien du film :<input type="text" name="newlink" id="link" value="<?php echo $infoRecup['movie_link'];?>" required/>
 				</label>
-				<label>Titre du fichier (max. 50 caractères) :<input type="text" name="editMovie" id="editTitleMovie" value="<?php echo $infoRecup['titre_film'];?>" required/>
+				<label>Titre du fichier (max. 50 caractères) :<input type="text" name="editMovie" id="editTitleMovie" value="<?php echo $infoRecup['titre_film'];?>" required/><p id="prevention"></p>
 				</label>
 				<label>Fichier ('jpg','jpeg', 'gif' et 'png' | max. 3 Mo) :
      				<input type="file" name="newimgFilms" id="imgFilms" required/>
@@ -28,5 +28,6 @@
 			?>
 		</article>
 </section>
+
 </body>
 </html>

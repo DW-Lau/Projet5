@@ -23,7 +23,7 @@ var Diaporama={
 /*-------------GRANDE RESOLUTION------------------*/
 var diapo=["views/Images/Diapo/BigBuckBunnyOpening.png","views/Images/Diapo/blenderOpenMovie.png","views/Images/Diapo/TearsOfSteel.png","views/Images/Diapo/blenderOpenMovie_v2.png"];
 var description=["Bonne visite!", "Bienvenu sur le site (non-officiel) de la fondation Blender Open Movie!","Retrouvez ici, tous les projets réalisés par l'institue Blender","Aussi riches et variés"];
-var miniDiapo=["views/Images/Avatars/Agent327.png", "views/Images/Avatars/Agent327_v2.png", "views/Images/Avatars/bigbuckbunny_EvilsSquirels.png"];
+var miniDiapo=["views/Images/Avatars/Agent327.png", "views/Images/Avatars/Agent327_v2.png", "views/Images/Avatars/bigbuckbunny_EvilsSquirels.png","views/Images/Avatars/glasshalf.png"];
 
 var affichage=Object.create(Diaporama);
 affichage.init(diapo,description);

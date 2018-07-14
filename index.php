@@ -6,7 +6,6 @@ require ("controllers/Back.php");
 
 headBand();
 if (!(isset($_GET['action']) ) ) {
-		//headBand();
 		firstPageInfo();}
 
 if (isset($_GET['action'])){
@@ -20,7 +19,6 @@ if($_GET['action']=='mentions'){
 }
 /*--------------------------------LOGIN / SUBSCRIBE----------------------------------------*/
 if($_GET['action']=='connexion'){
-	 	//headBand();
 	 	formulaire();
 }
 if ($_GET['action']=='subscribeMember') {
@@ -40,8 +38,6 @@ if ($_GET['action']=='subscribeMember') {
 			}
 		}else{
 			$message="Les 2 mots de passes ne sont pas correspondant";
-
-			//headBand();
 			msgPWD($message);
 				
 		}
@@ -80,7 +76,6 @@ if($_GET['action']=='newAvatar'){
 $idAvatar=$_GET['id_pict'];
 $idMembre=$_SESSION['id'];
 	getNewAvatar($idAvatar,$idMembre);
-	//headBand();
 
 }
 if ($_GET['action']=='validAvatar') {

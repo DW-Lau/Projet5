@@ -58,7 +58,6 @@ class CommentsManager extends Manager{
 			
 		));
 		$newTopic=$bdd->query('SELECT forum.id_auteur, membre.id_membre FROM forum LEFT JOIN membre ON forum.id_auteur=membre.id_membre');
-		//header("Location:index.php?action=admin");
 	}
 	public function deletTopic($idTopic){
 		$bdd=$this->dbConnect();
@@ -71,7 +70,7 @@ class CommentsManager extends Manager{
 		$newComm=$bdd->prepare('INSERT INTO sujet(id_topic,id_auteurSujet,message, date_poste) VALUES(?,?,?, NOW())' );
 		$newComm->execute(array($idTopic,$idAuteur,$textTopic));
 		header("Location:./index.php?action=selectTopic&id=$idTopic");
-		//return $newComm;
+		
 	}
 	public function WarningComment($idTopic,$idSubject){
 		$bdd=$this->dbConnect();
@@ -79,10 +78,6 @@ class CommentsManager extends Manager{
 		$pbComm->execute(array(
 			'id_sujet'=> $idSubject
 		));
-		// $recupIdChap= $bdd->prepare('SELECT stat_message FROM sujet WHERE id_comm=:id_topic');
-		// $recupIdChap->execute(array(
-		// 	'id_topic'=> $idTopic
-		// ));
 		header("Location:./index.php?action=selectTopic&id=$idTopic");
 	}
 	public function listWarningComm(){

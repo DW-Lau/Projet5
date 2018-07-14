@@ -14,14 +14,17 @@
 		</aside>
 		<article id="rules">
 			<h4 class="subInfo">Avant de continuer..</h4>
-				<p> Remplissez le formulaire  pour rejoindre notre communautée! </br>
-					Devenez membre et profiter de  nouveau contenus.
-					Paratger vos impressions sur <a href="https://www.blender.org/about/projects/"> les films Open Movies de la fondation Blender</a>, avec les autres utilisateurs, en postant dans les différents topics du forum.  </br></br>
-
-					<i>En remplissant, et acceptant l'envoi du formulaire vous acceptez l'utilisation des cookies.</br>
-					Les informations renseignées ne seront utilisées que sur ce site.
+			<p>
+				Pour partager vos impressions et avis sur les films que vous venez de voir, rien de plus simple, inscrivez-vous ou connectez vous pour faire vivre la communauté du forum.Cependant quelque règles, tel que le respect d’autrui seront toujours à respecter. Ainsi que donnée du crédit aux travaux fournis.
+			</p>
+				<p id="mentions">
+					<i>
+						Les informations renseignées ne seront utilisées que sur ce site.
+				
+						Projet réalisé dans le cadre de la formation OpenClassroom: Développeur Web Junior.Projet 5: "Réaliser un projet personnel".
+					</i>
 				</p>
-				<p id="mentions">Projet réalisé dans le cadre de la formation OpenClassroom: Développeur Web Junior.Projet 5: "Réaliser un projet personnel".</p></i>
+				<p>Bonne visite parmi nous !</p>
 		</article>
 	</div>
 	<div id="slide">
