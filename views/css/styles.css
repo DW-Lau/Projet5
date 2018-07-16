@@ -158,6 +158,7 @@ section{
     border: white 2px solid;
     border-radius: 5px;
     background: white;
+    width: 100%;
 }
 
 #arrows-L,#arrows-R{
@@ -248,7 +249,9 @@ text-align: justify;
 .connexionGalerie{
     margin:2px;
 }
-
+#pano{
+    width: 100%;
+}
 #paysage{
     height: 200px;
 }
@@ -560,9 +563,14 @@ figcaption p{
 
 #eraseTopic{
     height: 35px;
-    width: 11%;
+    width: 15%;
     border-radius: 5px;
     background: white;
+    border: 2px solid #0e5585;
+    text-align: center;
+}
+#forum{
+    width: 100%;
 }
 /*TOPIC*/
 #topic{

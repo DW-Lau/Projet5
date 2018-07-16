@@ -28,7 +28,7 @@
 		</article>
 	</div>
 	<div id="slide">
-		<figure >
+		<figure id="pano">
 			<img src="views/Images/Screens/agent327_v2.png" alt="Agent327" id="land">
 				<figcaption id="movieLegend" >Agent 327</figcaption>
 		</figure>

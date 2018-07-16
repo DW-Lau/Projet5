@@ -1,5 +1,5 @@
 <section id="forumPage">
-	<article>
+	<article id="forum">
 		<h2>Blender Open Movie: le forum</h2>
 		<?php
 			while($listTopic = $getTopics->fetch()){
@@ -18,7 +18,7 @@
 
 				<?php 
 					if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
-						echo '<button id="eraseTopic"><a href="./index.php?action=eraseTopic&amp;id='. $listTopic['id_post'].'">Supprimer sujet</a></button>';
+						echo '<span id="eraseTopic"><a href="./index.php?action=eraseTopic&amp;id='. $listTopic['id_post'].'">Supprimer sujet</a></span>';
 					}
 					?>
 				

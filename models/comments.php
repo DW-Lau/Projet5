@@ -59,6 +59,7 @@ class CommentsManager extends Manager{
 				FROM forum 
 					LEFT JOIN membre 
 				ON forum.id_auteur=membre.id_membre');
+		header("Location:./index.php?action=forum");
 	}
 
 	public function deletTopic($idTopic){
@@ -69,6 +70,7 @@ class CommentsManager extends Manager{
 				ON forum.id_post=sujet.id_topic');
 		$dltTopic=$bdd->prepare('DELETE FROM forum WHERE id_post=?');
 		$dltTopic->execute(array($idTopic));
+		header("Location:./index.php?action=forum");
 	}
 
 	public function addnewComment($idTopic,$idAuteur,$textTopic){

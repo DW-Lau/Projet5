@@ -114,6 +114,7 @@ function createdTopic($auteurTopic,$titreTopic,$messageTopic){
 	
 	$newTopic= new CommentsManager();
 	$newSubject=$newTopic->createdTopic($auteurTopic,$titreTopic,$messageTopic);
+	//A redirection will be done on the comments.php
 }
 function chooseAvatar(){
 	$selectAvatar= new membersManager();
@@ -144,7 +145,7 @@ function selectTopic($topic){
 function deleteTopic($idTopic){
 	$dlt= new CommentsManager();
 	$eraseTopic=$dlt->deletTopic($idTopic);	
-		require('./views/pages/forum.php');
+		//A redirection will be done on the comments.php
 	}
 function newComment($idTopic,$idAuteur,$textTopic){
 	$newComm= new CommentsManager();
