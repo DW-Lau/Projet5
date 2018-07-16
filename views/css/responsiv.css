@@ -1,204 +1,243 @@
 @media all and (max-width: 650px) {
-h1{
-	margin: 2px;
-}
-h4{
-	margin: 0px;
-}
-p{
-	font-family: 'Raleway';
-	margin: 0px;
-}
+	h1{
+		margin: 2px;
+	}
+
+	h4{
+		margin: 0px;
+	}
+
+	p{
+		font-family: 'Raleway';
+		margin: 0px;
+	}
+
 	header{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#headband{
+		max-height: 90px;
+	}
+
+	#headband img{
+		width: 50%;
+	}
+
+	#nav_Log{
+	flex-direction: row;
+	width: 100%;
+	margin-top: 15px;
+	}
+
+	nav{
+		width: 55%;
+		font-size: 0.9em;
+	}
+
+	ul{
+		padding: 0px;
+	}
+
+	#recapProfil{
+		width: 40%;
+	}
+
+	.Profil{
+		width: 25%;
+	}
+
+	section{
+		width: 98%;
+		border: none;
+	}
+
+	#disclamer{
+		font-size: 0.9em;
+	}
+
+	#first_Page_Info{
+		width: 100%;
+	}
+
+	.FirstPageImg{
+		width: 60%;
+	}
+
+	.formatVideo{
+		width: 333px;
+		height: 230px;
+	}
+	/*CONNEXION*/
+	#conditions{
+	    display: flex;
+	    flex-direction: column-reverse;
+	}
+
+	#miniGalerie{
+	    max-width: 95%;
+	    margin: 0px;
+	}
+
+	#paysage{
+	   width: 100%;
+	}
+
+	#miniPortrait{
+	    width: 100%;
+	}
+
+	#poster{
+	    display: none;
+	}
+
+	#slide{
+	  display: none;
+	}
+
+	figure{
+	    margin: 0px;
+	}
+
+	#rules{
+		background: white;
+	    width: 93%;
+	}
+
+	#subBlock{
+		display: flex;
+		flex-direction: column;
+	    width: 100%;
+	    padding: 0px;
+	}
+
+	.formulaires{
+	   width: 100%;
+	}
+
+	form{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+	/*FIN DE CONNEXION*/
+
+	/*FILMS*/
+	#IntroMovies{
+		width: 95%;
+		margin: 0px;
+		padding: 5px;
+	}
+
+	#Thumbnails{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.thumbnais_Movie {
+	    width: 95%;
+	}
+
+	figcaption p{
+		padding: 0px;
+	}
+	/*FIN FILMS*/
+
+	/* FILM*/
+	#OneMovie{
+		width: 100%;
+	}
+
+	#moviePage{
+		width: 95%;
+	}
+
+	.presentation {
+	    display: flex;
+	    align-items: center;
+	    text-align: justify;
+	    flex-direction: column;
+	}
+
+	.movie{
+		width: 100%;
+	}
+	/*ADMIN*/
+	#controlleAdmin{
+		display: flex;
+		flex-direction: column;
+	}
+
+	#EntryAdmin{
+		width: 100%;
+	}
+
+	.bandeau{
+		display: none;
+	}
+
+	#newTopic{
+		width: 100%;
+	}
+
+	#newEntry label{
+		font-size: 0.9em;
+	}
+
+	#eraseTopic{
+		width: 25%;
+	}
+
+	#eraseTopic a{
+		font-size: 0.8em;
+	}
+	/*FIN ADMIN*/
+
+	/* PROFIL*/
+	#stat_modo,#stat_membre{
+		text-align: justify;
+	}
+
+	#gestion{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.reported{
+		font-size: 0.8em;
+		display: flex;
+	}
+
+	.deleteComm,.confirmComm{
+	padding: 2px;
 	display: flex;
-	flex-direction: column;
-}
-#headband{
-	max-height: 90px;
-}
-#headband img{
+	flex-direction:column;
 	width: 50%;
-}
-#nav_Log{
-flex-direction: row;
-width: 100%;
-margin-top: 15px;
-}
-nav{
-	width: 55%;
-	font-size: 0.9em;
-}
-ul{
-	padding: 0px;
-}
-#recapProfil{
-	width: 40%;
+	justify-content: center;
+	margin: 2px;
+	}
+	/* FORUM*/
+	.allAnswers{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.presentationAnswers{
+		width: 100%;
+		background: #0e558466;
+	}
+
+	.reponses{
+		width: 100%;
+	}
+
+	#message{
+		width: 95%;
+	}
+
+	#getNewComment{
+		align-items: flex-start;
+	}
 	
-
-}
-.Profil{
-	width: 25%;
-}
-section{
-	width: 98%;
-	border: none;
-}
-#disclamer{
-	font-size: 0.9em;
-}
-#first_Page_Info{
-	width: 100%;
-}
-.FirstPageImg{
-	width: 60%;
-}
-.formatVideo{
-	width: 333px;
-	height: 230px;
-}
-/*CONNEXION*/
-#conditions{
-    display: flex;
-    flex-direction: column-reverse;
-}
-#miniGalerie{
-    max-width: 95%;
-    margin: 0px;
-}
-#paysage{
-   width: 100%;
-}
-#miniPortrait{
-    width: 100%;
-}
-#poster{
-    display: none;
-}
-#slide{
-  display: none;
-}
-figure{
-    margin: 0px;
-}
-#rules{
-	background: white;
-    width: 93%;
-}
-#subBlock{
-	display: flex;
-	flex-direction: column;
-    width: 100%;
-    padding: 0px;
-}
-.formulaires{
-   width: 100%;
-}
-form{
-	display: flex;
-flex-direction: column;
-align-items: flex-end;
-}
-/*FIN DE CONNEXION*/
-
-/*FILMS*/
-#IntroMovies{
-	width: 95%;
-	margin: 0px;
-	padding: 5px;
-}
-
-#Thumbnails{
-	display: flex;
-	flex-direction: column;
-}
-.thumbnais_Movie {
-    width: 95%;
-}
-figcaption p{
-	padding: 0px;
-}
-
-/*FIN FILMS*/
-
-/* FILM*/
-#OneMovie{
-	width: 100%;
-}
-#moviePage{
-	width: 95%;
-}
-.presentation {
-    display: flex;
-    align-items: center;
-    text-align: justify;
-    flex-direction: column;
-}
-.movie{
-	width: 100%;
-}
-
-/*ADMIN*/
-#controlleAdmin{
-	display: flex;
-	flex-direction: column;
-}
-#EntryAdmin{
-	width: 100%;
-}
-.bandeau{
-	display: none;
-}
-#newTopic{
-	width: 100%;
-}
-#newEntry label{
-	font-size: 0.9em;
-}
-#eraseTopic{
-	width: 25%;
-
-}
-#eraseTopic a{
-	font-size: 0.8em;
-}
-/*FIN ADMIN*/
-/* PROFIL*/
-#stat_modo,#stat_membre{
-	text-align: justify;
-}
-#gestion{
-	display: flex;
-	flex-direction: column;
-}
-.reported{
-	font-size: 0.8em;
-	display: flex;
-}
-.deleteComm,.confirmComm{
-padding: 2px;
-display: flex;
-flex-direction:column;
-width: 50%;
-justify-content: center;
-margin: 2px;
-}
-
-/* FORUM*/
-.allAnswers{
-	display: flex;
-	flex-direction: column;
-}
-.presentationAnswers{
-	width: 100%;
-	background: #0e558466;
-}
-.reponses{
-	width: 100%;
-}
-#message{
-	width: 95%;
-}
-#getNewComment{
-	align-items: flex-start;
-}
 }

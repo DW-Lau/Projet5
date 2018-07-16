@@ -29,12 +29,11 @@
 	</div>
 	<div id="slide">
 		<figure >
-				<img src="views/Images/Screens/agent327_v2.png" alt="Agent327" id="land">
+			<img src="views/Images/Screens/agent327_v2.png" alt="Agent327" id="land">
 				<figcaption id="movieLegend" >Agent 327</figcaption>
-			</figure>
+		</figure>
 	</div>
 		<div id="subBlock">
-
 			<div class="formulaires">
 				<fieldset>
 					<h3>Inscription:</h3>
@@ -56,7 +55,6 @@
 
 							<input type="submit" id="valide" value="Valider" />
 						</form>
-				
 
 					<?php
 					if (isset($pseudoPresent)) {
@@ -70,30 +68,34 @@
 					}
 					?>
 				</fieldset>
-			</div>
-
+			</div><!-- end of class formulaires -->
 			<div class="formulaires">
 				<fieldset>
 					<h3>Connexion: </h3>
 					<form method="post" action="./index.php?action=logger">
-						<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudoMember" required></label><br />
-						<label name="checkpwd">Mot de passe:<input type="password" name="checkpwd" id="motDpasseMember" required /></label><br />
+						<label name="checkPseudo"> Pseudo:
+							<input type="text" name="checkPseudo" id="pseudoMember" required>
+						</label><br />
+
+						<label name="checkpwd">Mot de passe:
+							<input type="password" name="checkpwd" id="motDpasseMember" required />
+						</label><br />
+
 						<input type="submit" id="validation" value="Valider" />
-					
-					</form></fieldset>
+					</form>
+
 						<?php
-						if (isset($noNickName)) {
-							echo "<p>".$noNickName."</p>";
-						}
-						if(isset($NoMatch)){
-							echo "<p>".$NoMatch."</p>";
-						}
+							if (isset($noNickName)) {
+								echo "<p>".$noNickName."</p>";
+							}
+							if(isset($NoMatch)){
+								echo "<p>".$NoMatch."</p>";
+							}
 						?>
+				</fieldset>
 			</div>
 		</div> <!-- end of subBlock -->
-	
-	
-</section>
 
+</section>
 </body>
 </html>

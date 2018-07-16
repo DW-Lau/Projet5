@@ -68,9 +68,9 @@ class membersManager extends Manager
 			 	$_SESSION["pseudo"]=$pseudo;
 
 				 header("Location:./index.php");
-		
 			}
 	}
+
 	public function getInfo($idMembre){
 		$bdd=$this->dbConnect();
 		$getAllInfo=$bdd->prepare('SELECT pseudo,status_membre,date_format(date_membre,"%d.%m.%y")as date_membre, avatar, membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE id_membre =:idmembre');
@@ -79,6 +79,7 @@ class membersManager extends Manager
 		));
 		return $getAllInfo;
 	}
+
 	public function updateInfo($idMembre,$pseudo,$avatar){
 		$bdd=$this->dbConnect();
 		$updateInfo=$bdd->prepare('SELECT pseudo, avatar, membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE id_membre =:idmembre');
@@ -92,6 +93,7 @@ class membersManager extends Manager
 			'lien'=>$avatar
 		));
 	}
+
 	public function upGradeRights($id_membre){
 		$bdd=$this->dbConnect();
 		$id_membre;
@@ -101,6 +103,7 @@ class membersManager extends Manager
 		));
 		header("Location:./index.php?action=admin");
 	}
+
 	public function downGradeRights($id_membre){
 		$bdd=$this->dbConnect();
 		$id_membre;
@@ -110,6 +113,7 @@ class membersManager extends Manager
 		));
 		header("Location:./index.php?action=admin");
 	}
+
 	public function listMembers(){
 		$bdd=$this->dbConnect();
 		$listMmbrs= $bdd->query('SELECT id_membre,pseudo, status_membre FROM membre WHERE status_membre=\'1\'');
@@ -121,11 +125,13 @@ class membersManager extends Manager
 		$listMd= $bdd->query('SELECT id_membre,pseudo, status_membre FROM membre WHERE status_membre=\'2 \'');
 		return $listMd;
 	}
+
 	public function choseAvatar(){
 		$bdd=$this->dbConnect();
 		$listAvatar=$bdd->query('SELECT * FROM avatar');
 		return $listAvatar;
 	}
+
 	public function newAvatarProfil($idAvatar,$idMembre){
 		$bdd=$this->dbConnect();
 		$newPicture=$bdd->prepare('UPDATE membre SET avatar= ? WHERE id_membre= ?');
@@ -144,6 +150,5 @@ class membersManager extends Manager
 
 		 $_SESSION['avatar']=$getnewAvatar['lien_avatar'];
 		header("Location:./index.php");
-
 	}
 }

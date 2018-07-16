@@ -8,8 +8,7 @@ function entry($pseudo,$pwd,$pseudoPresent){
 
 	$newMember= new membersManager();
 	$getNewMember= $newMember->NewUser($pseudo,$pwd,$pseudoPresent);
-
-	//require('./views/pages/membre.php');
+	//A redirection will be done on the Adminpage.php
 }
 function checkInfo($checkPseudo,$checkpwd){
 	$checkUser= new membersManager();
@@ -24,7 +23,6 @@ function  getInfoUser($idMembre){
 	$getAllWarningComm= new CommentsManager();
 	$listWarningComm=$getAllWarningComm->listWarningComm(); 
 	
-
 	require('./views/pages/membre.php');
 }
 
@@ -34,7 +32,7 @@ function sessionOut(){
 function getNewAvatar($idAvatar,$idMembre){
 	$newProfilPicture= new membersManager();
 	$newPicture=$newProfilPicture->newAvatarProfil($idAvatar,$idMembre);
-	//require('./index.php');
+	//A redirection will be done on the Adminpage.php
 }
 /*--------------------------------MESSAGE LOGIN----------------------------------------*/
 function msgPWD($message){
@@ -97,7 +95,7 @@ function submitEntry($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$r
 
 	$submit= new MoviesManager();
 	$submitMovie= $submit->submitedMovie($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$resultat);
-	//require('./views/pages/adminpage.php');
+	//A redirection will be done on the Adminpage.php
 }
 function deleteMovie($moviedeleted){
 	$dlt= new MoviesManager();
@@ -132,9 +130,7 @@ function allTopics(){
 	$topics= new CommentsManager();
 	$getTopics= $topics->getAllTopics();
 	
-require("./views/pages/forum.php");
-	
-	
+	require("./views/pages/forum.php");
 }
 function selectTopic($topic){
 	$oneTopic= new CommentsManager();
@@ -153,12 +149,12 @@ function deleteTopic($idTopic){
 function newComment($idTopic,$idAuteur,$textTopic){
 	$newComm= new CommentsManager();
 	$addNewComm= $newComm-> addnewComment($idTopic,$idAuteur,$textTopic);
-	//require('./views/pages/topic.php');
+	//A redirection will be done on the comments.php
 }
 function warningComm($idTopic,$idSubject){
 	$wngComm= new CommentsManager();
 	$warningComment= $wngComm->WarningComment($idTopic,$idSubject);
-	//require('./views/pages/topic.php');
+	//A redirection will be done on the comments.php
 }
 
 function deleteComm($idSubject){

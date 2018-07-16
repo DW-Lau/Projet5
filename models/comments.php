@@ -11,8 +11,6 @@ class CommentsManager extends Manager{
 			ON forum.id_auteur=membre.id_membre
 				LEFT JOIN avatar
 			ON membre.avatar=avatar.id_avatar');
-		
-		
 		return $Topics;
 	}
 	public function oneTopic($topic){
@@ -29,8 +27,8 @@ class CommentsManager extends Manager{
 		$sujet->execute(array(
 			':id_post'=>$topic));
 		return $sujet;
-	
 	}
+
 	public function answerOneTopic($topic){
 
 		$bdd=$this->dbConnect();
@@ -48,6 +46,7 @@ class CommentsManager extends Manager{
 			':id_topic'=>$topic));
 		return $answer;
 	}
+
 	public function createdTopic($auteurTopic,$titreTopic,$messageTopic){
 		$bdd=$this->dbConnect();
 		$newTopic=$bdd->prepare('INSERT INTO forum ( id_auteur,titre_post,message_post, date_post) VALUES(:id_auteur,:titre_post,:message_post, NOW() )' );
@@ -55,16 +54,23 @@ class CommentsManager extends Manager{
 			'id_auteur'=>$auteurTopic,
 			'titre_post'=>$titreTopic,
 			'message_post'=>$messageTopic
-			
 		));
-		$newTopic=$bdd->query('SELECT forum.id_auteur, membre.id_membre FROM forum LEFT JOIN membre ON forum.id_auteur=membre.id_membre');
+		$newTopic=$bdd->query('SELECT forum.id_auteur, membre.id_membre 
+				FROM forum 
+					LEFT JOIN membre 
+				ON forum.id_auteur=membre.id_membre');
 	}
+
 	public function deletTopic($idTopic){
 		$bdd=$this->dbConnect();
-		$dltTopic=$bdd->query('SELECT id_post, sujet.id_topic FROM forum LEFT JOIN sujet ON forum.id_post=sujet.id_topic');
+		$dltTopic=$bdd->query('SELECT id_post, sujet.id_topic 
+				FROM forum 
+					LEFT JOIN sujet
+				ON forum.id_post=sujet.id_topic');
 		$dltTopic=$bdd->prepare('DELETE FROM forum WHERE id_post=?');
 		$dltTopic->execute(array($idTopic));
 	}
+
 	public function addnewComment($idTopic,$idAuteur,$textTopic){
 		$bdd=$this->dbConnect();
 		$newComm=$bdd->prepare('INSERT INTO sujet(id_topic,id_auteurSujet,message, date_poste) VALUES(?,?,?, NOW())' );
@@ -82,7 +88,11 @@ class CommentsManager extends Manager{
 	}
 	public function listWarningComm(){
 		$bdd=$this->dbConnect();
-		$listWarning=$bdd->query('SELECT id_sujet,id_topic,sujet.id_auteurSujet,message,date_format(date_poste,"%d.%m.%y")as date_Poste, membre.id_membre, pseudo FROM sujet INNER JOIN membre on sujet.id_auteurSujet=membre.id_membre WHERE stat_message=1');
+		$listWarning=$bdd->query('SELECT id_sujet,id_topic,sujet.id_auteurSujet,message,date_format(date_poste,"%d.%m.%y")as date_Poste, membre.id_membre, pseudo 
+					FROM sujet 
+						INNER JOIN membre
+					ON sujet.id_auteurSujet=membre.id_membre 
+					WHERE stat_message=1');
 		return $listWarning;
 	}
 

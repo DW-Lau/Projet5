@@ -2,12 +2,15 @@ body{
 	background: #0c52828a;
 	margin:0px;
 }
+
 a{
 	text-decoration: none;
 }
+
 p{
 	font-family: 'Raleway';
 }
+
 h1 a{
 	color: #0e5584;
     font-size: 0.9em;
@@ -15,6 +18,7 @@ h1 a{
     border-radius: 5px;
     font-family: Raleway;
 }
+
 h2{
     margin: 5px;
     font-family: 'Helvetica';
@@ -25,33 +29,37 @@ h2{
     padding-left: 10px;
     padding-right: 10px;
 }
+
 h3{
     margin: 5px;
     font-family: 'Helvetica';
     border-bottom: #045484 solid 2px;
     border-radius: 5px;
 }
+
 h4{
 	text-align: center;
     border-top: solid lightgray 2px;
     border-radius: 5px;
     font-family: 'Helvetica';
 }
+
 header{
 	background: white;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
+
 #headband{
 	display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 #headband img{
 	width: 50%;
 }
-
 /*---------------MENU------------------*/
 #nav_Log{
 	display: flex;
@@ -59,30 +67,33 @@ header{
     width: 40%;
     align-items: center;
 }
+
 nav{
 	width: 80%;
      font-family: Raleway;
      font-size: 1em;
 }
+
 nav a{
 	text-decoration: none;
     color: #0e5584;
 }
+
 ul li:hover{
     background: #ea8e32;
 
 }
+
 ul{
 	display: flex;
     justify-content: space-around;
 }
+
 ul li{
 	list-style: none;
     border-left: solid 2px #0e5584;
     border-radius: 6%;
-   
     padding: 5px;
-
 }
 
 #recapProfil{
@@ -94,16 +105,20 @@ ul li{
     border-top: 2px solid #ea8e32;
     border-bottom: 2px solid #ea8e32;
 }
+
 .Profil{
 	border-radius: 50%;
     width: 20%;
 }
+
 #pseudoProfil{
     text-align: center;
 }
+
 .fa-sign-out-alt{
     color: #ea8e32;
 }
+
 section{
 	width: 80%;
     margin: auto;
@@ -114,23 +129,27 @@ section{
     border-left: 2px solid #0e5584;
     border-right: 2px solid #0e5584;
     background: #fffffff2;
-   /* height: 820px;*/
 }
+
 #diaporama{
     width: 100%;
 }
+
 #diapo{
     width: 90%;
     margin: auto;
 }
+
 #carrousel{
     max-height: 200px;
 }
+
 #legende{
     font-family: 'Helvetica';
     font-size: 0.8em;
     text-align: center;
 }
+
 #diapoFirstPage{
     display: flex;
     align-items: center;
@@ -140,11 +159,13 @@ section{
     border-radius: 5px;
     background: white;
 }
+
 #arrows-L,#arrows-R{
      font-size: 2em;
     width: 5%;
     text-align: center;  
 }
+
 #chevron-r,#chevron-l{
     color:  #e38831;
 }
@@ -153,10 +174,12 @@ section{
 	width: 80%;
    
 }
+
 .formatVideo{
     width:560px;
      height:315px;
 }
+
 #disclamer{
 	background: white;
     padding: 5px;
@@ -167,14 +190,17 @@ section{
     margin: auto;
     width: 90%;
 }
+
 #disclamerParagraphes{
 font-size: 1em;
 padding: 5px;
 text-align: justify;
 }
+
 #first_Page_Info{
     width: 90%;
 }
+
 #last_Movie_Out{
 	display: flex;
     flex-direction: column;
@@ -186,12 +212,14 @@ text-align: justify;
     border-left: 2px solid #e38831;
     border-right: 2px solid #e38831;
 }
+
 #resume_Last_Movie{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     text-align: justify;
 }
+
 #presentation{
 	display: flex;
     flex-direction: column;
@@ -199,11 +227,11 @@ text-align: justify;
     padding: 5px;
 }
 
-
 /*CONNEXION*/
 #conditions{
     display: flex;
 }
+
 #miniGalerie{
     padding: 0px;
     max-width: 46%;
@@ -216,37 +244,47 @@ text-align: justify;
     border-right: solid 2px #ea8f34;
     background: white;
 }
+
 .connexionGalerie{
     margin:2px;
 }
+
 #paysage{
     height: 200px;
 }
+
 #miniPortrait{
     height: 180px;
 }
+
 #poster{
     height: 200px;
 }
+
 #slide{
     background: white;
-border-top: #045484 solid 2px;
-border-bottom: #045484 solid 2px;
-padding: 5px;
-border-radius: 5px;
-width: 90%;
+    border-top: #045484 solid 2px;
+    border-bottom: #045484 solid 2px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 90%;
 }
+
 figure{
     margin: 0px;
+    width: 33%;
 }
+
 #land{
     width: 50%;
 }
+
 #movieLegend{
     text-align: center;
     font-size: 1em;
     font-family: 'Raleway';
 }
+
 #rules{
 	background: white;
     width: 54%;
@@ -257,12 +295,14 @@ figure{
     border-right: 2px solid #e38831;
     border-radius: 5px;
 }
+
 #subBlock{
 	    display: flex;
     margin: auto;
     width: 93%;
     padding: 5px;
 }
+
 .formulaires{
    width: 50%;
     background: white;
@@ -271,14 +311,16 @@ figure{
     display: flex;
     flex-direction: column;
 }
+
 .formulaires fieldset{
     border: none;
-display: flex;
-flex-direction: column;
-align-items: baseline;
-text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
 }
 /*FILMS*/
+
 #IntroMovies{
     width: 80%;
     margin: auto;
@@ -287,14 +329,17 @@ text-align: left;
     border-left: 2px solid #e38831;
     border-right: 2px solid #e38831;
 }
+
 #Thumbnails{
     display: flex;
     flex-wrap: wrap;
     background: white;
 }
+
 a img{
     width: 50%;
 }
+
 .thumbnais_Movie{
     width: 32%;
     padding: 5px;
@@ -303,9 +348,11 @@ a img{
     flex-direction: column;
     align-items: center;
 }
+
 figcaption{
     text-align: justify;
 }
+
 figcaption p{
     padding-right: 5px;
     padding-left: 5px;
@@ -314,14 +361,16 @@ figcaption p{
 #imgPoster{
     height: 350px;
 }
+
 #moviePage{
     background: white;
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 80%;
-margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
 }
+
 .presentation{
     display: flex;
     align-items: center;
@@ -329,36 +378,40 @@ margin: auto;
     text-align: justif
 
 }
+
 .presentation img{
     margin: 5px;
 }
+
 #warningVideo{
     font-size: 0.8em;
 }
-
 /*Admin*/
+
 #profil{
-        display: flex;
+    display: flex;
     width: 50%;
     align-items: center;
     justify-content: space-around;
     padding: 5px;
 }
+
 .profilPicture{
-   border: solid 2px #e78c34;
-   border-radius: 50%;
-    width: 35%;
-    
+    border: solid 2px #e78c34;
+    border-radius: 50%;
+    width: 35%; 
 }
+
 .avatar{
     border-radius: 5px;
     padding: 5px;
     background: #e78c34;
-
 }
+
 .avatar a{
     color: white;
 }
+
 #headBandUpDate{
     margin: 5px;
     border-top: #0f5685 solid 2px;
@@ -369,33 +422,37 @@ margin: auto;
     width: 90%;
     background: #ffffff96;
 }
+
 #listAdminTopics, #listMember, #commentsPannel{
     display: flex;
     flex-direction: column;
     text-align: justify;
     padding: 5px;
-
 }
+
 #controlleAdmin{
    display: flex;
     width: 100%;
     justify-content: space-around;
     align-items: center;
 }
+
 #EntryAdmin{
-        height: 532px;
+    height: 532px;
     overflow: auto;
     background: white;
     width: 22%;
     border-top: #e78c34 2px solid;
     border-radius: 5px;
 }
+
 .warning{
     border-bottom: #0f5685 solid 2px;
     width: 80%;
     margin: auto;
     padding: 5px;
 }
+
 #newEntry{
     display: flex;
     flex-direction: column;
@@ -404,14 +461,15 @@ margin: auto;
     border-top: solid 2px #0e5585;
     border-radius: 5px;
 }
+
 #newEntry label{
     font-family: 'Raleway';
     font-size: 1.1em;
 }
+
 .bandeau{
     height: 450px;
     border: solid 1px #0e5585
-
 }
 /*MEMBRES*/
 #infoPerso{
@@ -420,12 +478,13 @@ margin: auto;
     width: 90%;
     background: white;
 }
+
 #espaceMembre{
     display: flex;
-flex-wrap: wrap;
-width: 80%;
-align-items: center;
-justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 80%;
+    align-items: center;
+    justify-content: space-evenly;
 }
 /*BUTTONS*/
 
@@ -435,6 +494,10 @@ justify-content: space-evenly;
     border-radius: 20px;
 }
 
+#plusModo,#minusModo,#plusMembre,#minusMembre,#plusComm,#minusComm{
+    padding: 5px;
+}
+
 /*FORUM*/
 .Avatar{
     height: 50px;
@@ -442,6 +505,7 @@ justify-content: space-evenly;
     border: white 2px solid;
     border-radius:50%;
 }
+
 .infoMember{
     display: flex;
     align-items: center;
@@ -449,6 +513,7 @@ justify-content: space-evenly;
     border-top: solid 2px #0e5585;
     padding: 5px;
 }
+
 .message{
     border-bottom: solid 2px #ea8e32;
     margin-bottom: 5px;
@@ -456,22 +521,25 @@ justify-content: space-evenly;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 5px;
-    
+    padding: 5px;  
 }
+
 .message a{
     color: black;
     font-family: 'Raleway';
     font-size: 1em;
 }
+
 #forumPage{
     display: flex;
     flex-direction: column-reverse;
 }
+
 #newTopic{
     width: 80%;
     margin: auto;
 }
+
 .newSubject{
     font-family: 'Raleway';
     background: #e6edf2;
@@ -482,27 +550,30 @@ justify-content: space-evenly;
     border-radius: 5px;
     text-align: left
 }
+
 #send{
     background: #ec9035;
     font-size: 1.1em;
     color: #fff;
     width: 50%;
 }
+
 #eraseTopic{
     height: 35px;
     width: 11%;
     border-radius: 5px;
     background: white;
 }
-
 /*TOPIC*/
 #topic{
     width: 100%;
 }
+
 .listAnswer{
     background: white;
     padding-top: 5px;
 }
+
 .infoMessageMember{
     display: flex;
     align-items: center;
@@ -514,74 +585,82 @@ justify-content: space-evenly;
     padding: 5px;
     border-radius: 5px;
 }
+
 .titreMessage{
     text-align: center;
 }
+
 .allAnswes{
     border-bottom: #e48932 solid 2px;
     border-top: #0d5383 solid 2px;
     background: #0e5584;
     border-radius: 5px;
-
-        display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .presentationAnswers{
     display: flex;
     align-items: center;
     justify-content: center;
-  margin: 0px;
-        background: #0e5584;
+    margin: 0px;
+    background: #0e5584;
     width: 30%;
     border-bottom: #ec9136 solid 2px;
     border-radius: 0px 0px 5px 5px;
 }
+
 .attentionRequired{
     font-style: italic;
     font-size: 0.8em;
 }
+
 .deleteComm, .confirmComm{
     border: solid #e98c34 1px;
     border-radius: 5px;
     padding: 5px;
     background: #e98c34;
 }
+
 .deleteComm a,.confirmComm a {
     font-size: 1em;
     color: white;
 }
+
 .reponses{
-       text-align: justify;
+    text-align: justify;
     width: 70%;
     margin: 0px;
     border-bottom: #0e5584 solid 2px;
     border-radius: 5px;
     padding-left: 5px;
 }
+
 #message{
     border-top: solid #ec9136 2px;
     border-radius: 5px;
     width: 90%;
     background: white;
 }
+
 .allAnswers{
     display: flex;
     padding: 5px;
 }
-
 /*Avatar*/
 #galerie{
-        display: flex;
-flex-wrap: wrap;
-background: white;
-padding: 5px;
-border-left: 2px solid #ec9136;
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    padding: 5px;
+    border-left: 2px solid #ec9136;
     border-right: 2px solid #ec9136;
     border-radius: 5px;
-        width: 90%;
+     width: 90%;
     margin: auto;
 }
+
 .imageAvatar{
     border: white solid 2px;
     border-radius: 29px;

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8"/>
 
-		<meta name="description" content="Fiches et posts sur l'univers des films Blender,(Sité réalisé dans le cadre de la formation OpenClassroom)">
+		<meta name="description" content="Fiches et forum sur les films d'animation de la fondation Blender Open Movie,(Sité réalisé dans le cadre de la formation OpenClassroom)">
 
-		<meta name="keywords" content="Films, Forum" />
+		<meta name="keywords" content="Films, Forum, Blender,3D, animation,court-métrage,logiciel, fondation, Open Movie" />
 			<!--Meta Facebook-->
-		<meta property="og:title" content="" />
+		<meta property="og:title" content="Les films de la fondation Blender Open Movie" />
 		<meta property="og:type" content="article" /> 
 		<meta property="og:url" content="http://www.projet5.laura-lariccia.fr" /> 
 		<meta property="og:image" content="images/" /> 
@@ -40,49 +40,51 @@
 				height:'250px'
 			});
 		</script>
-		<title>Blender</title>
+
+		<title>Fondation Blender Open Mobie</title>
 
 	</head>
 
-		<body>	
-			<header>
-				<div id="headband">
-					<img src="views/Images/Logo_Blender.png" alt="Logo Blender">
+	<body>	
+		<header>
+			<div id="headband">
+				<img src="views/Images/Logo_Blender.png" alt="Logo Blender">
 					<h1>
 						<a href="./index.php">  Blender Open Projects </a>
 					</h1>
 					
-				</div>
+			</div>
 					
-				<div id="nav_Log">
-					<nav>
-						<ul>
+			<div id="nav_Log">
+				<nav>
+					<ul>
+						<li>
+							<a href="./index.php?action=films">Films</a>
+						</li>
+						<li>
+							<a href="./index.php?action=forum">Forum</a>
+						</li>
+						<?php
+							if (!isset($_SESSION['pseudo'])){
+						?> 
 							<li>
-								<a href="./index.php?action=films">Films</a>
+								<a href="./index.php?action=connexion">Connexion</a>
 							</li>
-							<li>
-									<a href="./index.php?action=forum">Forum</a>
-							</li>
-							<?php
-								if (!isset($_SESSION['pseudo'])){
-							?> 
-								<li>
-									<a href="./index.php?action=connexion">Connexion</a>
-								</li>
-							<?php
-								}
-							?>
-							<?php
-								if(isset($_SESSION['droits'])&&$_SESSION['droits']==3) {
-									echo "<li><a href='./index.php?action=admin'>Admin</a></li>";
-									}elseif(isset($_SESSION['droits'])&&$_SESSION['droits']==2||isset($_SESSION['droits'])&&$_SESSION['droits']==1){
-										echo "<li><a href='./index.php?action=espace'>Profil</a></li>";
-									}
-							?> 
-								
-						</ul>
-					</nav>
-					<div id="recapProfil">
+						<?php
+							}
+						?>
+						<?php
+							if(isset($_SESSION['droits'])&&$_SESSION['droits']==3) {
+								echo "<li><a href='./index.php?action=admin'>Admin</a></li>";
+							}
+							elseif(isset($_SESSION['droits'])&&$_SESSION['droits']==2||isset($_SESSION['droits'])&&$_SESSION['droits']==1){
+								echo "<li><a href='./index.php?action=espace'>Profil</a></li>";
+							}
+						?> 
+					</ul>
+				</nav>
+				
+				<div id="recapProfil">
 						<?php
 							if (isset($_SESSION['pseudo'] ) ) {
 								if (isset($_SESSION['avatar'])) {
@@ -94,6 +96,6 @@
 								echo "<p id='pseudoProfil'> Bonjour ".$_SESSION['pseudo']."<br/><a href='./index.php?action=logOut'><i class='fas fa-sign-out-alt'>Déconnexion</i></a><p>";
 							}
 						?>
-						</div>
 				</div>
-			</header>
+			</div>
+		</header>
