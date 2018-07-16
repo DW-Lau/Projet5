@@ -15,7 +15,7 @@
 		<article id="rules">
 			<h4 class="subInfo">Avant de continuer..</h4>
 			<p>
-				Pour partager vos impressions et avis sur les films que vous venez de voir, rien de plus simple, inscrivez-vous ou connectez vous pour faire vivre la communauté du forum.Cependant quelque règles, tel que le respect d’autrui seront toujours à respecter. Ainsi que donnée du crédit aux travaux fournis.
+				Pour partager vos impressions et avis sur les films que vous venez de voir, rien de plus simple, inscrivez-vous ou connectez vous pour faire vivre la communauté du forum.Cependant quelques règles, comme le respect d’autrui seront toujours à respecter. Ainsi que donner du crédit aux travaux fournis.
 			</p>
 				<p id="mentions">
 					<i>

@@ -29,19 +29,19 @@
 
 			<p id="disclamerParagraphes">
 				C'est en 2005 que débutait l'aventure de la fondation Blender Open Movie.<br />
-				Publié sous le registre des creatives communs, les animations et films créés par  la fondation et les artistes enrôlé pour ces projets ont laissé parler leurs savoir-faire et la puissance de leur logiciel Blender , à l'occasion de ses cours métrages.<br />
-				Au cours de ces 12 dernières années les films et projets ce sont multipliés pour être maintenant au nombre de 9, touchants à des sujets et technique de modélisation/ captures aussi riches que variés.<br />
-				Ainsi, vous pourrez retrouver sur ce site une liste complète ( à la date de juillet 2018) des travaux réalisés par ces équipes opérants dans la fondation Blender Open Movie. Un forum est également proposé pour les membres du site, afin que chacun exprime son ressentie ou  ses préférences. <br />
+				Publiés sous le registre des creatives communs, les animations et films créés par  la fondation et les artistes enrôlés pour ces projets ont laissé parler leurs savoir-faire et la puissance de leur logiciel Blender , à l'occasion de ces cours métrages.<br />
+				Au cours de ces 12 dernières années les films et projets se sont multipliés pour être maintenant au nombre de 9, touchant à des sujets et technique de modélisation/captures aussi riches que variés.<br />
+				Ainsi, vous pourrez retrouver sur ce site une liste complète ( à la date de juillet 2018) des travaux réalisés par ces équipes opérant dans la fondation Blender Open Movie. Un forum est également proposé pour les membres du site, afin que chacun exprime leur ressenti ou  ses préférences. <br />
 
-				Bien que sous la licence des creatives communs, Tous les films/courts-métrages et images qui sont utilisé sur ce site sont les travaux de la fondation <a href="https://www.blender.org/about/projects/">Blender Open Movie</a> et du logiciel <a href="https://www.blender.org/">Blender</a>.<br />
-				Néanmoins, le site qui vous est présenté est le résultat du Projet 5 : « Un Projet personnalisé » issue de la formation Développeur Web Junior proposé par OpenClassroom. <br />
+				Bien que sous la licence des creatives communs, Tous les films/courts-métrages et images qui sont utilisés sur ce site sont les travaux de la fondation <a href="https://www.blender.org/about/projects/">Blender Open Movie</a> et du logiciel <a href="https://www.blender.org/">Blender</a>.<br />
+				Néanmoins, le site qui vous est présenté est le résultat du Projet 5 : « Un Projet personnalisé » issu de la formation Développeur Web Junior proposé par OpenClassroom. <br />
 				Bonne visite.
 			</p>
 			<?php
 				while($movie = $upDateMovie->fetch() ){ 
 			?>
 			<h3>
-				Dernier Film sortie: <?php echo $movie['titre_film']?> 
+				Dernier Film sorti: <?php echo $movie['titre_film']?> 
 			</h3>
 
 		 	<div id="resume_Last_Movie"> 
@@ -65,8 +65,8 @@
      						<i class="fas fa-deaf"></i>
      					</span>
 			     	
-			     	   <p id="activerSousTitre">Rappel: Les vidéos issue de l\'institue Blender Open Movie sont sous-titrés. <br />
-			        		S\'il ne sont pas automatiquement activés, l\'option est disponible lors de la lecture. Pour cela, rendez-vous dans les paramètres de la vidéo est sélectionner l\'option Sous-titrage.
+			     	   <p id="activerSousTitre">Rappel: Les vidéos issues de l\'institut Blender Open Movie sont sous-titrés. <br />
+			        		S\'ils ne sont pas automatiquement activés, l\'option est disponible lors de la lecture. Pour cela, rendez-vous dans les paramètres de la vidéo et sélectionner l\'option Sous-titrage.
 			    		 </p>';
 				?> 
 			<?php

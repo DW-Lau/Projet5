@@ -25,8 +25,8 @@
 					elseif($recapInfo['status_membre']==2){
 						$recapInfo['status_membre']="Modérateur du forum";
 						echo '<p>Vous êtes '. $recapInfo['status_membre'].'</p>
-							<p id="stat_modo"> En tant que modérateur du forum , vous veillerez à la bonne tenu de ce dernier et des bonnes régles de conduites de ses membres, vous pouvez aider l\'administrateur à maintenir l\'ordre dans la vie de la communauté.<br />
-								 Ainsi vous pourrez supprimer des sujets ou des commentaires signaler, mais encore en créer de nouveaux.
+							<p id="stat_modo"> En tant que modérateur du forum , vous veillerez à la bonne tenue de ce dernier et des bonnes régles de conduite de ses membres, vous pouvez aider l\'administrateur à maintenir l\'ordre dans la vie de la communauté.<br />
+								 Ainsi vous pourrez supprimer des sujets ou des commentaires signalés, mais encore en créer de nouveaux.
 							 </p>';
 					}
 				?>

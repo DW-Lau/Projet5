@@ -12,7 +12,7 @@
       			echo '<img src="views/Images/Films/'. $movie['img_link'].'" alt="'. $movie['img_link'].'" id="imgPoster"'; 
       		?> 
       			<i>
-      				<?php echo htmlspecialchars($movie['titre_film'])?> est sortie en:  <?php echo htmlspecialchars($movie['date_fr'])?>.</br>
+      				<?php echo htmlspecialchars($movie['titre_film'])?> est sorti en:  <?php echo htmlspecialchars($movie['date_fr'])?>.</br>
       			</i>
             <?php echo htmlspecialchars_decode($movie['resume'])?>
   		  </p>
