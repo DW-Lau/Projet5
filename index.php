@@ -67,7 +67,7 @@ if (isset($_GET['action']))
 	if($_GET['action']=='admin'){
 		$idMembre=$_SESSION['id'];
 		adminPage($idMembre);
-		allTopics();	
+		
 	}
 	if ($_GET['action']=='selectAvatar') {
 		chooseAvatar();

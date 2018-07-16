@@ -165,9 +165,8 @@
 <!-- New topic is call by "Back.php" -->
 	</div><!-- end of div "controlleAdmin" -->
 		<?php
-			if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
-				require("./views/pages/newtopic.php");
-			}
+			require("./views/pages/forum.php");
+			
 		?>
 </section>
 </body>

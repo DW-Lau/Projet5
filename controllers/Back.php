@@ -79,6 +79,9 @@ function adminPage($idMembre){
 	$listModos= new membersManager();
 	$AllModerateurs=$listModos->listModo();
 
+	$topics= new CommentsManager();
+	$getTopics= $topics->getAllTopics();
+	
 	require('./views/pages/adminpage.php');
 	
 }
