@@ -28,7 +28,7 @@
 			$getTopics->closeCursor();
 		?>
 		<?php
-			if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
+			if(isset($_SESSION['id'])&&$_SESSION['droits']!=1){
 				require("./views/pages/newtopic.php");
 			}
 		?>

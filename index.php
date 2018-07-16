@@ -33,8 +33,6 @@ if (isset($_GET['action']))
 				if (isset($pseudo)&&($pwd==true) ) {
 					$pseudoPresent=0;
 					$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
-
-					headBand();
 					entry($pseudo,$pwd,$pseudoPresent);
 					infoIssues($infoIssues);
 				}

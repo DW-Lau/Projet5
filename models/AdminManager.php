@@ -66,8 +66,7 @@ class membersManager extends Manager
 	   			$_SESSION['droits']=$SessionInfos['status_membre'];
 				$_SESSION["id"]=$SessionInfos["id_membre"];
 			 	$_SESSION["pseudo"]=$pseudo;
-
-				 header("Location:./index.php");
+				header("Location:./index.php");
 			}
 	}
 

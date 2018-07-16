@@ -576,7 +576,9 @@ figcaption p{
 #topic{
     width: 100%;
 }
-
+#gestion{
+    width: 80%;
+}
 .listAnswer{
     background: white;
     padding-top: 5px;

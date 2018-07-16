@@ -91,7 +91,7 @@
 									echo '<img src="views/Images/Avatars/'. $_SESSION['avatar'].'"  class="Profil">';
 								}else{
 									echo "Rendez_vous dans votre profil pour choisir un avatar";
-									$_SESSION['avatar'];
+									
 								}
 								echo "<p id='pseudoProfil'> Bonjour ".$_SESSION['pseudo']."<br/><a href='./index.php?action=logOut'><i class='fas fa-sign-out-alt'>Déconnexion</i></a><p>";
 							}
