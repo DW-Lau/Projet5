@@ -191,8 +191,8 @@ if (isset($_GET['action']))
 	}
 	if ($_GET['action']=='newTopic') {
 		$auteurTopic=$_SESSION['id'];
-		$titreTopic=htmlentities($_POST['titreTopic']);
-		$messageTopic=htmlentities($_POST['tinymce_Topic']);
+		$titreTopic=strip_tags($_POST['titreTopic']);
+		$messageTopic=strip_tags($_POST['tinymce_Topic']);
 		createdTopic($auteurTopic,$titreTopic,$messageTopic);
 	}
 	if ($_GET['action']=='selectTopic') {
@@ -202,7 +202,7 @@ if (isset($_GET['action']))
 	if($_GET['action']=='addNewComment'){
 		$idTopic=$_GET['id'];
 		$idAuteur=$_SESSION['id'];
-		$textTopic=htmlentities($_POST['tinymce_Comment']);
+		$textTopic=strip_tags($_POST['tinymce_Comment']);
 		newComment($idTopic,$idAuteur,$textTopic);
 	}
 

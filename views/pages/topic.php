@@ -9,8 +9,8 @@
 							echo '<img src="views/Images/Avatars/'.$answers['lien_avatar'].'" alt="Avatar de '. $answers['pseudo'].'" class="Avatar">';
 						?>
 					<h3><?php echo $answers['pseudo'];?></h3> 
-						à écrit le: <?php echo $answers['date_message']?>, 
-						<p class="titreMessage"> <?php echo $answers['titre_post']?></p>
+						à écrit le: <?php echo htmlentities($answers['date_message']);?>, 
+						<p class="titreMessage"> <?php echo htmlentities($answers['titre_post']);?></p>
 			</div>
 				à écrit <?php echo $answers['message_post']?>
 				<?php

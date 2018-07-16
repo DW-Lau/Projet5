@@ -8,12 +8,12 @@
 				<?php
 				echo '<img src="views/Images/Avatars/'.$listTopic['lien_avatar'].'" alt="Avatar de '. $listTopic['pseudo'].'" class="Avatar">';
 				?>
-				<?php echo $listTopic['pseudo']?> à écrit: le <?php echo $listTopic['date_message']?>
+				<?php echo $listTopic['pseudo']?> à écrit: le <?php echo htmlentities($listTopic['date_message']);?>
 			</div>
 
 			<div class="message">
 				<?php
-				 echo '<a href="./index.php?action=selectTopic&amp;id='.$listTopic['id_post'].'"><p class="thumbnail_Forum">'. strip_tags($listTopic['message_post']) .'</p></a>';
+				 echo '<a href="./index.php?action=selectTopic&amp;id='.$listTopic['id_post'].'"><p class="thumbnail_Forum">'. htmlentities($listTopic['message_post']) .'</p></a>';
 				 ?>
 
 				<?php 
