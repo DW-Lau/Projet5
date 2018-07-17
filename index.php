@@ -132,7 +132,7 @@ if (isset($_GET['action']))
 		if (isset($_FILES['newimgFilms']) AND $_FILES['newimgFilms']['error'] == 0){
 			$newtitle=htmlspecialchars($_POST['newtitle']);
 			$newreleaseDate=$_POST['newdate'];
-			$newresume=htmlspecialchars($_POST['newtinymce_Movie']);
+			$newresume=strip_tags($_POST['newtinymce_Movie']);
 			$newLink=$_POST['newlink'];
 			$newfileName=htmlspecialchars($_POST['editMovie']);
 			

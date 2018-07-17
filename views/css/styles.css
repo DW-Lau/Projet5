@@ -378,8 +378,6 @@ figcaption p{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    text-align: justif
-
 }
 
 .presentation img{
@@ -504,7 +502,7 @@ figcaption p{
 /*FORUM*/
 .Avatar{
     height: 50px;
-    width: 50%;
+
     border: white 2px solid;
     border-radius:50%;
 }

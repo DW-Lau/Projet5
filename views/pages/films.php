@@ -1,5 +1,5 @@
 <section>
-	<div>
+	<div id="presentationsFilms">
 		<article id="IntroMovies">
 			<h3>Open Movies: Blender Fondation</h3>
 			<p> Liste complète des films réalisés par la <a href="https://www.blender.org/about/projects/"> fondation Blender</a>
@@ -17,7 +17,7 @@
 					?> 
 						<figcaption> 
 							<h4> <?php echo $allMovies['titre_film']?> </h4>
-								<p><?php echo htmlspecialchars_decode($allMovies['resume']);?> [...]</p>
+								<p><?php echo htmlentities($allMovies['resume']);?> [...]</p>
 						</figcaption>
 				</figure>
 			<?php

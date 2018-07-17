@@ -124,6 +124,9 @@
 	/*FIN DE CONNEXION*/
 
 	/*FILMS*/
+	#presentationsFilms{
+		width: 100%;
+	}
 	#IntroMovies{
 		width: 95%;
 		margin: 0px;
