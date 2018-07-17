@@ -3,6 +3,11 @@ require_once("manager.php");
 
 class MoviesManager extends Manager{
 
+	public function lastMovie(){
+			$bdd=$this->dbConnect();
+			$lastMovieOut= $bdd->query('SELECT id_film,titre_film,SUBSTR(resume, 1, 250)as resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link, img_link FROM films ORDER BY date_sortie desc LIMIT 0,1');
+			return $lastMovieOut;
+		}
 	public function moviesCall(){
 		$bdd=$this->dbConnect();
 		$movies= $bdd->query('SELECT id_film,titre_film,SUBSTR(resume, 1, 150)as resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link,img_link FROM films ORDER BY date_sortie DESC');	
@@ -17,12 +22,7 @@ class MoviesManager extends Manager{
 		 	 ));
 		return $selectOne;
 	}
-	public function lastMovie(){
-		$bdd=$this->dbConnect();
-		$lastMovieOut= $bdd->query('SELECT id_film,titre_film,SUBSTR(resume, 1, 250)as resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link, img_link FROM films ORDER BY date_sortie desc LIMIT 0,1');
-		return $lastMovieOut;
-	}
-
+	
 	public function addNewMovie($title,$resume,$releaseDate,$addLink,$resultat){
 		$bdd=$this->dbConnect();
 		$NewMovie= $bdd->prepare('INSERT INTO films(titre_film,resume,date_sortie,movie_link,img_link) VALUES (:titre,:resume,:dateSortie,:lien,:cheminImg)');

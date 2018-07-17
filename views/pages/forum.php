@@ -17,7 +17,7 @@
 				 ?>
 
 				<?php 
-					if(isset($_SESSION['id'])&&$_SESSION['droits']!==1){
+					if(isset($_SESSION['id'])&&$_SESSION['droits']!=1){
 						echo '<span id="eraseTopic"><a href="./index.php?action=eraseTopic&amp;id='. $listTopic['id_post'].'">Supprimer sujet</a></span>';
 					}
 					?>

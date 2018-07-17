@@ -16,9 +16,6 @@ if (isset($_GET['action']))
 		header("Location:index.php");
 	}
 
-	if($_GET['action']=='mentions'){
-		mentions();
-	}
 	/*--------------------------------LOGIN / SUBSCRIBE----------------------------------------*/
 	if($_GET['action']=='connexion'){
 		 	formulaire();
@@ -49,12 +46,11 @@ if (isset($_GET['action']))
 			$checkpwd = $_POST['checkpwd'];
 
 			if ( isset($checkPseudo)&& isset($checkpwd) ){
-				$noNickName="Aucun pseudo reconnu";
+				
 				$NoMatch="Pseudo ou mot de passe incorrect";
 				
 				checkInfo($checkPseudo,$checkpwd);
-				noNickName($noNickName);
-				NoMatch($NoMatch);
+				 NoMatch($NoMatch);
 			}
 
 		}

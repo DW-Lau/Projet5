@@ -85,8 +85,8 @@
 					</form>
 
 						<?php
-							if (isset($noNickName)) {
-								echo "<p>".$noNickName."</p>";
+							if (isset($errorLogin)) {
+								echo "<p>".$errorLogin."</p>";
 							}
 							if(isset($NoMatch)){
 								echo "<p>".$NoMatch."</p>";

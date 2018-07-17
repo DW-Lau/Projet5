@@ -14,7 +14,6 @@ class membersManager extends Manager
 		$isPasswordCorrect = password_verify($checkpwd, $resultat['pwd']);
 
 		if (!$resultat){
-			
 		}
 		else{
 	    	if ($isPasswordCorrect) {
@@ -26,7 +25,6 @@ class membersManager extends Manager
 	        	header("Location:./index.php");
 	   		}
 	   		else{
-	   			echo "Une erreur est survenu. Veuilliez ré-essayer.";
 	    	}
 		}
 		return $isPasswordCorrect; 
