@@ -6,7 +6,7 @@ session_start();
 require "vendor/autoload.php";
 require("controllers/Front.php");
 require ("controllers/Back.php");
-use models\movies\MoviesManager;
+use models\movies;
 headBand();
 if (!(isset($_GET['action']) ) ) {
 		firstPageInfo();}

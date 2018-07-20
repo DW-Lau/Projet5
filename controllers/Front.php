@@ -1,7 +1,11 @@
 <?php
 //namespace controllers\Front;
 
-use models\movies\MoviesManager;
+use models\movies;
+if(class_exists('Fetch\\ \models\movies\MoviesManager')){
+	echo "string";}
+	else{echo "raté";};
+models\movies::MoviesManager();
 //require('models/MoviesManager.php');
  function headBand(){
  	require('./views/pages/header.php');
@@ -11,7 +15,7 @@ function mentions(){
 }
 function firstPageInfo(){
 	//var_dump(MoviesManager());
-	$LastMovie= new \models\movies\MoviesManager();
+	$LastMovie= new MoviesManager();
 	$upDateMovie= $LastMovie->lastMovie();
 
 	require('./views/pages/homepage.php');
