@@ -1,9 +1,11 @@
 <?php
 session_start();
-require("controllers/Front.php");
-require ("controllers/Back.php");
+// require("controllers/Front.php");
+//require ("controllers/Back.php");
 
-
+require "vendor/autoload.php";
+use \controllers\Back;
+use \controllers\Front;
 headBand();
 if (!(isset($_GET['action']) ) ) {
 		firstPageInfo();}

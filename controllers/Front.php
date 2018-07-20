@@ -1,16 +1,15 @@
 <?php
-require_once("./models/AdminManager.php");
-require_once("./models/movies.php");
+namespace controllers\Front;
+use \models\movies\MoviesManager;
 
-
-function headBand(){
-	require('./views/pages/header.php');
-}
+ function headBand(){
+ 	require('./views/pages/header.php');
+ }
 function mentions(){
 	require('./views/pages/mentions.php');
 }
 function firstPageInfo(){
-	$LastMovie= new MoviesManager();
+	$LastMovie= new \models\movies\MoviesManager();
 	$upDateMovie= $LastMovie->lastMovie();
 
 	require('./views/pages/homepage.php');
@@ -19,12 +18,12 @@ function formulaire(){
 	require('./views/pages/connexion.php');
 }
 function allMovies(){
-	$listMovies= new MoviesManager();
+	$listMovies= new \models\movies\MoviesManager()
 	$Movies= $listMovies->moviesCall();
 	require('./views/pages/films.php');
 }
 function oneMovie(){
-	$oneMovies= new MoviesManager();
+	$oneMovies= new \models\movies\MoviesManager()
 	$selectedMovie= $oneMovies->selectOneMovie();
 	require('./views/pages/film.php');
 }

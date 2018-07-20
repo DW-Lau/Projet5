@@ -1,0 +1,13 @@
+{
+    "name": "projet5/autoloader",
+    "description": "Projet 5 de la formation OpenClassroom",
+    "type": "markdown",
+    "require": {
+    },
+    "autoload": {
+    	"psr-4" : {
+    	"models\\" : "models/",
+    	"controllers\\" : "controllers/"
+    }
+    }
+}

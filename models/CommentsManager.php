@@ -1,4 +1,5 @@
 <?php
+namespace models\comments;
 require_once("manager.php");
 
 class CommentsManager extends Manager{

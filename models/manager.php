@@ -7,7 +7,7 @@ class Manager{
 			return $bdd;
 		}
 		catch (Exception $e){
-			die('Erreur: ' . $e->getmsg());
+			die('Erreur: Impossible de ce connecter à la base de données ' . $e->getmsg());
 		}
 	}
 }

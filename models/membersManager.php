@@ -1,4 +1,5 @@
 <?php
+namespace models\members;
 require_once("manager.php");
 
 class membersManager extends Manager
