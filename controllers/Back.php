@@ -1,5 +1,5 @@
 <?php
-namespace controllers\Back;
+//namespace controllers\Back;
 use models\members;
 use models\movies;
 use models\comments;

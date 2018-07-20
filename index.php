@@ -1,11 +1,12 @@
 <?php
 session_start();
-// require("controllers/Front.php");
-//require ("controllers/Back.php");
 
+// use \controllers\Back;
+// use \controllers\Front;
 require "vendor/autoload.php";
-use \controllers\Back;
-use \controllers\Front;
+require("controllers/Front.php");
+require ("controllers/Back.php");
+use models\movies\MoviesManager;
 headBand();
 if (!(isset($_GET['action']) ) ) {
 		firstPageInfo();}
