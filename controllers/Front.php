@@ -1,15 +1,23 @@
 <?php
 //namespace controllers\Front;
-require "vendor/autoload.php";
-use modelMovie ;
-//require('models/MoviesManager.php');
-if(class_exists('modelMovie\MoviesManager')){
+//require('models/MoviesManager.php')
+if(file_exists("./vendor/autoload.php")){
+	echo "Le fichier est bien présent";
+}else{
+	echo "introuvable";
+	echo __NAMESPACE__;
+}
+require "./vendor/autoload.php";
+//use models\movies\MoviesManager ;
+
+;
+ if(class_exists('models\movies\MoviesManager')){
 	echo "la class existe";
 }else{
-	echo __NAMESPACE__;
+	
 	echo "la class n'existe pas ";
 }
-modelMovie::MoviesManager();
+ echo models\movies\MoviesManager::lastMovie();
 
 
 function headBand(){
