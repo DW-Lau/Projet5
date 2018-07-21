@@ -1,5 +1,5 @@
 <?php
-namespace models\movies;
+namespace modelMovie ;
 require_once("manager.php");
 
 class MoviesManager extends Manager{

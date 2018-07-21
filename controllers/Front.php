@@ -1,12 +1,16 @@
 <?php
 //namespace controllers\Front;
 require "vendor/autoload.php";
-use models\movies;
-if(class_exists('Fetch\\ \models\movies\MoviesManager')){
-	echo "string";}
-	else{echo "raté";};
-models\movies::MoviesManager();
+use modelMovie ;
 //require('models/MoviesManager.php');
+if(class_exists('modelMovie\MoviesManager')){
+	echo "la class existe";
+}else{
+	echo __NAMESPACE__;
+	echo "la class n'existe pas ";
+}
+modelMovie::MoviesManager();
+
 
 function headBand(){
 	require('./views/pages/header.php');

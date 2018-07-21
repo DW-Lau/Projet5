@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-// use \controllers\Back;
-// use \controllers\Front;
 require "vendor/autoload.php";
 require("controllers/Front.php");
 require ("controllers/Back.php");
@@ -10,8 +8,6 @@ if(!isset($_GET['action'])){
 	headBand();
 	firstPageInfo();
 }
-
-
 if (isset($_GET['action']))
 {
 	headBand();
