@@ -1,7 +1,7 @@
 <?php
-namespace models\movies;
+//namespace models\movies;
 //require('models/MoviesManager.php')
-if(file_exists("../vendor/autoload.php")){
+if(file_exists("./vendor/autoload.php")){
 	echo "Le fichier est bien présent";
 }
 else{
@@ -10,14 +10,14 @@ else{
 }
 require "./vendor/autoload.php";
 
- if(class_exists('models\movies')){
+ if(class_exists('models\movies\MoviesManager')){
 	echo "la class existe";
 }else{
 	
 	echo " mais la class n'existe pas ";
 	echo __NAMESPACE__;
 }
- echo MoviesManager::MoviesManager();
+ echo models\movies\MoviesManager::MoviesManager();
 
 
 function headBand(){
@@ -36,12 +36,12 @@ function formulaire(){
 	require('./views/pages/connexion.php');
 }
 function allMovies(){
-	$listMovies= new MoviesManager();
+	$listMovies= new \models\movies\MoviesManager();
 	$Movies= $listMovies->moviesCall();
 	require('./views/pages/films.php');
 }
 function oneMovie(){
-	$oneMovies= new MoviesManager();
+	$oneMovies= new \models\movies\MoviesManager();
 	$result= $oneMovies->selectOneMovie();
 	require('./views/pages/film.php');
 }
