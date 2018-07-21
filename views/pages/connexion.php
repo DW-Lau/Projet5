@@ -57,11 +57,11 @@
 						</form>
 
 					<?php
-					if (isset($pseudoPresent)) {
-						echo "<p> Pseudo déjà utilisé, veuillez en séléctionner un autre.</p>";
+					if (isset($messagePseudo)) {
+						echo "<p class='warning_Info'>" .$messagePseudo ."</p>";
 					}
-					if (isset($message)) {
-						echo "<p class='warning_Info'>" .$message ."</p>";
+					if (isset($messageMDP)) {
+						echo "<p class='warning_Info'>" .$messageMDP ."</p>";
 					}
 					if(isset($infoIssues)){
 						echo "<p class='warning_Info'>" .$infoIssues."</p>";
@@ -85,11 +85,11 @@
 					</form>
 
 						<?php
-							if (isset($errorLogin)) {
-								echo "<p>".$errorLogin."</p>";
-							}
 							if(isset($NoMatch)){
 								echo "<p>".$NoMatch."</p>";
+							}
+							if(isset($messageErreur)){
+								echo "<p>".$messageErreur."</p>";
 							}
 						?>
 				</fieldset>

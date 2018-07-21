@@ -2,7 +2,8 @@
 	<article id="OneMovie">
   	<div id="moviePage">
       <?php
-        while ( $movie=$selectedMovie->fetch() ) {
+        if($movie=$result) {
+
   		?>
   		
   		<h2><?php echo htmlspecialchars($movie['titre_film'])?></h2>
@@ -24,7 +25,7 @@
   			
     		<?php 
       		}
-      		$selectedMovie-> closeCursor();
+      		
     		?>
       <span id="sousTitre">
         <i class="fas fa-deaf"></i>

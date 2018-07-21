@@ -27,7 +27,19 @@ class CommentsManager extends Manager{
 			WHERE id_post= :id_post');
 		$sujet->execute(array(
 			':id_post'=>$topic));
-		return $sujet;
+		try{
+			//$resultatSujet=$sujet->fetch();
+				if(!$resultatSujet=$sujet->fetch()){
+					$message="<section><p>Le sujet que vous recherchez ne trouve aucune correspondances dans la base de données. Veuillez retournez à la liste des sujets.</p></section> ";
+				throw new Exception($message);
+				}
+				else{
+					return $sujet;
+				}
+		}catch(Exception $e){
+			die($e->getMessage());
+		}
+		
 	}
 
 	public function answerOneTopic($topic){

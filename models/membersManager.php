@@ -6,29 +6,39 @@ class membersManager extends Manager
 {
 	public function checkInfo($checkPseudo,$checkpwd){
 		$bdd=$this->dbConnect();
-		$req= $bdd->prepare('SELECT id_membre,pwd, status_membre,membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar  WHERE pseudo=:pseudo');
+		$req= $bdd->prepare('SELECT id_membre,pwd, status_membre,membre.avatar, avatar.id_avatar, lien_avatar 
+					FROM membre 
+						LEFT JOIN avatar 
+					ON membre.avatar=avatar.id_avatar  
+					WHERE pseudo=:pseudo');
 		$req->execute(array(
 	   			    'pseudo' => $checkPseudo
 	   			));
 	
 		$resultat = $req->fetch();
 		$isPasswordCorrect = password_verify($checkpwd, $resultat['pwd']);
-
-		if (!$resultat){
+			try{
+				if (!$resultat){
+					$messageErreur="Une erreur est survenue, veuillez vérifier vos informations et recommencer.";
+					throw new Exception($messageErreur);
+				}else{
+			    	if ($isPasswordCorrect) {
+			    		$_SESSION['droits']=$resultat['status_membre'];
+			        	$_SESSION['id'] = $resultat['id_membre'];
+			       		$_SESSION['pseudo'] = $checkPseudo;
+			       		$_SESSION['avatar']=$resultat['lien_avatar'];
+			        	header("Location:./index.php");
+			   		}
+			   		else{
+			   			$NoMatch="Votre pseudo ou mot de passe est incorrecte.";
+			   			throw new Exception($NoMatch);
+			    	}
+				}
+			
+		}catch(Exception $e){
+			//Will return the "correct" error message"
+			require('./views/pages/connexion.php');
 		}
-		else{
-	    	if ($isPasswordCorrect) {
-	    		$_SESSION['droits']=$resultat['status_membre'];
-	        	$_SESSION['id'] = $resultat['id_membre'];
-	       		$_SESSION['pseudo'] = $checkPseudo;
-	       		$_SESSION['avatar']=$resultat['lien_avatar'];
-	        	var_dump($_SESSION['avatar']);
-	        	header("Location:./index.php");
-	   		}
-	   		else{
-	    	}
-		}
-		return $isPasswordCorrect; 
 	}
 
 	public function NewUser($pseudo,$pwd,$pseudoPresent){
@@ -39,33 +49,37 @@ class membersManager extends Manager
 	   			    'pseudo'=>$pseudo
 	   			));
 		$resultat=$verif->fetch();
+		try{
+			if($resultat['pseudo']==$pseudo){
+					
+					$pseudoPresent="Le pseudo indiqué est déjà enregistré dans notre base de données, veuillez en selectionner un autre.";
+					throw new Exception($pseudoPresent);	
+			}//end of the verification.
+			else{//If all conditions are true, subscribe
+					
+					$pass_hache = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
 
-		if($resultat['pseudo']==$pseudo){
-				$pseudoPresent=1;
-				return $pseudoPresent;
-				
-		}//end of the verification.
-		else{//If all conditions are true, subscribe
-				
-				$pass_hache = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
+					$user = $bdd->prepare('INSERT INTO membre(pseudo,pwd,date_membre) VALUES(:pseudo,:pwd, Now() )');
+			
+					
+					$info=$user->execute(array(
+							'pseudo'=>$pseudo,
+							'pwd'=>$pass_hache
+						));
 
-				$user = $bdd->prepare('INSERT INTO membre(pseudo,pwd,date_membre) VALUES(:pseudo,:pwd, Now() )');
-		
-				
-				$info=$user->execute(array(
-						'pseudo'=>$pseudo,
-						'pwd'=>$pass_hache
-					));
+					$membreLogin= $bdd->prepare('SELECT id_membre, status_membre,avatar, membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE pseudo=:pseudo ');
+					$membreLogin->execute(array(
+		   			    'pseudo'=>$pseudo
+		   			));
+		   			$SessionInfos=$membreLogin->fetch();
+		   			$_SESSION['droits']=$SessionInfos['status_membre'];
+					$_SESSION["id"]=$SessionInfos["id_membre"];
+				 	$_SESSION["pseudo"]=$pseudo;
+					header("Location:./index.php");
 
-				$membreLogin= $bdd->prepare('SELECT id_membre, status_membre,avatar, membre.avatar, avatar.id_avatar, lien_avatar FROM membre LEFT JOIN avatar ON membre.avatar=avatar.id_avatar WHERE pseudo=:pseudo ');
-				$membreLogin->execute(array(
-	   			    'pseudo'=>$pseudo
-	   			));
-	   			$SessionInfos=$membreLogin->fetch();
-	   			$_SESSION['droits']=$SessionInfos['status_membre'];
-				$_SESSION["id"]=$SessionInfos["id_membre"];
-			 	$_SESSION["pseudo"]=$pseudo;
-				header("Location:./index.php");
+				}
+			}catch(Exception $e){
+				die($e);
 			}
 	}
 
