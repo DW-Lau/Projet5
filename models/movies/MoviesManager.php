@@ -1,8 +1,14 @@
 <?php
 namespace models\movies;
+
+if(file_exists("models/manager.php")){
+	echo "Le manager est là";
+}
+else{
+	echo "introuvable";
+	
+}
 require("models/manager.php");
-
-
 class MoviesManager extends Manager{
 
 	public function lastMovie(){
