@@ -1,7 +1,6 @@
 <?php
 namespace models\comments;
 use \models\Manager;
-error_reporting(30711);//TEMPORAIRE
 require "./vendor/autoload.php";;
 
 class CommentsManager extends Manager{

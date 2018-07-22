@@ -1,10 +1,9 @@
 <?php
 namespace models\members;
 use \models\Manager;
-error_reporting(30711);//TEMPORAIRE
 require "./vendor/autoload.php";
 
-class membersManager extends Manager{
+class MembersManager extends Manager{
 	public function checkInfo($checkPseudo,$checkpwd){
 		$bdd=parent::dbConnect();
 		$req= $bdd->prepare('SELECT id_membre,pwd, status_membre,membre.avatar, avatar.id_avatar, lien_avatar 

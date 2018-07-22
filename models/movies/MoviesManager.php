@@ -1,7 +1,6 @@
 <?php
 namespace models\movies;
 use \models\Manager;
-error_reporting(30711);//TEMPORAIRE
 require "./vendor/autoload.php";
 
 class MoviesManager extends Manager{

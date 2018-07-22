@@ -3,7 +3,7 @@ require "./vendor/autoload.php";
 use \models\Manager;
 use \models\movies\MoviesManager;
 use \models\comments\CommentsManager;
-use \models\members\membersManager;
+use \models\members\MembersManager;
 
 /*------------------------CONNEXION / Subscribtion-----------------------*/
 function entry($pseudo,$pwd,$pseudoPresent){
