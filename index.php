@@ -4,6 +4,22 @@ session_start();
 require "vendor/autoload.php";
 require("controllers/Front.php");
 require ("controllers/Back.php");
+try{
+if(isset($_SESSION['id'])){
+	if ((time()-$_SESSION['time_log'])>120 ) {//essaie de 2 minutes sinon 600
+		session_destroy();
+		$messageLogOut="<section> <p>Oups vous êtes resté inactif trop longtemps: <a href='index.php'>Accueil</a><//p></section>";
+		throw new Exception($messageLogOut);
+	}
+}else{
+	$_SESSION['time_log']=time();
+}
+}catch(Exception $e){
+	headBand();
+	die($messageLogOut);
+	header("Location:index.php");
+}
+
 if(!isset($_GET['action'])){
 	headBand();
 	firstPageInfo();
@@ -65,8 +81,18 @@ if (isset($_GET['action']))
 		/*------------------------------ADMIN--------------------------*/
 
 		elseif($_GET['action']=='admin'){
-			$idMembre=$_SESSION['id'];
-			adminPage($idMembre);
+			try{
+				if (!isset($_SESSION['id'])) {
+					throw new Exception("<section><p>Vous devez être connecté pour avoir accès à cette page.</p></section>");
+
+				}else{
+					$idMembre=$_SESSION['id'];
+					adminPage($idMembre);
+				}
+			}catch(Exception $e){
+				die ($e);
+			}
+			
 		}
 		elseif ($_GET['action']=='selectAvatar') {
 			chooseAvatar();
@@ -178,8 +204,17 @@ if (isset($_GET['action']))
 		/*------------------------END ADMIN-------------------------------*/
 		/*----------------------------PROFIL------------------------------*/
 		elseif ($_GET['action']=='espace') {
-			$idMembre=$_SESSION['id'];
-			getInfoUser($idMembre);
+			try{
+				if (!isset($_SESSION['id'])) {
+					throw new Exception("<section><p>Vous devez être connecté pour avoir accès à cette page.</p></section>");
+
+				}else{
+					$idMembre=$_SESSION['id'];
+					getInfoUser($idMembre);
+				}
+			}catch(Exception $e){
+				die ($e);
+			}
 		}
 
 		/*-----------------------------TOPICS-----------------------------*/
