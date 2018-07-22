@@ -1,8 +1,9 @@
 <?php
-//namespace controllers\Back;
-use models\members;
-use models\movies;
-use models\comments;
+require "./vendor/autoload.php";
+use \models\Manager;
+use \models\movies\MoviesManager;
+use \models\comments\CommentsManager;
+use \models\members\membersManager;
 
 /*------------------------CONNEXION / Subscribtion-----------------------*/
 function entry($pseudo,$pwd,$pseudoPresent){
