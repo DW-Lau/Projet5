@@ -1,29 +1,24 @@
 <?php
 namespace models\movies;
+use \models\Manager;
+error_reporting(30711);//TEMPORAIRE
+require "./vendor/autoload.php";
 
-if(file_exists("models/manager.php")){
-	echo "Le manager est là";
-}
-else{
-	echo "introuvable";
-	
-}
-require("models/manager.php");
 class MoviesManager extends Manager{
 
 	public function lastMovie(){
-			$bdd=$this->dbConnect();
+			$bdd=parent::dbConnect();
 			$lastMovieOut= $bdd->query('SELECT id_film,titre_film,SUBSTR(resume, 1, 250)as resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link, img_link FROM films ORDER BY date_sortie desc LIMIT 0,1');
 			return $lastMovieOut;
 		}
 	public function moviesCall(){
-		$bdd=$this->dbConnect();
+		$bdd=parent::dbConnect();
 		$movies= $bdd->query('SELECT id_film,titre_film,SUBSTR(resume, 1, 150)as resume,date_format(date_sortie,"%d.%m.%y")as date_fr, movie_link,img_link FROM films ORDER BY date_sortie DESC');	
 		return $movies;
 	}
 
 	public function selectOneMovie(){
-		$bdd=$this->dbConnect();
+		$bdd=parent::dbConnect();
 		$selectOne=$bdd->prepare('SELECT id_film,titre_film,resume,date_format(date_sortie,"%d.%m.%y")as date_fr,movie_link, img_link FROM films WHERE id_film=:idFilm ORDER BY date_sortie desc ');
 		$selectOne->execute(array(
 			'idFilm'=>$_GET['id']
@@ -45,7 +40,7 @@ class MoviesManager extends Manager{
 	}
 	
 	public function addNewMovie($title,$resume,$releaseDate,$addLink,$resultat){
-		$bdd=$this->dbConnect();
+		$bdd=parent::dbConnect();
 		$NewMovie= $bdd->prepare('INSERT INTO films(titre_film,resume,date_sortie,movie_link,img_link) VALUES (:titre,:resume,:dateSortie,:lien,:cheminImg)');
 		$NewMovie->execute(array(
 			'titre'=>$title,
@@ -58,7 +53,7 @@ class MoviesManager extends Manager{
 	}
 
 	public function editedMovie($movieEdit){
-		$bdd=$this->dbConnect();
+		$bdd=parent::dbConnect();
 		$editAMovie=$bdd->prepare('SELECT id_film,titre_film,resume,date_format(date_sortie,"%d.%m.%y")as date_fr,movie_link, img_link FROM films WHERE id_film=:idFilm ');
 		$editAMovie->execute(array(
 			'idFilm'=>$movieEdit
@@ -67,7 +62,7 @@ class MoviesManager extends Manager{
 	}
 
 	public function submitedMovie($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$resultat){
-		$bdd=$this->dbConnect();
+		$bdd=parent::dbConnect();
 		$submit=$bdd->prepare('UPDATE films SET titre_film= :titre , resume= :resume, date_sortie = :datesortie,movie_link= :linkmovie , img_link= :imglink WHERE id_film=:id ');
 		$submit->execute(array(
 			'id'=>$movieEdit,
@@ -81,7 +76,7 @@ class MoviesManager extends Manager{
 	}
 	
 	public function eraseChapter($moviedeleted){//This function will deleted
-		$bdd=$this->dbConnect();
+		$bdd=parent::dbConnect();
 		$dltAMovie=$bdd->prepare('DELETE FROM films WHERE id_film= :id');
 		$eraseComms=$dltAMovie->execute(array(
 			'id'=>$moviedeleted));
