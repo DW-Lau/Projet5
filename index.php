@@ -6,7 +6,7 @@ require("controllers/Front.php");
 require ("controllers/Back.php");
 try{
 if(isset($_SESSION['id'])){
-	if ((time()-$_SESSION['time_log'])>120 ) {//essaie de 2 minutes sinon 600
+	if ((time()-$_SESSION['time_log'])>300 ) {//essaie de 2 minutes sinon 600
 		session_destroy();
 		$messageLogOut="<section> <p>Oups vous êtes resté inactif trop longtemps: <a href='index.php'>Accueil</a><//p></section>";
 		throw new Exception($messageLogOut);
