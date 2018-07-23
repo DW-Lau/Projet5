@@ -2,7 +2,7 @@
 require "./vendor/autoload.php";
 use \models\Manager;
 use \models\movies\MoviesManager;
-
+use \models\members\Exception;
 function headBand(){
 	require('./views/pages/header.php');
 }

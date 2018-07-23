@@ -4,6 +4,7 @@ use \models\Manager;
 use \models\movies\MoviesManager;
 use \models\comments\CommentsManager;
 use \models\members\MembersManager;
+use \models\members\Exception;//Calls all exception class
 
 /*------------------------CONNEXION / Subscribtion-----------------------*/
 function entry($pseudo,$pwd,$pseudoPresent){

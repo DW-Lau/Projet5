@@ -20,7 +20,7 @@ class MembersManager extends Manager{
 			try{
 				if (!$resultat){
 					$messageErreur="Une erreur est survenue, veuillez vérifier vos informations et recommencer.";
-					throw new Exception($messageErreur);
+					throw new \Exception($messageErreur);
 				}else{
 			    	if ($isPasswordCorrect) {
 			    		$_SESSION['droits']=$resultat['status_membre'];
@@ -31,13 +31,12 @@ class MembersManager extends Manager{
 			   		}
 			   		else{
 			   			$NoMatch="Votre pseudo ou mot de passe est incorrecte.";
-			   			throw new Exception($NoMatch);
+			   			throw new \Exception($NoMatch);
 			    	}
 				}
 			
-		}catch(Exception $e){
-			//Will return the "correct" error message"
-			require('./views/pages/connexion.php');
+		}catch(\Exception $e){
+			//$messageErreur and $NoMatch will be send to connexion.php and use as strings
 		}
 	}
 

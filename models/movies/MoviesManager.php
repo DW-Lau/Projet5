@@ -25,17 +25,15 @@ class MoviesManager extends Manager{
 		try{
 			$result=$selectOne->fetch();
 				if (!$result) {
-				$message="<section><p>Le film que vous recherchez ne trouve aucune correspondances dans la base de données. Veuillez retournez à la liste des films pour voir ceux présents.</p></section> ";
-				throw new Exception($message);
+				$message="Le film que vous recherchez ne trouve aucune correspondances dans notre base de données. Veuillez retournez à la liste des films pour voir ceux présents. ";
+				throw new \Exception($message);
 				}
 				else{
 					return $result;
 				}
-		}catch(Exception $e){
-			die($e->getMessage());
+		}catch( \Exception $e){
+			die("<section><p>".$message."</p></section>");
 		}
-		
-		
 	}
 	
 	public function addNewMovie($title,$resume,$releaseDate,$addLink,$resultat){

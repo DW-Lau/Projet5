@@ -83,14 +83,15 @@ if (isset($_GET['action']))
 		elseif($_GET['action']=='admin'){
 			try{
 				if (!isset($_SESSION['id'])) {
-					throw new Exception("<section><p>Vous devez être connecté pour avoir accès à cette page.</p></section>");
+					$MessageAdmin="Vous devez être connecté pour avoir accès à cette page.";
+					throw new Exception("$MessageAdmin");
 
 				}else{
 					$idMembre=$_SESSION['id'];
 					adminPage($idMembre);
 				}
 			}catch(Exception $e){
-				die ($e);
+				die ("<section><p>".$MessageAdmin."</p></section>");
 			}
 			
 		}
@@ -167,6 +168,7 @@ if (isset($_GET['action']))
 				
 				$taillemax=3000000;//environ 3MO
 				$extensionValides=array('jpg','jpeg', 'gif','png');
+				try{
 					if ($_FILES['newimgFilms']['size']<=$taillemax) {
 
 						$infosfichier = pathinfo($_FILES['newimgFilms']['name']);
@@ -177,12 +179,20 @@ if (isset($_GET['action']))
 								move_uploaded_file($_FILES['newimgFilms']['tmp_name'], './views/Images/Films/' . basename($_FILES['newimgFilms']['name']));
 							submitEntry($movieEdit,$newtitle,$newresume,$newreleaseDate,$newLink,$resultat);
 							}else{
-								$msg="Veuillez vérifier le format de la photo.";
+								$msg="<p>Veuillez vérifier le format de la photo.</p>";
+								throw new Exception($msg);
+								
 							}
 					}
 					else{
-						$msg="Votre image dépasse les 3MO.";
+						$msgTaille="<p>Votre image dépasse les 3MO.</p>";
+						throw new Exception($msgTaille);
+						
 					}
+				}catch(Exception $e){
+					require('views/pages/adminPage.php');
+					die($e);
+				}
 			}
 		}
 
@@ -222,26 +232,56 @@ if (isset($_GET['action']))
 			allTopics();
 		}
 		elseif ($_GET['action']=='newTopic') {
-			$auteurTopic=$_SESSION['id'];
-			$titreTopic=strip_tags($_POST['titreTopic']);
-			$messageTopic=strip_tags($_POST['tinymce_Topic']);
-			createdTopic($auteurTopic,$titreTopic,$messageTopic);
+				try{
+				if (!isset($_SESSION['id'])) {
+					$messageConnexion="Vous devez être connecté pour avoir accès à cette page.";
+					throw new Exception($messageConnexion);
+
+				}else{
+					$auteurTopic=$_SESSION['id'];
+					$titreTopic=strip_tags($_POST['titreTopic']);
+					$messageTopic=strip_tags($_POST['tinymce_Topic']);
+					createdTopic($auteurTopic,$titreTopic,$messageTopic);
+				}
+			}catch(Exception $e){
+				die ("<section><p>".$messageConnexion."</p></section>");
+			}
 		}
 		elseif ($_GET['action']=='selectTopic') {
 			$topic=$_GET['id'];
 			selectTopic($topic);
 		}
 		elseif($_GET['action']=='addNewComment'){
-			$idTopic=$_GET['id'];
-			$idAuteur=$_SESSION['id'];
-			$textTopic=strip_tags($_POST['tinymce_Comment']);
-			newComment($idTopic,$idAuteur,$textTopic);
+			try{
+				if (!isset($_SESSION['id'])) {
+					$messageConnexion="Vous devez être connecté pour avoir accès à cette page.";
+					throw new Exception($messageConnexion);
+
+				}else{
+					$idTopic=$_GET['id'];
+					$idAuteur=$_SESSION['id'];
+					$textTopic=strip_tags($_POST['tinymce_Comment']);
+					newComment($idTopic,$idAuteur,$textTopic);
+				}
+			}catch(Exception $e){
+				die ("<section><p>".$messageConnexion."</p></section>");
+			}
 		}
 
 		elseif ($_GET['action']=='signaler'){
-			$idTopic=$_GET['id_topic'];
-			$idSubject=$_GET['id'];
-			WarningComm($idTopic,$idSubject);
+			try{
+				if (!isset($_SESSION['id'])) {
+					$warningComment="Seul les membre du forum peuvent signaler du contenu<br />Connecter vous ou inscrivez vous sur le site pour participer à la vie du forum.";
+					throw new Exception($warningComment);
+
+				}else{
+					$idTopic=$_GET['id_topic'];
+					$idSubject=$_GET['id'];
+					WarningComm($idTopic,$idSubject);
+				}
+			}catch(Exception $e){
+				die ("<section><p>".$warningComment."</p></section>");
+			}
 		}
 
 		elseif($_GET['action']=='deleteComm'){

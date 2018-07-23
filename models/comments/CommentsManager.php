@@ -32,13 +32,13 @@ class CommentsManager extends Manager{
 			//$resultatSujet=$sujet->fetch();
 				if(!$resultatSujet=$sujet->fetch()){
 					$message="<section><p>Le sujet que vous recherchez ne trouve aucune correspondances dans la base de données. Veuillez retournez à la liste des sujets.</p></section> ";
-				throw new Exception($message);
+				throw new \Exception($message);
 				}
 				else{
 					return $sujet;
 				}
-		}catch(Exception $e){
-			die($e->getMessage());
+		}catch(\Exception $e){
+			die("<section><p>".$message."<a href='./index.php?action=forum'>retour au forum</a></p></section>");
 		}
 		
 	}
@@ -96,11 +96,26 @@ class CommentsManager extends Manager{
 	}
 	public function WarningComment($idTopic,$idSubject){
 		$bdd=parent::dbConnect();
-		$pbComm=$bdd->prepare('UPDATE sujet SET stat_message=1 WHERE id_sujet=:id_sujet');
-		$pbComm->execute(array(
-			'id_sujet'=> $idSubject
-		));
-		header("Location:./index.php?action=selectTopic&id=$idTopic");
+		try{
+			$checkComment=$bdd->prepare('SELECT stat_message FROM sujet WHERE id_sujet=:id_sujet');
+			$checkComment->execute(array(
+					'id_sujet'=> $idSubject
+				));
+			$resultChecking=$checkComment->fetch();
+			if($resultChecking['stat_message']==1){
+				$messageWarning="Le commentaire a déjà été signalé.";
+				throw new \Exception($messageWarning);
+				
+			}else{
+				$pbComm=$bdd->prepare('UPDATE sujet SET stat_message=1 WHERE id_sujet=:id_sujet');
+				$pbComm->execute(array(
+					'id_sujet'=> $idSubject
+				));
+				header("Location:./index.php?action=forum");
+			}
+		}catch(\Exception $e){
+			die("<section><p>".$messageWarning."<a href='./index.php?action=forum'>retour au forum</a></p></section>");
+		}
 	}
 	public function listWarningComm(){
 		$bdd=parent::dbConnect();
