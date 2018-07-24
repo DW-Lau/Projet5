@@ -164,3 +164,7 @@ function confirmComm($idSubject){
 	$conf= new CommentsManager();
 	$confComm= $conf->confirmComment($idSubject);
 }
+function errorPage($error){
+	$error;
+	require('views/pages/erreur.php');
+}

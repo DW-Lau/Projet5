@@ -4,6 +4,7 @@ session_start();
 require "vendor/autoload.php";
 require("controllers/Front.php");
 require ("controllers/Back.php");
+/*TIME OUT AT 3MINUTES OF INACTIVITY*/
 try{
 if(isset($_SESSION['id'])){
 	if ((time()-$_SESSION['time_log'])>300 ) {//essaie de 2 minutes sinon 600
@@ -19,6 +20,7 @@ if(isset($_SESSION['id'])){
 	die($messageLogOut);
 	header("Location:index.php");
 }
+/* TIME OUT END*/
 
 if(!isset($_GET['action'])){
 	headBand();
@@ -293,6 +295,14 @@ if (isset($_GET['action']))
 			$idTopic=$_GET['id'];
 			deleteTopic($idTopic);
 		}
+
+		if ($_GET['action']=='error') {
+		//headBand();
+			$error=$_GET[''];
+			errorPage($error);
+			
+		}
+
 		/*-----------------------------END TOPICS-------------------------*/
 		elseif ($_GET['action']=='films') {
 				allMovies();
