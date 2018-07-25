@@ -7,9 +7,11 @@
 			}
 			$userInfo->closeCursor();	
 		?>
-		<button class="avatar">
-			<a href="./index.php?action=selectAvatar">Séléctionner un avatar</a>
-		</button>
+		
+			<a href="./index.php?action=selectAvatar">
+				<button class="avatar">Séléctionner un avatar</button>
+			</a>
+		
 	</div>
 
 	<div id="headBandUpDate">

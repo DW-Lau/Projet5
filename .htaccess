@@ -1,0 +1,8 @@
+ErrorDocument 400 http://localhost/Projet5/index.php?action=error/400
+ErrorDocument 403 http://localhost/Projet5/index.php?action=error/403
+ErrorDocument 404 http://localhost/Projet5/index.php?action=error/404
+ErrorDocument 405 http://localhost/Projet5/index.php?action=error/405
+ErrorDocument 500 http://localhost/Projet5/index.php?action=error/500
+ErrorDocument 503 http://localhost/Projet5/index.php?action=error/503
+ErrorDocument 504 http://localhost/Projet5/index.php?action=error/504
+

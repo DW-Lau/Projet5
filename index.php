@@ -84,16 +84,17 @@ if (isset($_GET['action']))
 
 		elseif($_GET['action']=='admin'){
 			try{
-				if (!isset($_SESSION['id'])) {
-					$MessageAdmin="Vous devez être connecté pour avoir accès à cette page.";
+				if (!isset($_SESSION['id'])||$_SESSION['droits']!=3) {
+					$MessageAdmin="Vous devez être connecté pour avoir accès à cette page. Ou Vous n'avez pas les droits pour cette page";
 					throw new Exception("$MessageAdmin");
-
-				}else{
+				}
+				elseif($_SESSION['droits']==3){
 					$idMembre=$_SESSION['id'];
 					adminPage($idMembre);
 				}
 			}catch(Exception $e){
 				die ("<section><p>".$MessageAdmin."</p></section>");
+				
 			}
 			
 		}
@@ -296,12 +297,6 @@ if (isset($_GET['action']))
 			deleteTopic($idTopic);
 		}
 
-		if ($_GET['action']=='error') {
-		//headBand();
-			$error=$_GET[''];
-			errorPage($error);
-			
-		}
 
 		/*-----------------------------END TOPICS-------------------------*/
 		elseif ($_GET['action']=='films') {

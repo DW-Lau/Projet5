@@ -13,6 +13,7 @@ class Manager{
 			
 			return $bdd;
 		}
+		
 		catch (PDOException $e){
 			die('Erreur: Impossible de ce connecter à la base de données ' . $e->getmsg());
 		}
